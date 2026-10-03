@@ -9,8 +9,8 @@
           <a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
           {%- if item.services %}
           <ul class="sub">
-            {%- for s in collections.services %}<li><a href="{{ s.url }}"{% if page.url == s.url %} aria-current="page"{% endif %}>{{ s.data.menu_label or s.data.title }}</a></li>{% endfor %}
             {%- for x in item.extra %}<li><a href="{{ x.url }}"{% if page.url == x.url %} aria-current="page"{% endif %}>{{ x.label }}</a></li>{% endfor %}
+            {%- for s in collections.services %}<li><a href="{{ s.url }}"{% if page.url == s.url %} aria-current="page"{% endif %}>{{ s.data.menu_label or s.data.title }}</a></li>{% endfor %}
           </ul>
           {%- endif %}
         </li>
