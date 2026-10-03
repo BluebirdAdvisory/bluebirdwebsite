@@ -21,19 +21,34 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
+      - name: Check the server is set up
+        id: setup
+        env:
+          READY: ${{ secrets.VPS_HOST != '' && secrets.VPS_SSH_KEY != '' && secrets.VPS_KNOWN_HOSTS != '' }}
+        run: |
+          echo "ready=$READY" >> "$GITHUB_OUTPUT"
+          [[ $READY == true ]] || echo "::notice::Skipping deploy: the VPS secrets aren't set yet (see deploy/README.md)."
+
       - uses: actions/checkout@v4
+        if: steps.setup.outputs.ready == 'true'
 
       - uses: actions/setup-node@v4
+        if: steps.setup.outputs.ready == 'true'
         with:
           node-version: 22
           cache: npm
 
       - run: npm ci
+        if: steps.setup.outputs.ready == 'true'
       - run: npm run test:redirects
+        if: steps.setup.outputs.ready == 'true'
       - run: npm run build
+        if: steps.setup.outputs.ready == 'true'
       - run: node scripts/nginx-redirects.mjs > redirects.conf
+        if: steps.setup.outputs.ready == 'true'
 
       - name: SSH key
+        if: steps.setup.outputs.ready == 'true'
         env:
           VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
           VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
@@ -46,6 +61,7 @@ jobs:
           printf 'Host vps\n  HostName %s\n  User deploy\n  IdentityFile ~/.ssh/deploy_key\n  StrictHostKeyChecking yes\n' "$VPS_HOST" > ~/.ssh/config
 
       - name: Upload release
+        if: steps.setup.outputs.ready == 'true'
         env:
           RELEASE: ${{ github.sha }}
         run: |
@@ -56,6 +72,7 @@ jobs:
           rsync -az redirects.conf "vps:$base/releases/$RELEASE/redirects.conf"
 
       - name: Switch live site
+        if: steps.setup.outputs.ready == 'true'
         env:
           RELEASE: ${{ github.sha }}
         run: |
