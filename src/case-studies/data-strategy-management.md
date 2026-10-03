@@ -2,7 +2,7 @@
 title: Data Strategy & Management
 summary: A Government agency needed assistance in enhancing its data management and analysis capabilities, aiming to align practices and achieve their future vision.
 services:
-- Data and Artificial Intelligence
+- Data
 ---
 ## The problem
 

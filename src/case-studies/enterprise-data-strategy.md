@@ -2,7 +2,7 @@
 title: Enterprise Data Strategy
 summary: A Government business enterprise lacked a comprehensive data strategy and architecture, resulting in fragmented data usage and an inability to harness data as a strategic asset.
 services:
-- Data and Artificial Intelligence
+- Data
 ---
 ## The problem
 
