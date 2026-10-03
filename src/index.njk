@@ -8,6 +8,12 @@ feature:
   label: Bluebird AI Solutions
   text: Trusted AI solutions developed in Australia using sovereign capabilities.
   url: /bluebird-ai-solutions/
+# Shown first in the What we do list, before the services
+ai_item:
+  title: Artificial Intelligence Solution
+  text: We build sovereign AI solutions for our Australian clients
+  url: /bluebird-ai-solutions/
+
 what_we_do: We empower organisations with innovative digital solutions and expert consultancy. Our services include AI solutions, digital transformations, data analytics, cyber security, project delivery, change management, financial optimisation, and recruitment and contracting, all tailored to help our clients achieve sustainable results.
 why:
   heading: Why choose us?
@@ -47,6 +53,7 @@ partner:
 <section class="wrap section">
   <h2 class="section-title">What we do</h2>
   <ul class="service-index wide">
+    <li><a href="{{ ai_item.url }}"><h3>{{ ai_item.title }}</h3><p>{{ ai_item.text }}</p></a></li>
     {% for s in collections.services %}
     <li><a href="{{ s.url }}"><h3>{{ s.data.title }}</h3><p>{{ s.data.summary }}</p></a></li>
     {% endfor %}
