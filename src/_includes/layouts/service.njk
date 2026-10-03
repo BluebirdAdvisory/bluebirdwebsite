@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+crumb: { label: "What we do", url: "/what-we-do/" }
+---
+{% include "partials/page-hero.njk" %}
+<section class="wrap section">
+  <h2 class="section-title">What this service includes</h2>
+  <ul class="offerings">
+    {% for o in offerings %}<li>{{ o }}</li>{% endfor %}
+  </ul>
+</section>
+{% set related = collections.caseStudies | forService(title) %}
+{% if related.length %}
+<section class="band-mist">
+  <div class="wrap section">
+    <h2 class="section-title">Case studies</h2>
+    {% set list = related %}{% include "partials/case-grid.njk" %}
+  </div>
+</section>
+{% endif %}
+{% if content | trim %}
+<div class="wrap section"><div class="prose">{{ content | safe }}</div></div>
+{% endif %}
+{% include "partials/cta.njk" %}

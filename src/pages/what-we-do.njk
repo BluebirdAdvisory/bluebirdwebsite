@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+title: What we do
+summary: We empower organisations with innovative digital solutions and expert consultancy. Our services include digital transformations, data analytics, cyber security, project delivery, change management, and financial optimisation, all tailored to help our clients achieve sustainable results.
+---
+{% include "partials/page-hero.njk" %}
+<section class="wrap section">
+  <h2 class="section-title">Our services</h2>
+  <ul class="service-index wide">
+    {% for s in collections.services %}
+    <li><a href="{{ s.url }}"><h3>{{ s.data.title }}</h3><p>{{ s.data.summary }}</p></a></li>
+    {% endfor %}
+  </ul>
+</section>
+{% include "partials/cta.njk" %}

@@ -1,0 +1,26 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <img src="{{ site.logo }}" alt="Bluebird Advisory" width="180" height="48" class="footer-logo">
+      <p class="footer-tag">Passionate, driven, curious and authentic, we care about what you want to achieve.</p>
+    </div>
+    <div>
+      <h2 class="footer-h">Contact</h2>
+      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      <p>Canberra office<br>{{ site.office }}</p>
+      <p><a href="{{ site.linkedin }}">Bluebird Advisory on LinkedIn</a></p>
+    </div>
+    <div>
+      <h2 class="footer-h">Services</h2>
+      <ul>{% for s in collections.services %}<li><a href="{{ s.url }}">{{ s.data.title }}</a></li>{% endfor %}</ul>
+    </div>
+    <div>
+      <h2 class="footer-h">Our commitments</h2>
+      <ul>{% for c in site.commitments %}<li><a href="{{ c.url }}">{{ c.label }}</a></li>{% endfor %}</ul>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>Bluebird Advisory acknowledges the Traditional Custodians of the lands on which we work, and pays respect to Elders past and present.</p>
+    <p>&copy; {{ "" | year }} Bluebird Advisory Pty Ltd</p>
+  </div>
+</footer>

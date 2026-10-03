@@ -1,0 +1,10 @@
+[
+  { "source": "/careers", "target": "/join-our-team/", "status": "301" },
+  { "source": "/careers/", "target": "/join-our-team/", "status": "301" },
+  { "source": "/case-studies", "target": "/our-experience/", "status": "301" },
+  { "source": "/case-studies/", "target": "/our-experience/", "status": "301" },
+  { "source": "/home-temporary-preview/", "target": "/", "status": "301" },
+  { "source": "/wp-admin", "target": "/", "status": "301" },
+  { "source": "/wp-content/uploads/<*>", "target": "/uploads/<*>", "status": "301" },
+  { "source": "/<*>", "target": "/404.html", "status": "404-200" }
+]

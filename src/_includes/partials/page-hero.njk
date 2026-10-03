@@ -1,0 +1,7 @@
+<section class="page-hero">
+  <div class="wrap">
+    {% if crumb %}<p class="crumb"><a href="{{ crumb.url }}">{{ crumb.label }}</a></p>{% endif %}
+    <h1>{{ title }}</h1>
+    {% if summary %}<p class="lede">{{ summary }}</p>{% endif %}
+  </div>
+</section>

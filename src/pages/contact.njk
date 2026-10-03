@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+title: Contact us
+summary: We are passionate about working closely with our clients to help solve your problems, harness opportunities and make a meaningful impact for all Australians.
+---
+{% include "partials/page-hero.njk" %}
+<section class="wrap section split">
+  <div class="prose">
+    <h2>Get to know us</h2>
+    <p>We also have access to a range of SME experts across areas such as social research, environmental science and cyber security, meaning we can help you with almost any initiative.</p>
+    <p><a class="btn" href="mailto:{{ site.email }}?subject=Website%20enquiry">Email us</a></p>
+  </div>
+  <dl class="contact-list">
+    <dt>Email</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
+    <dt>Canberra office</dt><dd>{{ site.office }}</dd>
+    <dt>LinkedIn</dt><dd><a href="{{ site.linkedin }}">Bluebird Advisory</a></dd>
+  </dl>
+</section>

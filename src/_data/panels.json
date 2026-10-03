@@ -1,0 +1,52 @@
+[
+  {
+    "heading": "Australian Federal Government Panels",
+    "panels": [
+      {
+        "name": "DTA Cloud Market Place",
+        "url": "https://www.tenders.gov.au/Son/Show/7b3c8f4e-4638-452d-8b3d-6f2f41ece41d",
+        "details": "**Category:** Cloud Consulting\n\n- AI & Machine Learning\n- Analytics, Forecasting & Reporting\n- Corporate Applications\n- Data Warehousing\n- Database\n- Fintech\n- Risk & Compliance\n\n**AusTender ID:** SON3668352\n\n**Department:** Digital Transformation Agency"
+      },
+      {
+        "name": "Information Communication Technology Provider Arrangement",
+        "url": "https://www.tenders.gov.au/Son/Show/b02b2736-92c6-98d9-318a-4edbb576d370",
+        "details": "**Category:** Strategy & Architecture\n\n- Information Strategy\n- Business Strategy and Planning\n- Technical Strategy and Planning\n\n**AusTender ID:** SON3520191\n\n**Department:** Department of Defence"
+      },
+      {
+        "name": "Digital Marketplace Panel 2 - Module 1: ICT Labour Hire & Module 2: Professional and Consulting Services",
+        "url": "https://www.tenders.gov.au/Son/Show/44a18dad-c453-481e-953f-fb9aa8defb08",
+        "details": "**Categories:**\n\n- Architecture services\n- Business, systems & process analysis services\n- Cybersecurity services\n- Data analytics and business intelligence services\n- Digital sourcing, procurement and contract management services\n- Market research and advisory services\n- Program, project and change management services\n- Risk management, benchmarking and audit services\n- Strategy policy and governance services\n- Training, learning and development services\n- User research and design services\n\n**AusTender ID:** SON4102906\n\n**Department:** Digital Transformation Agency"
+      },
+      {
+        "name": "Department of Finance - Management Advisory Services (MAS Panel)",
+        "url": "https://www.tenders.gov.au/Son/Show/c00e6d9b-7a34-436d-9727-4e116ea9b1d0",
+        "details": "**Categories:**\n\n- Financial & Economic Analysis\n- Financial Assessments\n- Business Strategy and Improvement\n- Business Continuity\n- Governance structures and performance\n- Compliance, Fraud and Integrity\n- Audit and Assurance\n- Program/Project Development and Design\n- Program/Project Management\n- Program/Project Evaluation\n- Strategic Procurement advice\n- Strategic Risk Management\n- Investment Banking Services\n- Probity (non-legal)\n- General Financial Services\n- Audit Services\n- Organisational Planning and Development\n- Corporate Governance\n- Community and Stakeholder Engagement\n- Commercial Services Programs and Projects\n- Procurement and Acquisitions\n- Contract Management\n- Research\n- Data Analytics and Management\n\n**AusTender ID:** SON3751667\n\n**Department:** Department of Finance"
+      },
+      {
+        "name": "Provision of Professional and Associated Services",
+        "url": "https://www.tenders.gov.au/Son/Show/932991e4-d3e6-4bef-b6be-894b121a24fa",
+        "details": "**Category:** Management advisory services\n\n- System Assurance Audits\n- Contract-In Auditors and Labour Hire Contractor Services\n- Additional Services\n\n**AusTender ID:** SON3921486\n\n**Department:** Australian National Audit Office"
+      },
+      {
+        "name": "Serve Gate",
+        "url": "https://www.servegate.org.au/",
+        "details": "**Panels:**\n\n- Defence Support Services Panel (SON3485107)\n- Defence Simulation Services Panel (SON3412268)\n- Defence Chief Information Officer Group ICT Provider Arrangement (SON3520191)\n- Defence Innovation, Science & Technology Panel (SON3945513)\n- The Digital Marketplace Panel – (Buy ICT) (SON3413842)\n- Western Australian Indigenous Business Register\n- The Commonwealth Indigenous Procurement Policy via the Supply Nation Indigenous Business Register\n- AFP Support Services Panel (SON3538332)\n- NSW State Procurement (SCM0005)\n- ACT State Government Panel"
+      }
+    ]
+  },
+  {
+    "heading": "State Government Panels",
+    "panels": [
+      {
+        "name": "Professional Advisory Services",
+        "url": "https://www.buyingfor.vic.gov.au/professional-advisory-services-contract",
+        "details": "**Categories:**\n\n- CAFAS-1 - Strategic Policy Review, Reform and Project Development (incorporating service need analysis, Service Planning, Feasibility Studies and Strategic assessment)\n- CAFAS-2 - Business Case Preparation and Development\n- CAFAS-5 - Project, Program and Business Review (Incorporating business re-organisation reviews)\n- CAFAS-7 - Auditing and Investigation\n- CAFAS-8 - General Commercial Advice\n\n**Panel ID:** SS-04-2019\n\n**State:** Victoria"
+      },
+      {
+        "name": "eServices Register",
+        "url": "https://www.buyingfor.vic.gov.au/eservices-register",
+        "details": "**Categories:**\n\n- ICT Application Services\n- ICT Data Services\n- ICT Expertise\n- ICT Infrastructure Services\n- ICT Management\n- COVIDsafe Technologies and Associated Services\n- ICT Industry Sector Specialists\n\n**Panel ID:** SS-01-2021\n\n**State:** Victoria"
+      }
+    ]
+  }
+]

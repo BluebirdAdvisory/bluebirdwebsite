@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+title: Our experience
+summary: At Bluebird Advisory, we believe that actions speak louder than words. Our case studies exemplify the transformative power of trusted advice, data-driven insights and tailored digital solutions. With a focus on end-to-end services that add value and drive change, we pride ourselves in being instrumental in helping organisations make a meaningful impact.
+---
+{% include "partials/page-hero.njk" %}
+<section class="wrap section">
+  <h2 class="section-title">Case studies</h2>
+  {% set list = collections.caseStudies %}{% include "partials/case-grid.njk" %}
+</section>
+<section class="band-mist">
+  <div class="wrap section">
+    <h2 class="section-title">Client feedback</h2>
+    <ul class="quotes">
+      {% for t in testimonials %}
+      <li><blockquote><p>{{ t.quote }}</p></blockquote><p class="cite">{{ t.role }}, {{ t.org }}</p></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+<section class="wrap section">
+  <h2 class="section-title">Our clients</h2>
+  <ul class="logos">
+    {% for c in clients %}<li><img src="{{ c.logo }}" alt="{{ c.name or 'Client logo' }}" loading="lazy"></li>{% endfor %}
+  </ul>
+</section>
+{% include "partials/cta.njk" %}

@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+crumb: { label: "Our experience", url: "/our-experience/" }
+---
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="/our-experience/">Case studies</a></p>
+    <h1>{{ title }}</h1>
+    {% if services %}<p class="tags">{% for s in services %}{% for svc in collections.services %}{% if svc.data.title == s %}<a href="{{ svc.url }}">{{ s }}</a>{% endif %}{% endfor %}{% endfor %}</p>{% endif %}
+  </div>
+</section>
+<div class="wrap section"><div class="prose case-body">
+{{ content | safe }}
+</div></div>
+{% include "partials/cta.njk" %}

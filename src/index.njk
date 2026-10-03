@@ -1,0 +1,99 @@
+---
+layout: layouts/base.njk
+title: Bluebird Advisory
+headline: Your partners in making a difference
+intro: Empowering you to make meaningful change and deliver real results.
+feature:
+  label: AI Leaderboard
+  text: See how Australian Government departments rank on AI transparency.
+  url: /ai-leaderboard/
+what_we_do: We empower organisations with innovative digital solutions and expert consultancy. Our services include digital transformations, data analytics, cyber security, project delivery, change management, and financial optimisation, all tailored to help our clients achieve sustainable results.
+why:
+  heading: Why choose us?
+  text: Passionate, driven, curious and authentic, we care about what you want to achieve. We are hands-on and work closely with you to deliver genuine outcomes and create meaningful change. We aim to impress, deliver excellence, and we act with the highest integrity. You can be assured that your success is our success.
+  points:
+    - title: We are local
+      text: We are located in Canberra and Melbourne, and operate across Australia. As a 100% Australian owned SME, we genuinely care about making a difference to the communities we live in and are invested in ensuring your success.
+    - title: We are security cleared
+      text: We have extensive experience operating in high-security and confidential environments. We understand and deliver on the expectations associated with such critical work. All our team members are security cleared and adhere to the responsibilities required to keep it up to date.
+    - title: We offer value for money
+      text: Our highly-skilled and professional team are dedicated to making a genuine difference and enabling you, as change makers, to have a meaningful impact. We offer competitive rates providing value for money for all our clients, including government and not-for-profits.
+    - title: We work in innovative ways
+      text: We specialise in delivering tailored solutions to meet your specific needs. By incorporating agile, hybrid methodologies and design thinking, we effectively address challenges and help you achieve your desired outcomes.
+partner:
+  heading: Empowering you to make meaningful change and deliver real results
+  text: |
+    Partnering with the public sector, academia, private enterprise, not-for-profits and change makers, we are passionate about empowering our clients to drive better outcomes for all Australians.
+
+    We provide trusted advice, data-driven insights and tailored digital solutions. We specialise in end-to-end services to add value, make change and transform organisations so that you can make a meaningful difference.
+
+    Our talented team are dedicated and genuinely care about helping you achieve your strategic objectives to ensure you thrive in today’s dynamic and uncertain environment.
+---
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <h1>{{ headline }}</h1>
+      <p class="lede">{{ intro }}</p>
+      <p class="hero-actions"><a class="btn btn-light" href="/what-we-do/">Explore our services</a> <a class="btn btn-ghost" href="/contact/">Work with us</a></p>
+    </div>
+    {% include "partials/feather.svg" %}
+  </div>
+  <div class="wrap">
+    <a class="hero-feature" href="{{ feature.url }}"><strong>{{ feature.label }}</strong><span>{{ feature.text }}</span></a>
+  </div>
+</section>
+
+<section class="wrap section split">
+  <div>
+    <h2 class="section-title">What we do</h2>
+    <p class="section-intro">{{ what_we_do }}</p>
+    <p><a class="text-link" href="/what-we-do/">All services</a></p>
+  </div>
+  <ul class="service-index">
+    {% for s in collections.services %}
+    <li><a href="{{ s.url }}"><h3>{{ s.data.title }}</h3><p>{{ s.data.summary }}</p></a></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="band-navy">
+  <div class="wrap section impact">
+    <h2>We aim to make an impact</h2>
+    <div>
+      <p>Discover the ways in which we've made a difference with our clients.</p>
+      <p><a class="btn btn-light" href="/our-experience/">See our case studies</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section split">
+  <div>
+    <h2 class="section-title">{{ why.heading }}</h2>
+    <p class="section-intro">{{ why.text }}</p>
+    <h3>{{ partner.heading }}</h3>
+    <div class="prose small">{{ partner.text | md | safe }}</div>
+  </div>
+  <div class="points">
+    {% for p in why.points %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ p.title }}</summary>
+      <p>{{ p.text }}</p>
+    </details>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="band-mist">
+  <div class="wrap section duo">
+    <div>
+      <h2>Careers</h2>
+      <p>Join a team of passionate, curious and authentic people who care about making a difference.</p>
+      <p><a class="btn" href="/join-our-team/">Join our team</a></p>
+    </div>
+    <div>
+      <h2>Collaboration</h2>
+      <p>Partner with us on your next digital, data, AI or cyber security initiative.</p>
+      <p><a class="btn" href="/contact/">Work with us</a></p>
+    </div>
+  </div>
+</section>

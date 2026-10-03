@@ -1,0 +1,23 @@
+{
+  "name": "Bluebird Advisory",
+  "url": "https://bluebirdadvisory.com.au",
+  "description": "Australian-owned advisory firm helping government and public sector organisations with digital, data, AI and cyber security.",
+  "email": "contact@bluebirdadvisory.com.au",
+  "office": "Unit 5, 24 Napier Close, Deakin ACT 2600",
+  "linkedin": "https://www.linkedin.com/company/bluebird-advisory/",
+  "logo": "/uploads/2021/08/Bluebird-Advisory_Electric-Blue-Reversed_Logo.png",
+  "nav": [
+    { "label": "What we do", "url": "/what-we-do/", "services": true },
+    { "label": "Our experience", "url": "/our-experience/" },
+    { "label": "Meet our team", "url": "/meet-our-team/" },
+    { "label": "How to procure us", "url": "/how-to-procure-us/" },
+    { "label": "About", "url": "/about/" },
+    { "label": "Join our team", "url": "/join-our-team/" }
+  ],
+  "commitments": [
+    { "label": "Social sustainability", "url": "/social-sustainability/" },
+    { "label": "Environmental sustainability", "url": "/environmental-sustainability/" },
+    { "label": "Reconciliation", "url": "/reconciliation/" },
+    { "label": "Modern slavery", "url": "/modern-slavery/" }
+  ]
+}

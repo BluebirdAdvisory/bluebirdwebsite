@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: How to procure us
+summary: Bluebird Advisory is proud to be a trusted supplier to both Federal Government and State Government through a number of key procurement panels. These are the panels you can procure our services through.
+---
+{% include "partials/page-hero.njk" %}
+{% for g in panels %}
+<section class="wrap section">
+  <h2 class="section-title">{{ g.heading }}</h2>
+  <ul class="panels">
+    {% for p in g.panels %}
+    <li>
+      <h3>{{ p.name }}</h3>
+      <div class="prose small">{{ p.details | md | safe }}</div>
+      {% if p.url %}<p><a class="text-link" href="{{ p.url }}">View panel details</a></p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
+<section class="band-mist"><div class="wrap section">
+  <h2>Need more detail on these panels?</h2>
+  <p><a class="btn" href="mailto:{{ site.email }}">Email {{ site.email }}</a></p>
+</div></section>

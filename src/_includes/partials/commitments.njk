@@ -1,0 +1,3 @@
+<ul class="commit-links">
+{%- for c in site.commitments %}{% if c.url != page.url %}<li><a href="{{ c.url }}">{{ c.label }}</a></li>{% endif %}{% endfor %}
+</ul>

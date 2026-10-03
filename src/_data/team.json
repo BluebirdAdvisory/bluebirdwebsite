@@ -1,0 +1,93 @@
+[
+  {
+    "photo": "/uploads/2024/08/Alexia.jpg",
+    "name": "Alexia Hunter",
+    "role": "CEO",
+    "bio": "Bluebird’s fearless leader with over 25 years’ experience in leading large scale business transformations. Alexia is a dynamic and engaging leader and truly cares about our clients and our team.",
+    "linkedin": "https://www.linkedin.com/in/alexiahunter"
+  },
+  {
+    "photo": "/uploads/2026/03/Alex_No-background.png",
+    "name": "Alexander Smith",
+    "role": "Director",
+    "bio": "Our resident expert in emerging technologies, Alex has global experience in delivering technology and data strategies for public and private sector clients, including multibillion dollar transformations.",
+    "linkedin": "http://linkedin.com/in/alexmasmith"
+  },
+  {
+    "photo": "/uploads/2024/09/Ly-Duong-photo-e1726039248744.jpg",
+    "name": "Ly Duong",
+    "role": "Director",
+    "bio": "Ly has a wide breadth of experience in technology consulting, system integration and data analytics across the Federal Government and SaaS (software as a service) industries. Her expertise is in digital transformation, advanced analytics and BI reporting. Pairing technical knowledge with a business- and customer-centric approach, she has successfully led and delivered projects for several federal government clients. Most recently, Ly built a data team and capability within a tech company, while leading the data function for major cross-functional projects. She is passionate about building high-performing teams, execution excellence, solving complex problems, and driving changes that deliver business value.",
+    "linkedin": "https://www.linkedin.com/in/lyhduong/"
+  },
+  {
+    "photo": "/uploads/2026/09/MelitaJ-0167-1-scaled.jpg",
+    "name": "Melita Justic",
+    "role": "Director",
+    "bio": "",
+    "linkedin": ""
+  },
+  {
+    "photo": "/uploads/2026/09/Kate-Lis-Clarke-Photo-2.jpeg",
+    "name": "Kate Lis-Clarke",
+    "role": "Director",
+    "bio": "Kate brings over 12 years experience working in data and analytics in both consulting and industry roles.  She is a collaborative, pragmatic, adaptable and outcomes-focused leader, who is passionate about helping organisations use their data to create strategic value, while understanding and managing the risks associated with it.\n\nHer work has spanned data strategy, operating models, business cases, data modelling and visualisation, with a particular focus on data risk management, including data governance and records and information governance. Her work in financial services has given her a strong understanding and appreciation of regulatory frameworks and obligations from Australia (APRA, ASIC), the US (SEC/CFTC) and Europe/UK (FAC, GDPR).",
+    "linkedin": "https://www.linkedin.com/in/kate-lis-clarke/"
+  },
+  {
+    "photo": "/uploads/2024/08/Mia-scaled.jpg",
+    "name": "Mia Wrightson",
+    "role": "Senior Manager",
+    "bio": "Our data and visualisation expert, Mia has extensive experience in data architectures and data modelling within a complex system of data management tools in Defence Industry. Her expertise in data management systems like Excel, Power Query, Access and SQL give her a strong foundation to successfully deliver innovative solutions. She also brings the latest knowledge in data governance and optimisation to ensure that our clients can make the most out of their data.",
+    "linkedin": ""
+  },
+  {
+    "photo": "/uploads/2024/08/Anna.jpg",
+    "name": "Anna Zhong",
+    "role": "Senior Manager",
+    "bio": "Anna is a data manager specialising in data analytics and visualisation, data governance and management, information architecture and technology design. Her career objective is to make an impact on Australian lives using her data skills. Anna has worked with many government agencies to help them design and uplift their data capabilities, with a strong focus on delivering customer-centric solutions. She also has experience in change management and project management. Besides her primary career, she is a group fitness instructor, advocating for a fitter planet.",
+    "linkedin": "https://www.linkedin.com/in/anna-zhong-44972377/"
+  },
+  {
+    "photo": "/uploads/2026/02/Telmo-no-background-e1770244919867.png",
+    "name": "Telmo Lele",
+    "role": "Senior Manager",
+    "bio": "Telmo Lele is a project manager with experience delivering technology, operational, and policy-related projects across a range of environments. He has worked on digital transformation initiatives, cloud migrations, communications systems, infrastructure upgrades, and organisational policy work, with a focus on practical solutions that support day-to-day operations.\n\nTelmo Lele is skilled at coordinating teams, managing vendors, and turning business and policy requirements into clear project actions. He enjoys helping organisations strengthen their digital capability and improve how technology and process frameworks support services. His approach is collaborative and organised, with an emphasis on clear communication and getting work done without unnecessary complexity.",
+    "linkedin": "https://www.linkedin.com/in/telmolele/"
+  },
+  {
+    "photo": "/uploads/2026/09/NickM-0289-1-scaled.jpg",
+    "name": "Nick Major",
+    "role": "Manager",
+    "bio": "Nick is an experienced solution architect who specialises in connecting data and technological solutions to strategic objectives within government, private and not-for-profit sectors. He combines skills in solution architecture, project management and change management with skills in data management, data modelling, and coding languages in his approach to solving complex data and technical challenges. He seeks to understand the underlying challenges people are facing to ensure any solution is designed to not only solve the problem, but delivers an enduring capability that provides long-term organisational benefits. He is experienced in a wide variety of technologies including Azure DevOps, the Apache Suite, Cloudera Data Solutions, Microsoft Dynamics, Power BI and PostgreSQL databases. Nick is also a gymnastics coach and has been Head Coach of a highly successful program for over 15 years.",
+    "linkedin": ""
+  },
+  {
+    "photo": "/uploads/2026/09/professional_photo.jpg",
+    "name": "Amna Saleem",
+    "role": "Manager",
+    "bio": "Amna is an experienced Data Analyst with a strong data science foundation, specialising in transforming complex operational datasets into accurate, decision‑ready insights. She applies statistical reasoning, analytical modelling and structured problem‑solving to uncover trends, validate multi‑source data and support high‑integrity reporting across Defence and consulting environments. Her work integrates modern analytical techniques with robust data handling practices including programmatic data manipulation, query‑driven analysis and interactive visual storytelling enabling stakeholders to make confident, evidence‑based decisions. She is recognised for her ability to work end‑to‑end across analytical workflows: extracting and preparing data through ETL processes, applying analytical logic to derive meaningful insights and presenting findings through clear, intuitive dashboards. Amna brings a disciplined approach to data quality, metadata alignment and governance, ensuring analytical outputs are reliable, traceable and aligned with organisational standards",
+    "linkedin": "https://www.linkedin.com/in/amna-saleem-aa56416/"
+  },
+  {
+    "photo": "/uploads/2026/03/UsamahM-0513-Transparent-headshot-e1773790910671.png",
+    "name": "Usamah Monir",
+    "role": "Senior Recruitment Consultant",
+    "bio": "With a keen eye for talent and a commitment to excellence, Usamah excels in connecting right individuals with right opportunities. Drawing from the rich resources and expertise of Rosella Recruitment, Usamah specialises in navigating the intricate landscape of talent acquisition. Whether it's identifying the perfect candidate for a client's specialised needs or guiding contractors and consultants towards their desired roles, Usamah serves as the driving force behind successful placements. By fostering strong relationships and leveraging industry insights, he ensures that each placement is a strategic victory for all stakeholders involved.",
+    "linkedin": "https://www.linkedin.com/in/usamahmonir/"
+  },
+  {
+    "photo": "/uploads/2026/05/Emma-2-transparent-background-e1778130596918.png",
+    "name": "Emma Brennan",
+    "role": "Consultant",
+    "bio": "Emma combines analytical thinking with a collaborative, people-focused approach to solving complex challenges. She has experience supporting strategy, transformation, digital, and research initiatives, with strengths in business analysis, stakeholder engagement, workshop facilitation, and project delivery. She enjoys helping clients turn complex problems into clear, actionable solutions.\n\nEmma is recognised for her ability to quickly understand complex environments, build trusted relationships, and translate insights into practical outcomes that create value for clients. Her strong communication skills and adaptable approach enable her to work effectively across diverse stakeholder groups and project environments.",
+    "linkedin": "https://www.linkedin.com/in/emma-brennan-30529b37b/"
+  },
+  {
+    "photo": "/uploads/2026/09/BenediktM-0017-1-scaled.jpg",
+    "name": "Ben Matthews",
+    "role": "Consultant",
+    "bio": "Ben Matthews is a consultant at Bluebird Advisory working across many ICT disciplines, but specialising in Governance, Risk, Compliance and Cyber Security. Ben holds a Bachelor in IT, majoring in Cyber Security & System Administration and has worked across government and private environments in both ICT Support and Security roles. Ben brings a detail-oriented and methodical approach to his work aligning to clear outcomes that seek to highlight gaps and uplift work environments.",
+    "linkedin": ""
+  }
+]

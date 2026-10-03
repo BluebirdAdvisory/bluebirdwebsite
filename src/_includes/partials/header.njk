@@ -1,0 +1,25 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="{{ site.logo }}" alt="Bluebird Advisory home" width="180" height="48"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-icon" aria-hidden="true"></span>Menu</button>
+    <nav id="site-nav" aria-label="Main">
+      <ul>
+        {%- for item in site.nav %}
+        <li{% if item.services %} class="has-sub"{% endif %}>
+          <a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          {%- if item.services %}
+          <ul class="sub">
+            {%- for s in collections.services %}<li><a href="{{ s.url }}"{% if page.url == s.url %} aria-current="page"{% endif %}>{{ s.data.title }}</a></li>{% endfor %}
+          </ul>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+        <li><a class="nav-cta" href="/contact/"{% if page.url == "/contact/" %} aria-current="page"{% endif %}>Contact us</a></li>
+      </ul>
+    </nav>
+  </div>
+  <script>
+    (function(){var b=document.querySelector('.menu-toggle'),h=document.querySelector('.site-header');h.classList.add('js');
+    b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));h.classList.toggle('open',!o);});})();
+  </script>
+</header>

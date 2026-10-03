@@ -1,0 +1,5 @@
+<ul class="case-grid">
+  {% for c in list %}
+  <li><a href="{{ c.url }}"><h3>{{ c.data.title }}</h3><p>{{ c.data.summary }}</p><span class="more">Read case study</span></a></li>
+  {% endfor %}
+</ul>

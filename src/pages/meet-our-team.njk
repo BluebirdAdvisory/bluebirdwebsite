@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: Meet our team
+summary: Our team is the heart of our success. Comprising a diverse group of experts, we are dedicated to providing exceptional service and delivering innovative solutions across various industries. Our team's collective expertise spans data analytics, artificial intelligence, technology, cyber security, people and change management, project management and financial consulting.
+---
+{% include "partials/page-hero.njk" %}
+<section class="wrap section">
+  <ul class="team">
+    {% for m in team %}
+    <li class="person">
+      <img src="{{ m.photo }}" alt="{{ m.name }}" loading="lazy" width="400" height="400">
+      <h2>{{ m.name }}</h2>
+      <p class="role">{{ m.role }}</p>
+      {% if m.bio %}
+      <details>
+        <summary>Read bio</summary>
+        <div class="bio">{{ m.bio | md | safe }}{% if m.linkedin %}<p><a href="{{ m.linkedin }}">{{ m.name }} on LinkedIn</a></p>{% endif %}</div>
+      </details>
+      {% elif m.linkedin %}<p><a href="{{ m.linkedin }}">LinkedIn</a></p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% include "partials/cta.njk" %}
