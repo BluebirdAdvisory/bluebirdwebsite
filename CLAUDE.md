@@ -16,7 +16,7 @@ database, CMS or plugin. Pushing to `main` publishes the live site through AWS A
 | A service page (Data and AI, Cyber Security, …) | `src/services/<slug>.md` — `summary`, `offerings` list, optional body |
 | A case study | `src/case-studies/<slug>.md` |
 | Home page copy | front matter at the top of `src/index.njk` |
-| Other pages (About, Join our team, AI Leaderboard, commitments, shared services) | `src/pages/*.md` or `src/pages/*.njk` |
+| Other pages (About, Join our team, Bluebird AI Solutions, commitments, shared services) | `src/pages/*.md` or `src/pages/*.njk` |
 | Look and feel | `src/assets/css/site.css` (brand tokens are at the top) |
 | Images and PDFs | `src/uploads/YYYY/MM/filename` and reference as `/uploads/YYYY/MM/filename` |
 

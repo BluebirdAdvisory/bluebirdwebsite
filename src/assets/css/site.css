@@ -245,14 +245,6 @@ p{margin:0 0 var(--s2)}
 .contact-list dt{font-weight:700;color:var(--navy)}
 .contact-list dd{margin:0;font-size:1.15rem}
 
-/* leaderboard */
-.partners{display:flex;gap:var(--s3);align-items:center;margin-bottom:var(--s4);flex-wrap:wrap}
-.partners img{height:56px;width:auto}
-.partners .on-dark{background:var(--navy);padding:.6rem 1rem;border-radius:6px;height:68px}
-.ranking{list-style:none;padding:0!important;margin:0 0 var(--s4);counter-reset:none}
-.ranking li{display:flex;align-items:center;gap:var(--s3);padding:var(--s2) 0;border-bottom:1px solid var(--rule);font-size:1.2rem;font-weight:700;color:var(--navy);margin:0}
-.ranking .rank{flex:0 0 3rem;height:3rem;display:grid;place-items:center;border-radius:50%;background:var(--navy);color:var(--cyan);font-weight:800}
-.ranking li:first-child .rank{background:var(--cyan);color:var(--navy)}
 .two-col{columns:2 220px}
 .rates{display:flex;gap:var(--s3);flex-wrap:wrap;margin:0 0 var(--s2)}
 .rates div{border:1px solid var(--rule);border-radius:6px;padding:var(--s2) var(--s3);min-width:200px}

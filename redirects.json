@@ -1,6 +1,8 @@
 [
   { "source": "/careers", "target": "/join-our-team/", "status": "301" },
   { "source": "/careers/", "target": "/join-our-team/", "status": "301" },
+  { "source": "/ai-leaderboard", "target": "/bluebird-ai-solutions/", "status": "301" },
+  { "source": "/ai-leaderboard/", "target": "/bluebird-ai-solutions/", "status": "301" },
   { "source": "/case-studies", "target": "/our-experience/", "status": "301" },
   { "source": "/case-studies/", "target": "/our-experience/", "status": "301" },
   { "source": "/home-temporary-preview/", "target": "/", "status": "301" },
