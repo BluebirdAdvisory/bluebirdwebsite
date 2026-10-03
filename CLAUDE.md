@@ -13,7 +13,7 @@ database, CMS or plugin. Pushing to `main` publishes the live site through AWS A
 | Client feedback quotes | `src/_data/testimonials.json` |
 | Client logos | `src/_data/clients.json` |
 | Procurement panels | `src/_data/panels.json` (the `details` field is Markdown) |
-| A service page (Data and AI, Cyber Security, …) | `src/services/<slug>.md` — `summary`, `offerings` list, optional body |
+| A service page (Data and AI, Cyber Security, …) | `src/services/<slug>.md` — `summary`, `offerings` list, optional body. Optional `menu_label` shortens its name in the What we do menu only; don't rename `title`, case studies link to services by it |
 | A case study | `src/case-studies/<slug>.md` |
 | Home page copy | front matter at the top of `src/index.njk` |
 | Other pages (About, Join our team, AI Leaderboard, commitments, shared services) | `src/pages/*.md` or `src/pages/*.njk` |
