@@ -2,7 +2,7 @@
 title: Data Prioritisation & Optimisation
 summary: An Australian Government agency needed to align their data structure with new performance metrics and assess the availability of each data point, impacting the performance metrics and dashboard prototypes.
 services:
-- Data and Artificial Intelligence
+- Data
 ---
 ## The problem
 

@@ -12,7 +12,8 @@
     { "label": "Meet our team", "url": "/meet-our-team/" },
     { "label": "How to procure us", "url": "/how-to-procure-us/" },
     { "label": "About", "url": "/about/" },
-    { "label": "Join our team", "url": "/join-our-team/" }
+    { "label": "Join our team", "url": "/join-our-team/" },
+    { "label": "Jobs", "url": "/jobs/" }
   ],
   "commitments": [
     { "label": "Social sustainability", "url": "/social-sustainability/" },
