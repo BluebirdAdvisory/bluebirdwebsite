@@ -30,13 +30,13 @@ partner:
     Our talented team are dedicated and genuinely care about helping you achieve your strategic objectives to ensure you thrive in today’s dynamic and uncertain environment.
 ---
 <section class="hero">
+  {% include "partials/feather-field.njk" %}
   <div class="wrap hero-inner">
     <div class="hero-copy">
       <h1>{{ headline }}</h1>
       <p class="lede">{{ intro }}</p>
       <p class="hero-actions"><a class="btn btn-light" href="/what-we-do/">Explore our services</a> <a class="btn btn-ghost" href="/contact/">Work with us</a></p>
     </div>
-    {% include "partials/feather.svg" %}
   </div>
   <div class="wrap">
     <a class="hero-feature" href="{{ feature.url }}"><strong>{{ feature.label }}</strong><span>{{ feature.text }}</span></a>
