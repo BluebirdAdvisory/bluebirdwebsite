@@ -8,7 +8,7 @@ database, CMS or plugin. Pushing to `main` publishes the live site through AWS A
 
 | To change… | Edit |
 | --- | --- |
-| Contact email, office address, LinkedIn, main menu, footer commitment links | `src/_data/site.json` |
+| Contact email, office address, LinkedIn, main menu, footer commitment links | `src/_data/site.json` (extra links under What we do: `extra` on that menu item) |
 | Team members (photo, role, bio, LinkedIn, order on page) | `src/_data/team.json` (order in the file = order on the page) |
 | Client feedback quotes | `src/_data/testimonials.json` |
 | Client logos | `src/_data/clients.json` |
