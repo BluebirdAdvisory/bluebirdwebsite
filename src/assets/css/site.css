@@ -281,6 +281,4 @@ p{margin:0 0 var(--s2)}
 @media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
 
 /* Bluebird AI Solutions */
-.solution-client{font-size:1rem;text-transform:none;color:var(--teal-ink);margin:var(--s4) 0 var(--s2)}
-.solution-client:first-of-type{margin-top:0}
 .solution-note{margin:var(--s4) 0 0}
