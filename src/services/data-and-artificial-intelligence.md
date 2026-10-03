@@ -1,5 +1,6 @@
 ---
 title: Data
+hero_photo: green-and-blue
 summary: Transforming Business Outcomes with AI-Driven Insights and Data Innovation
 order: 2
 offerings:

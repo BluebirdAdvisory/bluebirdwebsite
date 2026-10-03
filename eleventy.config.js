@@ -15,6 +15,10 @@ export default function (eleventyConfig) {
     (list || []).filter((c) => (c.data.services || []).includes(title))
   );
   eleventyConfig.addFilter("year", () => new Date().getFullYear());
+  // Header photo for a case study: the photo of its first service
+  eleventyConfig.addFilter("servicePhoto", (services, all) =>
+    (all || []).find((s) => s.data.title === (services || [])[0])?.data.hero_photo
+  );
   eleventyConfig.addWatchTarget("jobs/");
 
   // Safe JSON for <script type="application/ld+json">

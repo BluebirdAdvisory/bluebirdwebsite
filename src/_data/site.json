@@ -5,6 +5,7 @@
   "email": "contact@bluebirdadvisory.com.au",
   "office": "Unit 5, 24 Napier Close, Deakin ACT 2600",
   "linkedin": "https://www.linkedin.com/company/bluebird-advisory/",
+  "hero_photo": "grey-and-blue",
   "logo": "/uploads/2021/08/Bluebird-Advisory_Electric-Blue-Reversed_Logo.png",
   "nav": [
     { "label": "What we do", "url": "/what-we-do/", "services": true },
