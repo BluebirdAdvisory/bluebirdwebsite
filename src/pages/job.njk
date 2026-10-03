@@ -1,0 +1,48 @@
+---js
+{
+  layout: "layouts/base.njk",
+  pagination: { data: "jobs.all", size: 1, alias: "job", addAllPagesToCollections: true },
+  permalink: (data) => `/jobs/${data.job.slug}/`,
+  crumb: { label: "Current opportunities", url: "/jobs/" },
+  eleventyComputed: {
+    title: (data) => data.job.title,
+    summary: (data) => [data.job.location, data.job.jobTypes.join(", "), data.job.salary].filter(Boolean).join(" · "),
+    noindex: (data) => !data.job.isOpen,
+  },
+}
+---
+{% include "partials/page-hero.njk" %}
+<div class="wrap section job">
+  <div class="prose">
+    {% if not job.isOpen %}
+    <p class="notice">This role has closed. See our <a href="/jobs/">current opportunities</a>.</p>
+    {% endif %}
+    {{ job.descriptionHtml | safe }}
+  </div>
+  <aside class="job-facts" aria-label="Role details">
+    <dl>
+      {% if job.location %}<dt>Location</dt><dd>{{ job.location }}{% if job.regions.length %}, {{ job.regions | join(", ") }}{% endif %}</dd>{% endif %}
+      {% if job.jobTypes.length %}<dt>Job type</dt><dd>{{ job.jobTypes | join(", ") }}</dd>{% endif %}
+      {% if job.salary %}<dt>Rate</dt><dd>{{ job.salary }}</dd>{% endif %}
+      {% if job.categories.length %}<dt>Area</dt><dd>{{ job.categories | join(", ") }}</dd>{% endif %}
+      {% if job.validThrough %}<dt>Closes</dt><dd>{{ job.validThrough | longDate }}</dd>{% endif %}
+    </dl>
+    {% if job.isOpen and job.applyUrl %}<p><a class="btn" href="{{ job.applyUrl }}" rel="noopener">Apply now</a></p>{% endif %}
+  </aside>
+</div>
+{% if job.isOpen %}
+{% set employment = { "Contract": "CONTRACTOR", "Fixed term": "TEMPORARY", "Permanent": "FULL_TIME", "Full time": "FULL_TIME", "Part time": "PART_TIME", "Casual": "PER_DIEM" } %}
+{% set types = [] %}{% for t in job.jobTypes %}{% if employment[t] %}{% set types = (types.push(employment[t]), types) %}{% endif %}{% endfor %}
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": job.title,
+  "description": job.descriptionHtml,
+  "datePosted": job.created,
+  "validThrough": job.validThrough,
+  "employmentType": types,
+  "hiringOrganization": { "@type": "Organization", "name": site.name, "sameAs": site.url },
+  "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": job.location, "addressRegion": job.regions[0], "addressCountry": "AU" } },
+  "directApply": false
+} | jsonld | safe }}</script>
+{% endif %}

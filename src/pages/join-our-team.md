@@ -24,6 +24,10 @@ If you’re a creative thinker who relishes exploring the various intersections 
 
 **When to apply:** we accept applications year-round.
 
+## Current opportunities
+
+We advertise contract and permanent roles on our [current opportunities](/jobs/) page.
+
 ## Join us
 
 If you're interested in joining the flock at Bluebird Advisory, get in touch and let us know!

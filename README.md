@@ -55,6 +55,11 @@ The output is just files, so any web server works. On a Lightsail/EC2 Ubuntu ins
 `error_page 404 /404.html;`). You lose automatic deploys, previews and certificates,
 and take on server patching, which is why Amplify is recommended.
 
+## Job ads from Recruit Wizard
+
+Jobs published in Recruit Wizard appear at `/jobs/` automatically. Setup and how it works:
+[`recruit-wizard/README.md`](recruit-wizard/README.md).
+
 ## Contact form
 
 The WordPress site used WPForms. This version uses `mailto:` links to

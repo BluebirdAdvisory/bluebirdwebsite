@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+title: Current opportunities
+summary: Contract and permanent roles with Bluebird Advisory. Find a role that suits you and apply online.
+---
+{% include "partials/page-hero.njk" %}
+<section class="wrap section">
+  {% if jobs.open.length %}
+  <ul class="service-index job-list">
+    {% for job in jobs.open %}
+    <li><a href="/jobs/{{ job.slug }}/">
+      <h3>{{ job.title }}</h3>
+      <p>{{ [job.location, job.jobTypes | join(", "), job.salary] | select | join(" · ") }}{% if job.validThrough %} · Closes {{ job.validThrough | longDate }}{% endif %}</p>
+    </a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <div class="prose">
+    <p>There are no open roles at the moment. We are always keen to hear from talented people, so feel free to send your CV to <a href="mailto:{{ site.email }}?subject=Expression%20of%20interest">{{ site.email }}</a>.</p>
+  </div>
+  {% endif %}
+</section>
+{% include "partials/cta.njk" %}

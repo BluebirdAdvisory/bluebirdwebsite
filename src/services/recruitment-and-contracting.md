@@ -17,3 +17,5 @@ We know the work because we do the work. Our consultants deliver digital, data, 
 We take the time to understand your team, your environment and your timeframes, and we only put forward people we would be confident working alongside ourselves.
 
 Looking for flexible business admin, EA or HR support? See our [on-demand EA and business admin support](/shared-services/).
+
+Looking for your next contract? See our [current opportunities](/jobs/).
