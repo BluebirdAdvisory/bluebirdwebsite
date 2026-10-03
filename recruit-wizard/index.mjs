@@ -2,8 +2,8 @@
 //
 // Recruit Wizard publishes job ads to a website by calling the same REST endpoints as its
 // WordPress add-on (wp-json/RecruitWizard/...). This AWS Lambda function answers those calls,
-// saves each job as jobs/<id>.json in the GitHub repo, and the commit makes Amplify rebuild
-// the site. No database, and no applicant data passes through here: the "Apply" button on
+// saves each job as jobs/<id>.json in the GitHub repo, and the commit makes GitHub Actions
+// redeploy the site. No database, and no applicant data passes through here: the "Apply" button on
 // each job page goes to Recruit Wizard's own hosted application form.
 //
 // Runtime: Node.js 22 (no dependencies). Set these environment variables on the function:

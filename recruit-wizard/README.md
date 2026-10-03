@@ -11,7 +11,7 @@ through the website.
 Recruit Wizard ──(publish / update / expire job)──▶ AWS Lambda (this folder)
       ▲                                                 │ saves jobs/<id>.json to GitHub
       │ Apply now                                       ▼
- candidate ◀── bluebirdadvisory.com.au/jobs/ ◀── Amplify rebuilds the site (about 1 minute)
+ candidate ◀── bluebirdadvisory.com.au/jobs/ ◀── GitHub Actions redeploys the site (about 2 minutes)
 ```
 
 Recruit Wizard publishes to websites through the same web addresses as its WordPress add-on
@@ -74,7 +74,7 @@ Ask Recruit Wizard support to set up your **website job board using the WordPres
 - Application password: the `RW_PASSWORD` value
 
 Then post a test job to the website from Recruit Wizard. Within a couple of minutes you
-should see a "Publish job ad: …" commit in GitHub, an Amplify build, and the job at
+should see a "Publish job ad: …" commit in GitHub, a **Deploy to VPS** run under Actions, and the job at
 `/jobs/`. Expire it in Recruit Wizard to check it closes.
 
 ## Changing the options
@@ -86,7 +86,7 @@ and click **Deploy**.
 ## Costs
 
 The Lambda runs for a fraction of a second per job, well inside AWS's free tier. Each job
-change triggers one Amplify build (under a minute, about US$0.01).
+change triggers one deploy (about two GitHub Actions minutes, within the free allowance).
 
 ## Testing changes to the function
 

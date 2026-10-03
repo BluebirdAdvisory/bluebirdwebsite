@@ -69,8 +69,13 @@ install -d /var/www/letsencrypt
 
 echo "==> HTTPS certificate"
 SITE=/etc/nginx/sites-available/bluebird
-if [[ ! -e /etc/letsencrypt/live/$DOMAIN/fullchain.pem ]] || \
-   ! openssl x509 -in "/etc/letsencrypt/live/$DOMAIN/fullchain.pem" -noout -text | grep -q "DNS:www.$DOMAIN" && [[ $WITH_WWW == 1 ]]; then
+need_cert() {
+  local pem=/etc/letsencrypt/live/$DOMAIN/fullchain.pem
+  [[ ! -e $pem ]] && return 0
+  [[ $WITH_WWW == 1 ]] && ! openssl x509 -in "$pem" -noout -text | grep -q "DNS:www.$DOMAIN" && return 0
+  return 1
+}
+if need_cert; then
   # Plain HTTP first, so Let's Encrypt can check we control the domain.
   cat > "$SITE" <<EOF
 server {
@@ -107,7 +112,7 @@ EOF
   if [[ $WITH_WWW == 1 ]]; then
     cat <<EOF
 server {
-  listen 443 ssl; listen [::]:443 ssl; http2 on;
+  listen 443 ssl http2; listen [::]:443 ssl http2;
   server_name www.$DOMAIN;
   $CERT
   return 301 https://$DOMAIN\$request_uri;
@@ -116,7 +121,7 @@ EOF
   fi
   cat <<EOF
 server {
-  listen 443 ssl; listen [::]:443 ssl; http2 on;
+  listen 443 ssl http2; listen [::]:443 ssl http2;
   server_name $DOMAIN;
   $CERT
 
@@ -151,7 +156,15 @@ nginx -t
 systemctl reload nginx
 
 echo "==> SSH: key-only logins"
-if [[ -s /root/.ssh/authorized_keys ]] || compgen -G "/home/*/.ssh/authorized_keys" >/dev/null && grep -qv deploy <<<"$(ls /home/*/.ssh/authorized_keys)"; then
+admin_has_key() {
+  [[ -s /root/.ssh/authorized_keys ]] && return 0
+  local f
+  for f in /home/*/.ssh/authorized_keys; do
+    [[ -s $f && $f != /home/deploy/* ]] && return 0
+  done
+  return 1
+}
+if admin_has_key; then
   printf 'PasswordAuthentication no\nPermitRootLogin prohibit-password\n' > /etc/ssh/sshd_config.d/10-bluebird.conf
   systemctl reload ssh
 else
@@ -161,5 +174,7 @@ fi
 
 echo
 echo "Done. Next: add the GitHub secrets in deploy/README.md and run the Deploy workflow."
-echo "Host key to paste into the VPS_KNOWN_HOSTS secret:"
-for k in /etc/ssh/ssh_host_ed25519_key.pub; do echo "$DOMAIN $(cut -d' ' -f1,2 "$k")"; done
+echo "Paste these two lines into the VPS_KNOWN_HOSTS secret:"
+HOSTKEY=$(cut -d' ' -f1,2 /etc/ssh/ssh_host_ed25519_key.pub)
+echo "$DOMAIN $HOSTKEY"
+echo "$(hostname -I | awk '{print $1}') $HOSTKEY"
