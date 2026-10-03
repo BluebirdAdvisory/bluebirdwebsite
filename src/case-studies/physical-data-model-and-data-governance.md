@@ -2,7 +2,7 @@
 title: Physical Data Model and Data Governance
 summary: An Australian Government agency needed to improve data quality and implement uplift initiatives.
 services:
-- Data and Artificial Intelligence
+- Data
 ---
 ## The problem
 

@@ -1,5 +1,5 @@
 ---
-title: Data and Artificial Intelligence
+title: Data
 summary: Transforming Business Outcomes with AI-Driven Insights and Data Innovation
 order: 2
 offerings:
