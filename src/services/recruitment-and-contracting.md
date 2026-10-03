@@ -83,7 +83,7 @@ We provide the following support for our people.
 
 - **On-the-job coaching and support.** We support and guide our candidates throughout their placement, including on-the-job coaching to help them develop new skills, perform at their best and work through any challenges in their role.
 - **Security clearance sponsorship and police checks.** Many roles require security clearances or police checks. Where required, we sponsor security clearances and arrange police checks, so candidates meet the requirements and can pursue opportunities with confidence.
-- **Fortnightly pay.** We pay our contractors fortnightly, providing timely, consistent payment that makes it easy to budget and plan.
+- **Monthly pay.** We pay our contractors monthly, providing timely, consistent payment that makes it easy to budget and plan.
 
 ## Get in touch
 
