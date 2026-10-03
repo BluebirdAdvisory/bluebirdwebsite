@@ -20,7 +20,7 @@ Project Delivery with …".
 7. **Program and Project Delivery** — offerings 2 and 4 are copied from Cyber Security
    ("cyber security maturity uplift…", "cyber resilience and security advisory…").
 8. **Financial and Benefit Management** — offering 2 is the same cyber uplift line.
-9. **AI Leaderboard** — the "Cyber security" reason reuses the "Ethical governance"
+9. ~~**AI Leaderboard**~~ (page removed 3 October 2026) — the "Cyber security" reason reuses the "Ethical governance"
    sentence. The "Why AI transparency is more than compliance" intro is the generic
    What We Do paragraph.
 10. **About → values** — the old site showed these as images with titles baked in;

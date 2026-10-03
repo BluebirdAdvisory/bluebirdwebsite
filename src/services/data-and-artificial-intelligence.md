@@ -17,7 +17,7 @@ offerings:
 - [Poll: Data & Artificial Intelligence Maturity Journey in Education](https://forms.office.com/pages/responsepage.aspx?id=nl_daDztFkWioZpUE5rB1MvD2GtPAopHu2SuM1YriFpUQ1dZODkyUkdUN1M4V0w4MERMWExOWE45SS4u&route=shorturl)
 - [CAUDIT website: Events for the Bluebird Advisory presentation](https://www.caudit.edu.au/events/?query=bluebird)
 - [CAUDIT Presentation: Trust Through Transformation (pdf)](/uploads/2025/01/20240916-CAUDIT-Presentation-Trust-Through-Transformation-v2.1.pdf)
-- [AI Leaderboard](/ai-leaderboard/)
+- [Bluebird AI Solutions](/bluebird-ai-solutions/)
 
 ## Presentation recording
 
