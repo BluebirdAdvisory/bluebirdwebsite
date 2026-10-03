@@ -19,6 +19,8 @@ database, CMS or plugin. Pushing to `main` publishes the live site through AWS A
 | Other pages (About, Join our team, AI Leaderboard, commitments, shared services) | `src/pages/*.md` or `src/pages/*.njk` |
 | Look and feel | `src/assets/css/site.css` (brand tokens are at the top) |
 | Images and PDFs | `src/uploads/YYYY/MM/filename` and reference as `/uploads/YYYY/MM/filename` |
+| Job ads | Published from Recruit Wizard into `jobs/*.json` — don't hand-edit; change them in Recruit Wizard. Pages: `src/pages/jobs.njk`, `src/pages/job.njk` |
+| Recruit Wizard connection (Lambda) | `recruit-wizard/index.mjs`; setup in `recruit-wizard/README.md`; run `npm run test:recruit-wizard` after any change |
 
 ## Common tasks
 
