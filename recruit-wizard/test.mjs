@@ -40,7 +40,7 @@ const job = (overrides = {}) => ({
   id: "", username: "recruitwizard", title: "Senior Data Engineer", status: "publish",
   content: "<p>Join a <strong>major</strong> data program.</p><script>alert(1)</script><p onclick=\"x()\" style=\"color:red\">Canberra based.</p>",
   location: "Canberra", applyurl: "https://apply.recruitwizard.com/Apply/Index/8/232360_1/52",
-  jobexpires: "December 1, 2026", jobsalary: "$1,200 per day", categories: ["data-and-artificial-intelligence"],
+  jobexpires: "December 1, 2026", jobsalary: "$1,200 per day", categories: ["data"],
   jobtypes: ["contract"], regions: ["australian-capital-territory"], thumbnailid: "", ...overrides,
 });
 
@@ -71,7 +71,7 @@ test("publishes a new job and returns its numeric id", async () => {
   const saved = JSON.parse(files.get(`jobs/${id}.json`).text);
   assert.equal(saved.status, "open");
   assert.equal(saved.slug, `senior-data-engineer-${id}`);
-  assert.deepEqual(saved.categories, ["Data and Artificial Intelligence"]);
+  assert.deepEqual(saved.categories, ["Data"]);
   assert.deepEqual(saved.jobTypes, ["Contract"]);
   assert.deepEqual(saved.regions, ["Australian Capital Territory"]);
   assert.equal(saved.descriptionHtml, "<p>Join a <strong>major</strong> data program.</p><p>Canberra based.</p>");
