@@ -4,7 +4,7 @@
    ========================================================= */
 @font-face{font-family:"Manrope";src:url("/assets/fonts/manrope-latin.woff2") format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
 :root{
-  --navy:#0C184F; --navy-deep:#070F38; --cyan:#05B0F0; --teal:#039197;
+  --navy:#0C184F; --navy-deep:#070F38; --cyan:#05B0F0; --sky:#8ED8F8; --blue:#3B82E0; --teal:#039197;
   --teal-ink:#026E73; --mist:#EEF3F8; --rule:#D3DBE8;
   --text:#25304F; --muted:#56607F; --white:#fff;
   --font:"Manrope", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -77,24 +77,38 @@ p{margin:0 0 var(--s2)}
 
 /* ---------- home hero (the one bold moment) ---------- */
 .hero{background:var(--navy);color:#DCE4F5;overflow:hidden;position:relative}
-.hero-inner{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:var(--s4);padding-block:var(--s5) var(--s4)}
+/* blue feather background: src/_includes/partials/feather-field.njk */
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,24,79,.7) 0%,rgba(12,24,79,.45) 35%,rgba(12,24,79,0) 60%);z-index:1;pointer-events:none}
+.hero > .wrap{position:relative;z-index:2}
+.hero-inner{display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:var(--s4);padding-block:var(--s6) var(--s5);min-height:min(68vh,620px)}
 .hero h1{color:var(--white);font-size:clamp(2.6rem,6.2vw,5rem);line-height:1.02;letter-spacing:-.035em;max-width:11ch}
 .hero .lede{font-size:clamp(1.15rem,1.8vw,1.35rem);max-width:34ch;color:#C8D3EE}
 .hero-actions{margin-top:var(--s4)}
-.feather{width:100%;max-width:520px;justify-self:end;color:var(--cyan)}
-.feather-barbs{opacity:.55}
+.feather-barbs{opacity:.6}
 @media (prefers-reduced-motion:no-preference){
-  .feather-barbs{stroke-dasharray:240;stroke-dashoffset:240;animation:draw 2.2s .2s cubic-bezier(.3,.6,.2,1) forwards}
-  .feather-quill{stroke-dasharray:800;stroke-dashoffset:800;animation:draw 1.4s cubic-bezier(.3,.6,.2,1) forwards}
+  .f-a .feather-barbs{stroke-dasharray:240;stroke-dashoffset:240;animation:draw 2.2s .2s cubic-bezier(.3,.6,.2,1) forwards}
+  .f-a .feather-quill{stroke-dasharray:800;stroke-dashoffset:800;animation:draw 1.4s cubic-bezier(.3,.6,.2,1) forwards}
+  .hero-feather use{animation:drift 14s ease-in-out infinite alternate}
+  .f-b use{animation-duration:11s;animation-delay:-3s}
+  .f-c use{animation-duration:16s;animation-delay:-7s}
+  .f-d use{animation-duration:12s;animation-delay:-5s}
+  .f-e use{animation-duration:18s;animation-delay:-2s}
+  .f-f use{animation-duration:15s;animation-delay:-9s}
+  .f-g use{animation-duration:13s;animation-delay:-4s}
+  .f-h use{animation-duration:17s;animation-delay:-6s}
+  .f-i use{animation-duration:12s;animation-delay:-8s}
+  .f-j use{animation-duration:15s;animation-delay:-1s}
 }
 @keyframes draw{to{stroke-dashoffset:0}}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(18px,-26px)}}
 .hero-feature{display:flex;flex-wrap:wrap;gap:.25rem 1rem;align-items:baseline;border-top:1px solid rgba(255,255,255,.18);padding:var(--s3) 0 var(--s4);color:#DCE4F5;text-decoration:none}
 .hero-feature strong{color:var(--cyan);font-weight:800}
 .hero-feature:hover span{color:var(--white);text-decoration:underline}
 @media (max-width:820px){
-  .hero-inner{grid-template-columns:1fr}
-  .feather{position:absolute;right:-90px;top:10px;width:340px;opacity:.35;pointer-events:none}
-  .hero-copy{position:relative}
+  .hero-inner{padding-block:var(--s5) var(--s4);min-height:0}
+  .hero-bg{opacity:.7}
+  .hero::before{background:linear-gradient(180deg,rgba(12,24,79,.35),rgba(12,24,79,.8))}
 }
 
 /* ---------- page hero ---------- */
