@@ -36,6 +36,10 @@ export default function (eleventyConfig) {
     return str ? eleventyConfig.markdownLibrary?.render(str) ?? str : "";
   });
   eleventyConfig.amendLibrary("md", (lib) => { eleventyConfig.markdownLibrary = lib; });
+  // Inline markdown (bold, links) for one-line strings such as service offerings
+  eleventyConfig.addFilter("mdInline", (str) =>
+    str ? eleventyConfig.markdownLibrary?.renderInline(str) ?? str : ""
+  );
 
   return {
     dir: { input: "src", includes: "_includes", data: "_data", output: "_site" },
