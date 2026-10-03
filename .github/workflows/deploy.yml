@@ -1,0 +1,83 @@
+# Publishes the site to the VPS whenever main changes (merged pull requests, Recruit Wizard
+# job ads, direct pushes). Each deploy goes into its own release folder; the live site
+# switches over only once everything is uploaded and nginx has accepted the new redirects.
+# Setup: deploy/README.md
+name: Deploy to VPS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-vps
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run test:redirects
+      - run: npm run build
+      - run: node scripts/nginx-redirects.mjs > redirects.conf
+
+      - name: SSH key
+        env:
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+        run: |
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$VPS_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          printf 'Host vps\n  HostName %s\n  User deploy\n  IdentityFile ~/.ssh/deploy_key\n  StrictHostKeyChecking yes\n' "$VPS_HOST" > ~/.ssh/config
+
+      - name: Upload release
+        env:
+          RELEASE: ${{ github.sha }}
+        run: |
+          base=/var/www/bluebird
+          ssh vps "mkdir -p $base/releases/$RELEASE"
+          # Unchanged files are hard-linked from the live release, so only changes are uploaded.
+          rsync -az --delete --link-dest="$base/current/site/" _site/ "vps:$base/releases/$RELEASE/site/"
+          rsync -az redirects.conf "vps:$base/releases/$RELEASE/redirects.conf"
+
+      - name: Switch live site
+        env:
+          RELEASE: ${{ github.sha }}
+        run: |
+          ssh vps bash -s -- "$RELEASE" <<'EOF'
+          set -euo pipefail
+          base=/var/www/bluebird
+          new=releases/$1
+          prev=$(readlink "$base/current")
+          switch() { ln -sfn "$1" "$base/current.tmp" && mv -Tf "$base/current.tmp" "$base/current"; }
+
+          switch "$new"
+          if sudo nginx -t 2>/tmp/nginx-test.log; then
+            sudo systemctl reload nginx
+          else
+            switch "$prev"
+            cat /tmp/nginx-test.log >&2
+            echo "nginx rejected the new redirects; the live site was left as it was." >&2
+            exit 1
+          fi
+
+          # Keep the five most recent releases for quick rollback.
+          cd "$base/releases"
+          ls -1t | grep -vx "$(basename "$new")" | tail -n +5 | xargs -r rm -rf
+          echo "Live: $new"
+          EOF

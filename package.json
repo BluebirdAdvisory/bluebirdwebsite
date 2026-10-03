@@ -6,7 +6,8 @@
     "start": "eleventy --serve",
     "build": "eleventy",
     "fetch-media": "node scripts/fetch-media.mjs",
-    "test:recruit-wizard": "node --test recruit-wizard/test.mjs"
+    "test:recruit-wizard": "node --test recruit-wizard/test.mjs",
+    "test:redirects": "node --test scripts/nginx-redirects.test.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"
