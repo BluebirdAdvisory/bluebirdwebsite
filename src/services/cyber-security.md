@@ -1,5 +1,6 @@
 ---
 title: Cyber Security
+hero_photo: peacock-body
 summary: Enhance overall organisational cybersecurity posture, reduce risk, and ensure the protection of critical assets and information in line with essential 8 and zero trust principles.
 order: 3
 offerings:

@@ -1,5 +1,6 @@
 ---
 title: Financial and Benefit Management
+hero_photo: yellow-green-brown
 summary: Crafting plans and strategies to support financial objectives through strategic management, operations optimisation, financial modelling, benefits realisation and risk management.
 order: 6
 offerings:

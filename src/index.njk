@@ -1,13 +1,20 @@
 ---
 layout: layouts/base.njk
 title: Bluebird Advisory
+hero_photo: blue
 headline: Your partners in making a difference
 intro: Empowering you to make meaningful change and deliver real results.
 feature:
-  label: AI Leaderboard
-  text: See how Australian Government departments rank on AI transparency.
-  url: /ai-leaderboard/
-what_we_do: We empower organisations with innovative digital solutions and expert consultancy. Our services include digital transformations, data analytics, cyber security, project delivery, change management, financial optimisation, and recruitment and contracting, all tailored to help our clients achieve sustainable results.
+  label: Bluebird AI Solutions
+  text: Trusted AI solutions developed in Australia using sovereign capabilities.
+  url: /bluebird-ai-solutions/
+# Shown first in the What we do list, before the services
+ai_item:
+  title: Artificial Intelligence Solution
+  text: We build sovereign AI solutions for our Australian clients
+  url: /bluebird-ai-solutions/
+
+what_we_do: We empower organisations with innovative digital solutions and expert consultancy. Our services include AI solutions, digital transformations, data analytics, cyber security, project delivery, change management, financial optimisation, and recruitment and contracting, all tailored to help our clients achieve sustainable results.
 why:
   heading: Why choose us?
   text: Passionate, driven, curious and authentic, we care about what you want to achieve. We are hands-on and work closely with you to deliver genuine outcomes and create meaningful change. We aim to impress, deliver excellence, and we act with the highest integrity. You can be assured that your success is our success.
@@ -30,7 +37,7 @@ partner:
     Our talented team are dedicated and genuinely care about helping you achieve your strategic objectives to ensure you thrive in today’s dynamic and uncertain environment.
 ---
 <section class="hero">
-  {% include "partials/feather-field.njk" %}
+  {% include "partials/hero-photo.njk" %}
   <div class="wrap hero-inner">
     <div class="hero-copy">
       <h1>{{ headline }}</h1>
@@ -43,13 +50,10 @@ partner:
   </div>
 </section>
 
-<section class="wrap section split">
-  <div>
-    <h2 class="section-title">What we do</h2>
-    <p class="section-intro">{{ what_we_do }}</p>
-    <p><a class="text-link" href="/what-we-do/">All services</a></p>
-  </div>
-  <ul class="service-index">
+<section class="wrap section">
+  <h2 class="section-title">What we do</h2>
+  <ul class="service-index wide">
+    <li><a href="{{ ai_item.url }}"><h3>{{ ai_item.title }}</h3><p>{{ ai_item.text }}</p></a></li>
     {% for s in collections.services %}
     <li><a href="{{ s.url }}"><h3>{{ s.data.title }}</h3><p>{{ s.data.summary }}</p></a></li>
     {% endfor %}

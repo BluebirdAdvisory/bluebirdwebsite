@@ -9,7 +9,7 @@ and uploads it to an AWS Lightsail server in Sydney (see `deploy/README.md`).
 
 | To change… | Edit |
 | --- | --- |
-| Contact email, office address, LinkedIn, main menu, footer commitment links | `src/_data/site.json` |
+| Contact email, office address, LinkedIn, main menu, footer commitment links | `src/_data/site.json` (extra links at the top of the What we do menu: `extra` on that menu item) |
 | Team members (photo, role, bio, LinkedIn, order on page) | `src/_data/team.json` (order in the file = order on the page) |
 | Client feedback quotes | `src/_data/testimonials.json` |
 | Client logos | `src/_data/clients.json` |

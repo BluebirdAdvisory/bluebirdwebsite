@@ -1,5 +1,6 @@
 ---
 title: Program and Project Delivery
+hero_photo: red-yellow-blue
 summary: Planning, coordination, execution, monitoring, and control of programs and projects to ensure successful delivery within scope, schedule, budget and quality constraints.
 order: 4
 offerings:

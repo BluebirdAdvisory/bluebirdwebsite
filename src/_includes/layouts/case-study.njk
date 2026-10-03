@@ -3,6 +3,7 @@ layout: layouts/base.njk
 crumb: { label: "Our experience", url: "/our-experience/" }
 ---
 <section class="page-hero">
+  {% set photo = services | servicePhoto(collections.services) %}{% include "partials/hero-photo.njk" %}
   <div class="wrap">
     <p class="crumb"><a href="/our-experience/">Case studies</a></p>
     <h1>{{ title }}</h1>

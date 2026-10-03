@@ -1,0 +1,6 @@
+{#- Feather photo behind a page header. Pages choose one with `hero_photo` (a name from
+    src/assets/img/feathers/, without the size); otherwise site.json's default is used. -#}
+{%- set photo = photo or hero_photo or site.hero_photo -%}
+<img class="hero-photo" src="/assets/img/feathers/{{ photo }}-1600.jpg"
+  srcset="/assets/img/feathers/{{ photo }}-800.jpg 800w, /assets/img/feathers/{{ photo }}-1600.jpg 1600w"
+  sizes="100vw" width="1600" height="1067" alt="" fetchpriority="high">
