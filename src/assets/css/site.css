@@ -267,3 +267,9 @@ p{margin:0 0 var(--s2)}
 
 /* Bluebird AI Solutions */
 .solution-note{margin:var(--s4) 0 0}
+
+/* artwork beside page text (Reconciliation) */
+.prose .art-feature{float:right;width:min(40%,400px);margin:0 0 var(--s3) var(--s4)}
+.prose .art-feature img{width:100%;height:auto;border-radius:6px}
+@media (max-width:760px){.prose .art-feature{float:none;width:100%;margin:0 0 var(--s3)}}
+.prose h2{clear:both}
