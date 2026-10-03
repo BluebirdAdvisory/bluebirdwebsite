@@ -77,45 +77,28 @@ p{margin:0 0 var(--s2)}
 
 /* ---------- home hero (the one bold moment) ---------- */
 .hero{background:var(--navy);color:#DCE4F5;overflow:hidden;position:relative}
-/* blue feather background: src/_includes/partials/feather-field.njk */
-.hero-bg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,24,79,.7) 0%,rgba(12,24,79,.45) 35%,rgba(12,24,79,0) 60%);z-index:1;pointer-events:none}
+/* feather photo behind page headers: src/_includes/partials/hero-photo.njk */
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero::before,.page-hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none}
+.hero::before{background:linear-gradient(90deg,rgba(12,24,79,.92) 0%,rgba(12,24,79,.8) 45%,rgba(12,24,79,.35) 100%)}
 .hero > .wrap{position:relative;z-index:2}
 .hero-inner{display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:var(--s4);padding-block:var(--s6) var(--s5);min-height:min(68vh,620px)}
 .hero h1{color:var(--white);font-size:clamp(2.6rem,6.2vw,5rem);line-height:1.02;letter-spacing:-.035em;max-width:11ch}
 .hero .lede{font-size:clamp(1.15rem,1.8vw,1.35rem);max-width:34ch;color:#C8D3EE}
 .hero-actions{margin-top:var(--s4)}
-.feather-barbs{opacity:.6}
-@media (prefers-reduced-motion:no-preference){
-  .f-a .feather-barbs{stroke-dasharray:240;stroke-dashoffset:240;animation:draw 2.2s .2s cubic-bezier(.3,.6,.2,1) forwards}
-  .f-a .feather-quill{stroke-dasharray:800;stroke-dashoffset:800;animation:draw 1.4s cubic-bezier(.3,.6,.2,1) forwards}
-  .hero-feather use{animation:drift 14s ease-in-out infinite alternate}
-  .f-b use{animation-duration:11s;animation-delay:-3s}
-  .f-c use{animation-duration:16s;animation-delay:-7s}
-  .f-d use{animation-duration:12s;animation-delay:-5s}
-  .f-e use{animation-duration:18s;animation-delay:-2s}
-  .f-f use{animation-duration:15s;animation-delay:-9s}
-  .f-g use{animation-duration:13s;animation-delay:-4s}
-  .f-h use{animation-duration:17s;animation-delay:-6s}
-  .f-i use{animation-duration:12s;animation-delay:-8s}
-  .f-j use{animation-duration:15s;animation-delay:-1s}
-}
-@keyframes draw{to{stroke-dashoffset:0}}
-@keyframes drift{from{transform:translate(0,0)}to{transform:translate(18px,-26px)}}
 .hero-feature{display:flex;flex-wrap:wrap;gap:.25rem 1rem;align-items:baseline;border-top:1px solid rgba(255,255,255,.18);padding:var(--s3) 0 var(--s4);color:#DCE4F5;text-decoration:none}
 .hero-feature strong{color:var(--cyan);font-weight:800}
 .hero-feature:hover span{color:var(--white);text-decoration:underline}
 @media (max-width:820px){
   .hero-inner{padding-block:var(--s5) var(--s4);min-height:0}
-  .hero-bg{opacity:.7}
-  .hero::before{background:linear-gradient(180deg,rgba(12,24,79,.35),rgba(12,24,79,.8))}
+  .hero::before{background:rgba(12,24,79,.82)}
 }
 
 /* ---------- page hero ---------- */
 .page-hero{background:var(--navy);color:#C8D3EE;padding-block:var(--s5) var(--s4);position:relative;overflow:hidden}
-.page-hero::after{content:"";position:absolute;right:max(-80px,calc((100vw - var(--wrap))/2 - 120px));top:-30px;width:380px;height:380px;background:url("/assets/img/feather-mark.svg") no-repeat center/contain;opacity:.28;pointer-events:none}
-@media (max-width:760px){.page-hero::after{width:240px;height:240px;right:-90px;top:auto;bottom:-60px;opacity:.18}}
-.page-hero .wrap{position:relative;z-index:1}
+.page-hero::before{background:linear-gradient(90deg,rgba(12,24,79,.93) 0%,rgba(12,24,79,.86) 50%,rgba(12,24,79,.55) 75%,rgba(12,24,79,.2) 100%)}
+@media (max-width:760px){.page-hero::before{background:rgba(12,24,79,.86)}}
+.page-hero .wrap{position:relative;z-index:2}
 .page-hero h1{color:var(--white);max-width:22ch}
 .page-hero .lede{font-size:1.2rem;max-width:60ch;margin:0}
 .crumb{margin:0 0 var(--s1);font-weight:600;font-size:.95rem}

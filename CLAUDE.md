@@ -17,6 +17,7 @@ database, CMS or plugin. Pushing to `main` publishes the live site through AWS A
 | A case study | `src/case-studies/<slug>.md` |
 | Home page copy | front matter at the top of `src/index.njk` |
 | Other pages (About, Join our team, Bluebird AI Solutions, commitments, shared services) | `src/pages/*.md` or `src/pages/*.njk` |
+| Header photo on a page | `hero_photo: <name>` in the page's front matter, using a name from `src/assets/img/feathers/` without the size (e.g. `peacock-plume`). Default is `hero_photo` in `site.json`; case studies use their first service's photo. New photos: crop to 3:2 and save a `-1600.jpg` and `-800.jpg` |
 | Look and feel | `src/assets/css/site.css` (brand tokens are at the top) |
 | Images and PDFs | `src/uploads/YYYY/MM/filename` and reference as `/uploads/YYYY/MM/filename` |
 | Job ads | Published from Recruit Wizard into `jobs/*.json` — don't hand-edit; change them in Recruit Wizard. Pages: `src/pages/jobs.njk`, `src/pages/job.njk` |

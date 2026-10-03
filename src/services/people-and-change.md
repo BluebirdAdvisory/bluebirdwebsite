@@ -1,5 +1,6 @@
 ---
 title: People and Change
+hero_photo: pink-and-blue
 summary: Addressing the human aspect of data, digital and cyber initiatives, focusing on managing change, developing talent and fostering a culture conducive to innovation and digital transformation.
 order: 5
 offerings:

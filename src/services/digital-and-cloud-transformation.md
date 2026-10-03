@@ -1,5 +1,6 @@
 ---
 title: Digital and Cloud Transformation
+hero_photo: shiny-blue
 summary: Designing, planning, implementing, and managing digital and cloud transformations. Leveraging digital technologies and cloud computing to drive innovation, improve operational efficiency, and enhance customer experiences.
 order: 1
 offerings:

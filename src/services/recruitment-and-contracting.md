@@ -1,5 +1,6 @@
 ---
 title: Recruitment & Contracting
+hero_photo: peacock-plume
 summary: Connecting you with skilled, reliable people for short-term, project and ongoing roles, so your team has the right capability when it is needed, without the overhead of a permanent hire.
 order: 7
 offerings:
