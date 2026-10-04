@@ -49,6 +49,8 @@ roles:
   text: Business case authors analyse business opportunities, gather relevant data and develop comprehensive business cases to support decision-making within organisations.
 - title: Data scientists
   text: Data scientists analyse complex data to uncover insights and trends that inform business decisions. They use statistical analysis, machine learning and data mining techniques to extract knowledge from data.
+- title: AI engineers
+  text: AI engineers design, develop, deploy and maintain artificial intelligence solutions that help organisations automate processes, improve decision-making and unlock value from data. They combine expertise in software engineering, data science, machine learning and cloud technologies to build AI models, integrate them into business systems, and ensure they operate securely, reliably and ethically. They may work on solutions such as generative AI assistants, predictive analytics, computer vision, natural language processing and intelligent automation. They are responsible for the end-to-end AI life cycle, including data preparation, model training, testing, deployment, monitoring, governance and continuous improvement, ensuring AI capabilities deliver measurable business outcomes while complying with privacy, security and regulatory requirements.
 - title: Data analysts
   text: Data analysts interpret data, analyse results using statistical techniques and provide ongoing reports. They develop and implement data collection systems and other strategies to improve data quality and efficiency.
 - title: Cyber security analysts
