@@ -288,3 +288,8 @@ p{margin:0 0 var(--s2)}
 .roles li{background:var(--white);border:1px solid var(--rule);border-radius:6px;padding:var(--s3)}
 .roles h3{font-size:1.15rem;margin:0 0 .4rem}
 .roles p{margin:0;font-size:.98rem;color:var(--text)}
+
+/* AI Solutions summary on What we do */
+.ai-summary{margin-top:var(--s4)}
+.ai-summary p:last-child{margin:0}
+.ai-summary-action{margin:var(--s4) 0 0}
