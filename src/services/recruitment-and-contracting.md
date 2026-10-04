@@ -27,6 +27,8 @@ roles:
   text: Enterprise architects shape an organisation's overall IT structure and processes, aligning strategic objectives with tactical demands. They design and lead the implementation of IT infrastructure, ensuring systems are scalable, sustainable and reliable, and that they support business development and growth.
 - title: Data architects
   text: Data architects design and manage large electronic databases to store and organise data. They focus on data migration, database structure and integration with data services so the organisation benefits from robust, scalable and efficient data ecosystems. They define how and where data is stored, consumed, integrated and managed across data entities and IT systems.
+- title: Data modellers
+  text: Data modellers design, document and maintain enterprise data models that support business operations, analytics, AI initiatives and digital transformation programs. They work closely with business stakeholders, architects, analysts and engineers to ensure organisational data is structured, governed and aligned to strategic objectives.
 - title: Change managers
   text: Change managers lead the change management process, ensuring changes within an organisation are implemented smoothly and successfully and that the lasting benefits of change are achieved. They focus on the human side of change, including changes to business processes, systems and technology, job roles and organisation structures. They work with stakeholders to increase benefit realisation, value creation and return on investment, while reducing resistance to change and addressing its impact on culture and people.
 - title: Cost modellers
@@ -34,7 +36,7 @@ roles:
 - title: Cloud engineers
   text: Cloud engineers design, implement and maintain cloud-based infrastructure and services, ensuring scalability, reliability and security in cloud environments.
 - title: Data engineers
-  text: Data engineers develop, build, test and maintain architectures such as databases and large-scale processing systems to handle data at scale.
+  text: Data engineers design, develop and maintain scalable data platforms, pipelines and integration solutions that enable trusted, secure and accessible data across the organisation. They transform raw data into curated information products that support reporting, analytics, AI and operational decision-making.
 - title: Developers
   text: Developers write, test and debug software programs and applications. They work with team members to design and implement software solutions that meet business needs.
 - title: Testers
