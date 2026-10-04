@@ -2,7 +2,7 @@
 title: IT Program Management
 summary: A large Government Department needed to transition a program to a new funding model.
 services:
-- Financial and Benefit Management
+- Financial Management
 - People and Change
 - Program and Project Delivery
 ---

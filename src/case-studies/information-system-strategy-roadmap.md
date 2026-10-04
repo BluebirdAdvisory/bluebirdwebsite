@@ -2,7 +2,7 @@
 title: Information System Strategy & Roadmap
 summary: A medium-sized Government Agency had a customized, legacy Financial Management Information System (FMIS).
 services:
-- Financial and Benefit Management
+- Financial Management
 - People and Change
 - Program and Project Delivery
 ---
