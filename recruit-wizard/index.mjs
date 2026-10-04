@@ -19,7 +19,7 @@ import { timingSafeEqual, createHash } from "node:crypto";
 const TERMS = {
   categories: [
     "Digital and Cloud Transformation", "Data and Artificial Intelligence", "Cyber Security",
-    "Program and Project Delivery", "People and Change", "Financial and Benefit Management",
+    "Program and Project Delivery", "People and Change", "Financial Management",
     "Business Support",
   ],
   jobTypes: ["Contract", "Fixed term", "Permanent", "Full time", "Part time", "Casual"],
