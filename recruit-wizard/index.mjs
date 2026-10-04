@@ -18,7 +18,7 @@ import { timingSafeEqual, createHash } from "node:crypto";
 // Options Recruit Wizard can pick from when posting a job. Edit freely; slugs are stored on the job.
 const TERMS = {
   categories: [
-    "Digital and Cloud Transformation", "Data", "Cyber Security",
+    "Digital and Cloud Transformation", "Data and Artificial Intelligence", "Cyber Security",
     "Program and Project Delivery", "People and Change", "Financial and Benefit Management",
     "Business Support",
   ],

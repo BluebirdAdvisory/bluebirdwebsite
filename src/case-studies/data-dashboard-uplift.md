@@ -2,7 +2,7 @@
 title: Data Dashboard Uplift
 summary: A Government agency wanted to improve the accuracy and quality of the ad-hoc data model behind their dashboards.
 services:
-- Data
+- Data and Artificial Intelligence
 ---
 ## The problem
 
