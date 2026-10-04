@@ -17,12 +17,6 @@ roles:
   text: Project managers lead projects from inception to completion, planning, executing and finalising them on time and within budget. They acquire resources and coordinate team members and any third-party contractors or consultants to deliver to plan. They define the project's objectives, oversee quality control throughout its life cycle, and manage communication with stakeholders to ensure project goals are met.
 - title: Project support officers
   text: Project support officers provide administrative and logistical support to project managers and teams, including scheduling meetings, maintaining project documentation and facilitating communication among stakeholders.
-- title: Project officers
-  text: Project officers assist with project planning, execution and monitoring. They coordinate with team members, track progress and ensure deliverables are met within scope, budget and timeline.
-- title: Project coordinators
-  text: Project coordinators oversee the coordination and execution of project tasks. They liaise between project managers, team members and stakeholders, ensuring smooth communication and timely completion of milestones.
-- title: Program officers
-  text: Program officers support program managers in delivering program activities. They assist with planning, budgeting and reporting for program initiatives, and coordinate with project teams to ensure program objectives are met.
 - title: Product managers
   text: Product managers manage the development and life cycle of a product from conception to launch. They conduct market research, define product requirements, prioritise features and work with cross-functional teams to deliver successful products.
 - title: Business analysts
