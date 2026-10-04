@@ -3,15 +3,16 @@ title: About us
 permalink: /about/
 summary: Our vision is to provide high-quality, world-class services and products that empower our clients to make meaningful change and deliver real results.
 ---
+{% from "partials/value-icon.njk" import valueIcon %}
 ## Our values
 
 <ul class="values">
-<li>At the heart of our values lies a deep commitment to people, kindness, and empathy.</li>
-<li>We care about our clients, as your success becomes our success.</li>
-<li>Our integrity and transparency are firmly grounded in moral principles, ethics, and discipline.</li>
-<li>We embrace diversity, creating a fun and inclusive environment built on trust and dependability.</li>
-<li>We believe in fostering positivity, creativity and encouraging adventurous innovation that sparks curiosity.</li>
-<li>We are committed to being a socially and environmentally responsible business. We support our clients in developing and implementing sustainability strategies and practices.</li>
+<li>{{ valueIcon("heart") }}<span>At the heart of our values lies a deep commitment to people, kindness, and empathy.</span></li>
+<li>{{ valueIcon("star") }}<span>We care about our clients, as your success becomes our success.</span></li>
+<li>{{ valueIcon("shield") }}<span>Our integrity and transparency are firmly grounded in moral principles, ethics, and discipline.</span></li>
+<li>{{ valueIcon("people") }}<span>We embrace diversity, creating a fun and inclusive environment built on trust and dependability.</span></li>
+<li>{{ valueIcon("lightbulb") }}<span>We believe in fostering positivity, creativity and encouraging adventurous innovation that sparks curiosity.</span></li>
+<li>{{ valueIcon("leaf") }}<span>We are committed to being a socially and environmentally responsible business. We support our clients in developing and implementing sustainability strategies and practices.</span></li>
 </ul>
 
 ## Having fun
