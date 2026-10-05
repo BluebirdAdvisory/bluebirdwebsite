@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" font-family="Manrope, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <!-- Illustration of a website AI risk assessment report. Example content only. -->
+  <rect width="800" height="500" fill="#f6f7fb"/>
+
+  <!-- browser window -->
+  <rect x="40" y="34" width="720" height="432" rx="14" fill="#ffffff" stroke="#d4d5d8"/>
+  <path d="M40 48a14 14 0 0 1 14-14h692a14 14 0 0 1 14 14v30H40z" fill="#0e194c"/>
+  <circle cx="64" cy="56" r="6" fill="#ff607d"/><circle cx="84" cy="56" r="6" fill="#f4784c"/><circle cx="104" cy="56" r="6" fill="#54aee8"/>
+  <rect x="134" y="45" width="420" height="22" rx="11" fill="#1d2a66"/>
+  <path d="M148 52v-2a4 4 0 0 1 8 0v2" fill="none" stroke="#54aee8" stroke-width="1.6"/><rect x="146" y="52" width="12" height="9" rx="2" fill="#54aee8"/>
+  <text x="166" y="60.5" font-size="12" fill="#c8d3ee">https://www.yourwebsite.com.au</text>
+
+  <!-- header -->
+  <text x="72" y="116" font-size="13" font-weight="700" letter-spacing="1.2" fill="#4d4df5">AI RISK ASSESSMENT</text>
+  <text x="72" y="144" font-size="24" font-weight="800" fill="#0e194c">What an AI agent can find about you</text>
+  <text x="72" y="166" font-size="13" fill="#56607f">142 pages and 38 documents scanned from the public internet</text>
+
+  <!-- score gauge -->
+  <g transform="translate(640 150)">
+    <circle r="50" fill="none" stroke="#e6e7e8" stroke-width="12"/>
+    <circle r="50" fill="none" stroke="#ef4300" stroke-width="12" stroke-linecap="round" stroke-dasharray="207 314" transform="rotate(-90)"/>
+    <text y="4" text-anchor="middle" font-size="28" font-weight="800" fill="#0e194c">66</text>
+    <text y="24" text-anchor="middle" font-size="11" fill="#56607f">risk score</text>
+  </g>
+
+  <!-- summary chips -->
+  <g font-size="12" font-weight="700">
+    <rect x="72" y="186" width="92" height="28" rx="14" fill="#ffe3e9"/><text x="118" y="204" text-anchor="middle" fill="#c3002f">3 High</text>
+    <rect x="174" y="186" width="108" height="28" rx="14" fill="#ffeee4"/><text x="228" y="204" text-anchor="middle" fill="#b33500">5 Medium</text>
+    <rect x="292" y="186" width="84" height="28" rx="14" fill="#e3f1fb"/><text x="334" y="204" text-anchor="middle" fill="#1d5f8f">9 Low</text>
+  </g>
+
+  <!-- findings -->
+  <g font-size="14">
+    <line x1="72" y1="232" x2="728" y2="232" stroke="#e6e7e8"/>
+    <rect x="72" y="248" width="64" height="22" rx="4" fill="#ff194c"/><text x="104" y="263" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">HIGH</text>
+    <text x="152" y="264" fill="#25304f">Staff names and email addresses exposed in public documents</text>
+    <line x1="72" y1="286" x2="728" y2="286" stroke="#e6e7e8"/>
+    <rect x="72" y="302" width="64" height="22" rx="4" fill="#ff194c"/><text x="104" y="317" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">HIGH</text>
+    <text x="152" y="318" fill="#25304f">Internal report indexed by search engines</text>
+    <line x1="72" y1="340" x2="728" y2="340" stroke="#e6e7e8"/>
+    <rect x="72" y="356" width="64" height="22" rx="4" fill="#f4784c"/><text x="104" y="371" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">MEDIUM</text>
+    <text x="152" y="372" fill="#25304f">Software versions disclosed in page headers</text>
+    <line x1="72" y1="394" x2="728" y2="394" stroke="#e6e7e8"/>
+    <rect x="72" y="410" width="64" height="22" rx="4" fill="#54aee8"/><text x="104" y="425" text-anchor="middle" font-size="11" font-weight="800" fill="#0e194c">LOW</text>
+    <text x="152" y="426" fill="#25304f">Recommended security headers missing</text>
+  </g>
+  <g font-size="12" font-weight="700" fill="#0000f5">
+    <text x="728" y="264" text-anchor="end">Fix →</text>
+    <text x="728" y="318" text-anchor="end">Fix →</text>
+    <text x="728" y="372" text-anchor="end">Fix →</text>
+    <text x="728" y="426" text-anchor="end">Fix →</text>
+  </g>
+</svg>
