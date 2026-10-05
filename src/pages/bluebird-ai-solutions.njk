@@ -7,23 +7,31 @@ solutions:
   - name: Horizon
     text: AI-driven strategic workforce planning solution designed to support workforce forecasting, capability planning, and APS workforce strategy development.
     url: https://horizon.axoquant.com/#overview
+    image: /assets/img/ai/horizon.jpg
+    alt: Horizon chart showing the share of task-hours exposed to AI by job family, from 46% for Service to 27% for Compliance
   - name: Freedom of Information at a Glance
     text: AI-enabled solution that streamlines Freedom of Information reporting and provides real-time insights into Freedom of Information performance and compliance.
     url: https://foi.axoquant.com/at-a-glance.html
+    image: /assets/img/ai/foi.jpg
+    alt: Freedom of Information at a Glance showing 42,759 requests received in the latest financial year, up 25.2% on 2023-24
   - name: Notifiable Data Breaches Insights
     text: AI-powered platform for analysing and reporting on Notifiable Data Breaches, helping organisations identify trends, risks, and regulatory reporting requirements.
     url: https://ndb.axoquant.com/
+    image: /assets/img/ai/ndb.jpg
+    alt: Notifiable Data Breaches Insights chart of notifications per half year from 2018 to 2025
 ---
 {% include "partials/page-hero.njk" %}
 
 <section class="wrap section duo">
   <div>
+    <figure class="solution-shot photo"><img src="/assets/img/ai/risk-assessment.jpg" alt="" width="800" height="533" loading="lazy"></figure>
     <h2>Website AI risk assessment</h2>
     <p class="section-intro">AI has changed the threat landscape. It's no longer just about what sits behind your firewall. It's about what an AI agent can discover from the public internet.</p>
     <p>We're helping our clients rapidly assess their websites and digital services with AI to identify risks, vulnerabilities and unintended exposure, and to address these vulnerabilities.</p>
     <p><a class="btn" href="/contact/" aria-label="Contact us about the website AI risk assessment">Contact us</a></p>
   </div>
   <div>
+    <figure class="solution-shot"><img src="/assets/img/ai/answerhatch.jpg" alt="The AnswerHatch website, showing how its chat bot cites the page behind each answer or declines when it has no source" width="1100" height="622" loading="lazy"></figure>
     <h2>AI chat bot</h2>
     <p class="section-intro">An AI chat bot for your website that uses your website's information to answer questions.</p>
     <p>It includes speech to text and text to speech for people who are visually impaired. Try it on the AnswerHatch website: click the <strong>Ask</strong> button in the bottom right corner.</p>
@@ -37,6 +45,7 @@ solutions:
     <ul class="solutions">
       {% for s in solutions %}
       <li>
+        {% if s.image %}<figure class="solution-shot"><img src="{{ s.image }}" alt="{{ s.alt }}" loading="lazy"></figure>{% endif %}
         <h3>{{ s.name }}</h3>
         <p>{{ s.text }}</p>
         <p><a class="btn" href="{{ s.url }}" rel="noopener" aria-label="Try demo: {{ s.name }}">Try demo</a></p>
