@@ -32,8 +32,9 @@ US$5 a month): [`deploy/README.md`](deploy/README.md).
 
 ## Job ads from Recruit Wizard
 
-Jobs published in Recruit Wizard appear at `/jobs/` automatically. Setup and how it works:
-[`recruit-wizard/README.md`](recruit-wizard/README.md).
+Jobs published in Recruit Wizard appear at `/jobs/` through Recruit Wizard's jobs widget,
+which loads them live in the visitor's browser. Widget settings (colours, filters, button
+text) are in `src/pages/jobs.njk`; the jobs themselves are managed in Recruit Wizard.
 
 ## Contact form
 

@@ -20,16 +20,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("servicePhoto", (services, all) =>
     (all || []).find((s) => s.data.title === (services || [])[0])?.data.hero_photo
   );
-  eleventyConfig.addWatchTarget("jobs/");
-
-  // Safe JSON for <script type="application/ld+json">
-  eleventyConfig.addFilter("jsonld", (obj) =>
-    JSON.stringify(obj).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026")
-  );
-  // "2026-12-01" → "1 December 2026"
-  eleventyConfig.addFilter("longDate", (iso) =>
-    iso ? new Date(iso).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric", timeZone: "Australia/Sydney" }) : ""
-  );
 
   // Render a markdown string held in front matter or a data file
   eleventyConfig.addFilter("md", function (str) {
