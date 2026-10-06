@@ -5,19 +5,71 @@ summary: Contract and permanent roles with Bluebird Advisory. Find a role that s
 ---
 {% include "partials/page-hero.njk" %}
 <section class="wrap section">
-  {% if jobs.open.length %}
-  <ul class="service-index job-list">
-    {% for job in jobs.open %}
-    <li><a href="/jobs/{{ job.slug }}/">
-      <h3>{{ job.title }}</h3>
-      <p>{{ [job.location, job.jobTypes | join(", "), job.salary] | select | join(" · ") }}{% if job.validThrough %} · Closes {{ job.validThrough | longDate }}{% endif %}</p>
-    </a></li>
-    {% endfor %}
-  </ul>
-  {% else %}
-  <div class="prose">
-    <p>There are no open roles at the moment. We are always keen to hear from talented people, so feel free to send your CV to <a href="mailto:{{ site.email }}?subject=Expression%20of%20interest">{{ site.email }}</a>.</p>
+  {# Job ads load live from Recruit Wizard. Change the widget settings here; change the jobs in Recruit Wizard. #}
+  <div id="rw-jobs-container"></div>
+  <div class="prose" id="rw-jobs-fallback" hidden>
+    <p>Our job listings can't be shown right now. Please try again later, or send your CV to <a href="mailto:{{ site.email }}?subject=Expression%20of%20interest">{{ site.email }}</a>.</p>
   </div>
-  {% endif %}
+  <noscript>
+    <div class="prose">
+      <p>Turn on JavaScript to see our open roles, or send your CV to <a href="mailto:{{ site.email }}?subject=Expression%20of%20interest">{{ site.email }}</a>.</p>
+    </div>
+  </noscript>
+  <script src="https://cdn.recruitwizard.com/widgets/jobs/rw-jobs-widget.js"></script>
+  <script>
+    if (!window.RecruitWizardJobsWidget) {
+      document.getElementById("rw-jobs-fallback").hidden = false;
+    } else RecruitWizardJobsWidget.init({
+      containerId: "rw-jobs-container",
+      token: "MOLvJC5oUPd",
+      styles: {
+        container: {
+          padding: "20px",
+          maxWidth: "900px",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          minHeight: "100vh",
+        },
+      },
+      detailsPageConfig: {
+        titleColour: '#00294B',
+        backToJobsButtonBackgroundColour: '#00294B',
+        backToJobsButtonTextColour: 'white',
+        backToJobsText: 'Back to jobs',
+        applyButtonBackgroundColour: '#00294B',
+        applyButtonTextColour: 'white',
+        applyButtonText: 'Apply',
+        showRecruiterName: false,
+        showRecruiterEmail: false,
+        showRecruiterPhone: false,
+        showReference: true,
+        showJobID: false
+      },
+      jobsPageConfig: {
+        showTextFilter: true,
+        showCategoryFilter: true,
+        showLocationFilter: true,
+        showWorkTypeFilter: true,
+        filterColour: '#00294B',
+        cardTitleColour: '#00294B',
+        showCardTags: true,
+        cardShowReference: true,
+        showJobID: false,
+        cardShowSalary: true,
+        cardShowDatePosted: true,
+        cardShowApplyNow: false,
+        cardApplyNowText: 'Apply',
+        cardApplyNowBackgroundColour: '#00294B',
+        cardApplyNowTextColour: 'white',
+        cardViewDetailsText: 'View details',
+        cardViewDetailsBackgroundColour: '#00294B',
+        cardViewDetailsTextColour: 'white',
+        alignButtonsToRight: true,
+        noDataText: 'Sorry we have no available positions'
+      }
+    });
+  </script>
 </section>
 {% include "partials/cta.njk" %}
