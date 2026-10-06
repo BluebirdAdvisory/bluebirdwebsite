@@ -1,5 +1,5 @@
-# Publishes the site to the VPS whenever main changes (merged pull requests, Recruit Wizard
-# job ads, direct pushes). Each deploy goes into its own release folder; the live site
+# Publishes the site to the VPS whenever main changes (merged pull requests or direct
+# pushes). Each deploy goes into its own release folder; the live site
 # switches over only once everything is uploaded and nginx has accepted the new redirects.
 # Setup: deploy/README.md
 name: Deploy to VPS

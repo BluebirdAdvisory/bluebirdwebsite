@@ -261,16 +261,6 @@ p{margin:0 0 var(--s2)}
 @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
 
-/* job ads (Recruit Wizard) */
-.job{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:var(--s5);align-items:start}
-@media (max-width:860px){.job{grid-template-columns:1fr;gap:var(--s4)}.job-facts{order:-1}}
-.job-facts{border:1px solid var(--rule);border-radius:6px;padding:var(--s3);position:sticky;top:var(--s3)}
-.job-facts dl{margin:0 0 var(--s3)}
-.job-facts dt{font-weight:700;color:var(--navy);font-size:.95rem}
-.job-facts dd{margin:0 0 var(--s2)}
-.job-facts p:last-child{margin:0}
-.notice{background:var(--mist);border-left:4px solid var(--indigo);padding:var(--s2) var(--s3)}
-
 /* Bluebird AI Solutions */
 .solution-note{margin:var(--s4) 0 0}
 .solutions{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--s3)}

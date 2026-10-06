@@ -8,7 +8,7 @@ merge to main ──▶ GitHub Actions ──▶ builds the site ──▶ uploa
 ```
 
 - **Publishing** is unchanged: anything merged or pushed to `main` goes live in about two
-  minutes, including Recruit Wizard job ads. You can watch each deploy under the repo's
+  minutes. You can watch each deploy under the repo's
   **Actions** tab.
 - **Redirects** stay in `redirects.json`. They are converted to server rules on every deploy,
   so there is nothing to paste anywhere.

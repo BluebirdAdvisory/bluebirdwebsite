@@ -21,8 +21,7 @@ and uploads it to an AWS Lightsail server in Sydney (see `deploy/README.md`).
 | Hosting, deploys, server setup | `deploy/README.md`, `deploy/setup-server.sh`, `.github/workflows/deploy.yml` |
 | Look and feel | `src/assets/css/site.css` (brand tokens are at the top) |
 | Images and PDFs | `src/uploads/YYYY/MM/filename` and reference as `/uploads/YYYY/MM/filename` |
-| Job ads | Published from Recruit Wizard into `jobs/*.json` — don't hand-edit; change them in Recruit Wizard. Pages: `src/pages/jobs.njk`, `src/pages/job.njk` |
-| Recruit Wizard connection (Lambda) | `recruit-wizard/index.mjs`; setup in `recruit-wizard/README.md`; run `npm run test:recruit-wizard` after any change |
+| Job ads | Managed in Recruit Wizard and shown on `/jobs/` by its jobs widget. Widget settings: `src/pages/jobs.njk` |
 
 ## Common tasks
 
