@@ -2,7 +2,7 @@
 
 Static rebuild of bluebirdadvisory.com.au, migrated from WordPress/Elementor on
 1 October 2026. Content is Markdown and JSON; the site builds to plain HTML with
-[Eleventy](https://www.11ty.dev/) and is hosted on an AWS Lightsail server in Sydney.
+[Eleventy](https://www.11ty.dev/) and is hosted on Vercel.
 
 ## Run it locally
 
