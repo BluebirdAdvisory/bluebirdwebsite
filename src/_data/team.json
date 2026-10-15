@@ -16,34 +16,34 @@
   {
     "photo": "/uploads/team/melita-justic.png",
     "name": "Melita Justic",
-    "role": "Director",
+    "role": "Chief of Sales",
     "bio": "Melita is a talent management professional with over 25 years’ experience in the Canberra region, helping organisations and federal government departments build, retain and engage high-performing consultants. She works closely with business leaders to align talent strategies with organisational objectives, ensuring the right people, skills and culture are in place to deliver outcomes.\n\nThis includes program augmentation, where she helps design and deliver blended teams of consultants, contractors and permanent staff to strengthen program delivery and achieve project success. Her expertise spans the ICT sector, with a specialisation in AI, Cyber Security and Data Analytics.\n\nContact Melita on [0434 983 713](tel:+61434983713).",
     "linkedin": ""
   },
   {
     "photo": "/uploads/team/kate-lis-clarke.png",
     "name": "Kate Lis-Clarke",
-    "role": "Director",
+    "role": "Co-Chief of Operations",
     "bio": "Kate brings over 12 years experience working in data and analytics in both consulting and industry roles.  She is a collaborative, pragmatic, adaptable and outcomes-focused leader, who is passionate about helping organisations use their data to create strategic value, while understanding and managing the risks associated with it.\n\nHer work has spanned data strategy, operating models, business cases, data modelling and visualisation, with a particular focus on data risk management, including data governance and records and information governance. Her work in financial services has given her a strong understanding and appreciation of regulatory frameworks and obligations from Australia (APRA, ASIC), the US (SEC/CFTC) and Europe/UK (FAC, GDPR).",
     "linkedin": "https://www.linkedin.com/in/kate-lis-clarke/"
   },
   {
     "name": "Sarah Luscombe",
-    "role": "Director of Cyber Security",
+    "role": "Chief of Security",
     "photo": "/uploads/team/sarah-luscombe.png",
     "bio": "Working with Federal Government and private industry organisations, Sarah turns risk, cyber assurance and strategic drivers into practical, lasting capabilities that create opportunity to improve the organisation’s security posture and scalability.\n\nShe was previously Chief Information Security Officer (CISO) and Senior Delivery Lead for Defence and private industry organisations, working with senior Military and Civilian leaders delivering capabilities for the warfighter. More recently she was CISO for an Australian consultancy, and Head of Cyber Security at the University of Canberra (UC), leading cyber security uplift capabilities, accreditation across tier one platforms, and delivering critical cyber operational solutions, technical and governance, risk and compliance capability uplift – along with various levels of technical assurance, committee and board-level cyber reporting.\n\nSarah works with our clients to turn cyber threats and risk into clear, deliverable capability. She is a member of the Trusted Information Sharing Network (TISN) and a previous co-chair of its Space Sector Group.\n\nHer advisory work has covered security strategy, the ASD Essential Consultation process and previous Essential Eight (E8) Framework implementations, PSPF, NIST-CSF, DSPF, DISP and ISM-aligned assurance, in addition to executive reporting and assessments for National Digital Platforms, including the National Disability Insurance Agency (NDIA)."
   },
   {
     "photo": "/uploads/team/mia-wrightson.png",
     "name": "Mia Wrightson",
-    "role": "Senior Manager",
+    "role": "Co-Chief of Operations",
     "bio": "Our data and visualisation expert, Mia has extensive experience in data architectures and data modelling within a complex system of data management tools in Defence Industry. Her expertise in data management systems like Excel, Power Query, Access and SQL give her a strong foundation to successfully deliver innovative solutions. She also brings the latest knowledge in data governance and optimisation to ensure that our clients can make the most out of their data.",
     "linkedin": ""
   },
   {
     "photo": "/uploads/team/anna-zhong.png",
     "name": "Anna Zhong",
-    "role": "Senior Manager",
+    "role": "Chief of Culture",
     "bio": "Anna is a data manager specialising in data analytics and visualisation, data governance and management, information architecture and technology design. Her career objective is to make an impact on Australian lives using her data skills. Anna has worked with many government agencies to help them design and uplift their data capabilities, with a strong focus on delivering customer-centric solutions. She also has experience in change management and project management. Besides her primary career, she is a group fitness instructor, advocating for a fitter planet.",
     "linkedin": "https://www.linkedin.com/in/anna-zhong-44972377/"
   },
@@ -78,14 +78,14 @@
   {
     "photo": "/uploads/team/emma-brennan.png",
     "name": "Emma Brennan",
-    "role": "Consultant",
+    "role": "Chief of Marketing",
     "bio": "Emma combines analytical thinking with a collaborative, people-focused approach to solving complex challenges. She has experience supporting strategy, transformation, digital, and research initiatives, with strengths in business analysis, stakeholder engagement, workshop facilitation, and project delivery. She enjoys helping clients turn complex problems into clear, actionable solutions.\n\nEmma is recognised for her ability to quickly understand complex environments, build trusted relationships, and translate insights into practical outcomes that create value for clients. Her strong communication skills and adaptable approach enable her to work effectively across diverse stakeholder groups and project environments.",
     "linkedin": "https://www.linkedin.com/in/emma-brennan-30529b37b/"
   },
   {
     "photo": "/uploads/team/ben-matthews.png",
     "name": "Ben Matthews",
-    "role": "Consultant",
+    "role": "Security Lead",
     "bio": "Ben Matthews is a consultant at Bluebird Advisory working across many ICT disciplines, but specialising in Governance, Risk, Compliance and Cyber Security. Ben holds a Bachelor in IT, majoring in Cyber Security & System Administration and has worked across government and private environments in both ICT Support and Security roles. Ben brings a detail-oriented and methodical approach to his work aligning to clear outcomes that seek to highlight gaps and uplift work environments.",
     "linkedin": ""
   }
