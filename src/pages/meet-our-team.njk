@@ -11,6 +11,7 @@ summary: Our team is the heart of our success. Comprising a diverse group of exp
       <img src="{{ m.photo }}" alt="{{ m.name }}" loading="lazy" width="400" height="400">
       <h2>{{ m.name }}</h2>
       <p class="role">{{ m.role }}</p>
+      {% if m.level %}<p class="level">{{ m.level }}</p>{% endif %}
       {% if m.bio %}
       <details>
         <summary>Read bio</summary>
