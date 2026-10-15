@@ -220,6 +220,8 @@ p{margin:0 0 var(--s2)}
 .person img{aspect-ratio:1;object-fit:cover;object-position:top;width:100%;border-radius:4px;background:var(--white);margin-bottom:var(--s2)}
 .person h2{font-size:1.2rem;margin:0 0 .15rem}
 .person .role{color:var(--electric);font-weight:600;margin-bottom:.5rem}
+.person .role:has(+ .level){margin-bottom:0}
+.person .level{color:var(--muted);font-weight:600;margin:0 0 .5rem}
 .person summary{cursor:pointer;font-weight:700;color:var(--navy)}
 .person .bio{font-size:.97rem;color:var(--text);padding-top:.5rem}
 
