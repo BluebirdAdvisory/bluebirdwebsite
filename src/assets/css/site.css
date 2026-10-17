@@ -235,11 +235,20 @@ p{margin:0 0 var(--s2)}
 @media (max-width:600px){.media-card{grid-template-columns:1fr}}
 
 /* experience */
-.quotes{list-style:none;margin:0;padding:0;columns:3 300px;column-gap:var(--s4)}
-.quotes li{break-inside:avoid;margin-bottom:var(--s4);padding-left:var(--s3);border-left:3px solid var(--sky)}
-.quotes blockquote{margin:0}
-.quotes blockquote p{font-size:1.08rem;color:var(--navy);font-weight:500;margin-bottom:.5rem}
-.cite{color:var(--muted);font-size:.92rem;margin:0}
+.quotes{list-style:none;margin:0;padding:0;columns:3 300px;column-gap:var(--s3)}
+.quotes li{break-inside:avoid;margin:0 0 var(--s3);position:relative;background:var(--white);border-top:4px solid var(--violet);border-radius:6px;padding:3.4rem var(--s3) var(--s3);box-shadow:0 1px 2px rgba(14,25,76,.06),0 10px 24px rgba(14,25,76,.07)}
+.quotes li::before{content:"\201C";position:absolute;top:.9rem;left:var(--s3);font-size:3.6rem;line-height:1;font-weight:800;color:var(--sky)}
+.quotes figure,.quotes blockquote{margin:0}
+.quotes blockquote p{font-size:1.02rem;line-height:1.6;color:var(--navy);font-weight:500;margin:0}
+.cite{margin:var(--s2) 0 0;padding-top:var(--s2);border-top:1px solid var(--rule);font-size:.9rem;line-height:1.4;color:var(--muted)}
+.cite strong{display:block;color:var(--navy);font-weight:700}
+/* phones: a row of cards to swipe through, with the next one peeking in */
+@media (max-width:600px){
+  .quotes{columns:auto;display:flex;gap:var(--s2);overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * var(--gut));padding:4px var(--gut) var(--s2);scroll-padding-inline:var(--gut);-webkit-overflow-scrolling:touch}
+  .quotes li{flex:0 0 82%;margin:0;scroll-snap-align:start;padding:3rem var(--s2) var(--s2)}
+  .quotes li::before{left:var(--s2);top:.7rem;font-size:3.2rem}
+  .quotes blockquote p{font-size:.98rem}
+}
 .logos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s3)}
 @media (max-width:900px){.logos{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:520px){.logos{grid-template-columns:repeat(2,1fr)}}
