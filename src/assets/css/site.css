@@ -98,6 +98,26 @@ p{margin:0 0 var(--s2)}
   .hero::before{background:rgba(14,25,76,.82)}
 }
 
+/* ---------- news ticker (home page) ---------- */
+.news-ticker{background:var(--navy-deep);color:#DCE4F5;font-size:.95rem}
+.news-ticker-inner{display:flex;align-items:center;gap:var(--s3);min-height:3.25rem}
+.news-ticker-label{flex:none;margin:0;font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--sky)}
+.news-ticker-track{flex:1;min-width:0;display:flex;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 2rem,#000 calc(100% - 2rem),transparent);mask-image:linear-gradient(90deg,transparent,#000 2rem,#000 calc(100% - 2rem),transparent)}
+.news-ticker-list{flex:none;display:flex;min-width:100%;list-style:none;margin:0;padding:0;animation:news-ticker 60s linear infinite}
+.news-ticker-list li{white-space:nowrap;padding-right:2.5rem;position:relative}
+.news-ticker-list li::after{content:"";position:absolute;right:1.1rem;top:50%;width:.3rem;height:.3rem;border-radius:50%;background:var(--violet);transform:translateY(-50%)}
+.news-ticker-list a,.news-ticker-all{color:#DCE4F5;text-decoration:none;font-weight:600}
+.news-ticker-list a:hover,.news-ticker-list a:focus-visible,.news-ticker-all:hover{color:var(--white);text-decoration:underline}
+.news-ticker-all{flex:none;color:var(--sky)}
+.news-ticker-track:hover .news-ticker-list,.news-ticker-track:focus-within .news-ticker-list{animation-play-state:paused}
+@keyframes news-ticker{to{transform:translateX(-100%)}}
+@media (max-width:600px){.news-ticker-label{display:none}.news-ticker-inner{gap:var(--s2)}}
+@media (prefers-reduced-motion:reduce){
+  .news-ticker-track{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+  .news-ticker-list{animation:none}
+  .news-ticker-list[aria-hidden]{display:none}
+}
+
 /* ---------- page hero ---------- */
 .page-hero{background:var(--navy);color:#C8D3EE;padding-block:var(--s5) var(--s4);position:relative;overflow:hidden}
 .page-hero::before{background:linear-gradient(90deg,rgba(14,25,76,.93) 0%,rgba(14,25,76,.86) 50%,rgba(14,25,76,.55) 75%,rgba(14,25,76,.2) 100%)}
