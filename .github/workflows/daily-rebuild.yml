@@ -1,5 +1,5 @@
-# Rebuilds the live site on Vercel once a day so the home page news ticker picks up new
-# Ironbark headlines. It calls a Vercel deploy hook for the main branch; the hook's URL is
+# Rebuilds the live site on Vercel once a day so the news ticker and Latest news page pick up
+# new headlines. It calls a Vercel deploy hook for the main branch; the hook's URL is
 # stored in the repository secret VERCEL_DEPLOY_HOOK_URL (see README, "Daily rebuild").
 name: Daily rebuild
 

@@ -1,7 +1,8 @@
-// Latest news for the home page ticker and the /news/ page, fetched from Ironbark's news API
-// at build time. Also accepts RSS/Atom or a plain HTML page of links to /news/… articles.
-// If the source can't be reached there are no items: the ticker is left off and /news/ links
-// to Ironbark instead. The build never fails; the build log shows a "[news]" line either way.
+// Latest news for the home page ticker and the /news/ page, fetched from the news API at build
+// time. Also accepts RSS/Atom or a plain HTML page of links to /news/… articles. Only articles
+// with their own link are shown. If the source can't be reached there are no items: the ticker
+// is left off and /news/ shows a short message. The build never fails; the build log shows a
+// "[news]" line either way.
 // Each article's summary is then written by Claude when ANTHROPIC_API_KEY is set
 // (scripts/summarise-news.mjs).
 // Set NEWS_SOURCE= (empty) to skip the fetch, e.g. when working offline.
@@ -9,7 +10,6 @@
 import { addSummaries } from "../../scripts/summarise-news.mjs";
 
 const SOURCE = process.env.NEWS_SOURCE ?? "https://ironbark.axoquant.com/api/v1/snapshot/news";
-const PAGE = "https://ironbark.axoquant.com/news"; // Ironbark's own news page, for "read more" links
 const LIMIT = 24;
 
 const decode = (s) =>
@@ -80,7 +80,7 @@ function fromHtml(html, base) {
 }
 
 export default async function () {
-  if (!SOURCE) return { source: PAGE, items: [], ticker: [] };
+  if (!SOURCE) return { items: [], ticker: [] };
   try {
     const res = await fetch(SOURCE, {
       headers: { accept: "application/json, application/rss+xml, application/atom+xml, text/html;q=0.9" },
@@ -96,35 +96,34 @@ export default async function () {
     else if (/<(rss|feed)\b/i.test(body)) raw = fromFeed(body);
     else raw = fromHtml(body, base);
 
-    // One item per article; when a page links to it more than once ("Read more"), keep the longest text.
-    // Articles without their own link go to Ironbark's news page and are told apart by title.
+    // One item per article; when a page links to it more than once ("Read more"), keep the longest text
     const byKey = new Map();
     for (const i of raw) {
       const item = {
         title: decode(String(i.title || "")),
-        url: i.url ? new URL(decode(String(i.url)), base).href : PAGE,
+        url: i.url ? new URL(decode(String(i.url)), base).href : "",
         date: i.date ? new Date(typeof i.date === "number" ? i.date : decode(String(i.date))) : null,
         summary: shorten(decode(String(i.summary || ""))),
       };
       if (item.date && isNaN(item.date)) item.date = null;
-      if (!item.title) continue;
+      if (!item.title || !item.url) continue;
       if (item.summary === item.title) item.summary = "";
-      const key = i.url ? item.url : `title:${item.title}`;
-      const prev = byKey.get(key);
-      if (!prev || item.title.length > prev.title.length) byKey.set(key, { ...item, date: item.date || prev?.date || null, summary: item.summary || prev?.summary || "" });
+      const prev = byKey.get(item.url);
+      if (!prev || item.title.length > prev.title.length) byKey.set(item.url, { ...item, date: item.date || prev?.date || null, summary: item.summary || prev?.summary || "" });
     }
     let list = [...byKey.values()];
     if (list.length && list.every((i) => i.date)) list.sort((a, b) => b.date - a.date);
-    const items = (await addSummaries(list.slice(0, LIMIT), { decode, skipUrl: PAGE })).map((i) => ({
+    const items = (await addSummaries(list.slice(0, LIMIT), { decode })).map((i) => ({
       ...i,
-      dateLabel: i.date ? i.date.toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric", timeZone: "Australia/Sydney" }) : "",
+      dateLabel: i.date ? i.date.toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric", timeZone: "Australia/Sydney" }) : "",
+      site: new URL(i.url).hostname.replace(/^www\./, ""), // shown on the /news/ tiles
     }));
 
     console.log(`[news] ${items.length} item(s) from ${SOURCE}`);
     if (!items.length) console.warn(`[news] No articles found in the response. It starts: ${body.slice(0, 300).replace(/\s+/g, " ")}`);
-    return { source: PAGE, items, ticker: items.slice(0, 8) };
+    return { items, ticker: items.slice(0, 8) };
   } catch (err) {
     console.warn(`[news] Could not load ${SOURCE} (${err.message}); no news items will be shown.`);
-    return { source: PAGE, items: [], ticker: [] };
+    return { items: [], ticker: [] };
   }
 }
