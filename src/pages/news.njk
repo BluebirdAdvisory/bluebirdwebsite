@@ -1,17 +1,17 @@
 ---
 layout: layouts/base.njk
 title: Latest news
-summary: The latest news from Ironbark.
+summary: Recent news on digital, data, AI and cyber security.
 ---
 {% include "partials/page-hero.njk" %}
 <section class="wrap section">
-  {# Items come from src/_data/news.js, which reads the Ironbark news page when the site is built. #}
+  {# Items come from src/_data/news.js, which reads the news API when the site is built. #}
   {% if news.items.length %}
   <ul class="news-list">
     {% for n in news.items %}
     <li>
       <a href="{{ n.url }}">
-        {% if n.dateLabel %}<time datetime="{{ n.date.toISOString() }}">{{ n.dateLabel }}</time>{% endif %}
+        {% if n.site or n.dateLabel %}<span class="news-meta">{{ n.site }}{% if n.site and n.dateLabel %} · {% endif %}{% if n.dateLabel %}<time datetime="{{ n.date.toISOString() }}">{{ n.dateLabel }}</time>{% endif %}</span>{% endif %}
         <h2>{{ n.title }}</h2>
         {% if n.summary %}<p>{{ n.summary }}</p>{% endif %}
         <span class="more">Read article</span>
@@ -19,10 +19,10 @@ summary: The latest news from Ironbark.
     </li>
     {% endfor %}
   </ul>
-  <p class="news-source">News from <a href="{{ news.source }}">Ironbark</a>.{% if news.items | selectattr("aiSummary") | length %} Summaries are written by AI from each article and may contain errors; read the full article for details.{% endif %}</p>
+  {% if news.items | selectattr("aiSummary") | length %}<p class="news-source">Summaries are written by AI from each article and may contain errors; read the full article for details.</p>{% endif %}
   {% else %}
   <div class="prose">
-    <p>Our news can't be shown here right now. You can read it on the <a href="{{ news.source }}">Ironbark news page</a>.</p>
+    <p>Our latest news can't be shown right now. Please check back soon.</p>
   </div>
   {% endif %}
 </section>

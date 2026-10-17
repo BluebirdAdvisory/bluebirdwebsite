@@ -50,7 +50,7 @@ async function summarise(client, item, decode) {
 }
 
 // Replaces each item's summary with an AI-written one where it can; returns the items
-export async function addSummaries(items, { decode, skipUrl }) {
+export async function addSummaries(items, { decode }) {
   if (!process.env.ANTHROPIC_API_KEY) {
     console.log("[news] ANTHROPIC_API_KEY isn't set; using the news API's own summaries.");
     return items;
@@ -59,7 +59,7 @@ export async function addSummaries(items, { decode, skipUrl }) {
   try { cache = JSON.parse(await readFile(CACHE, "utf8")); } catch {}
 
   const client = new Anthropic({ timeout: 120_000 });
-  const todo = items.filter((i) => i.url !== skipUrl && !(i.url in cache));
+  const todo = items.filter((i) => !(i.url in cache));
   let made = 0, skipped = 0, failed = 0;
   for (let n = 0; n < todo.length; n += PARALLEL) {
     await Promise.all(todo.slice(n, n + PARALLEL).map(async (item) => {

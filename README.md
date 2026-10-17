@@ -41,7 +41,7 @@ earlier hosting and isn't used by Vercel.)
 
 ## Daily rebuild
 
-The home page news ticker is filled from the Ironbark news page when the site is built, so
+The home page news ticker and Latest news page are filled from the news API when the site is built, so
 the site is rebuilt every morning by `.github/workflows/daily-rebuild.yml` (about 6 am
 Canberra time). It calls a Vercel deploy hook. To set it up, or to replace the hook:
 
@@ -60,7 +60,7 @@ The summaries on the Latest news page (`/news/`) are written by Claude when the 
 (`scripts/summarise-news.mjs`): each article is read from its headline link and summarised in
 one or two sentences. To turn it on, add an Anthropic API key in Vercel → the bluebirdwebsite
 project → **Settings → Environment Variables**, named `ANTHROPIC_API_KEY`, for Production and
-Preview, then redeploy. Without the key the page uses the summaries the Ironbark news API
+Preview, then redeploy. Without the key the page uses the summaries the news API
 provides.
 
 Each article is only summarised once; the results are cached between builds. The build log
