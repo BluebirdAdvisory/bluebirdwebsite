@@ -50,6 +50,24 @@ partner:
   </div>
 </section>
 
+{% if news.items.length %}
+<section class="news-ticker" aria-labelledby="news-ticker-label">
+  <div class="wrap news-ticker-inner">
+    <h2 id="news-ticker-label" class="news-ticker-label">Latest news</h2>
+    <div class="news-ticker-track">
+      {% for copy in [1, 2] %}
+      <ul class="news-ticker-list"{% if copy == 2 %} aria-hidden="true"{% endif %}>
+        {% for n in news.items %}
+        <li><a href="{{ n.url }}"{% if copy == 2 %} tabindex="-1"{% endif %}>{{ n.title }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endfor %}
+    </div>
+    <a class="news-ticker-all" href="{{ news.source }}">All news</a>
+  </div>
+</section>
+{% endif %}
+
 <section class="wrap section">
   <h2 class="section-title">What we do</h2>
   <ul class="service-index wide">
