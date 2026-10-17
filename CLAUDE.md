@@ -20,6 +20,7 @@ pushing to `main` publishes the live site, and each pull request gets a preview 
 | Home page copy | front matter at the top of `src/index.njk` |
 | Other pages (About, Join our team, AI Leaderboard, commitments, shared services) | `src/pages/*.md` or `src/pages/*.njk` |
 | Hosting and deploys | Vercel dashboard (project `bluebirdwebsite`); notes under "Hosting" in `README.md` |
+| Redirects from old URLs | `redirects` in `vercel.json` (checked by `npm run test:redirects`) |
 | Daily rebuild (refreshes the home page news ticker) | `.github/workflows/daily-rebuild.yml`; setup under "Daily rebuild" in `README.md` |
 | Look and feel | `src/assets/css/site.css` (brand tokens are at the top) |
 | Images and PDFs | `src/uploads/YYYY/MM/filename` and reference as `/uploads/YYYY/MM/filename` |
@@ -50,10 +51,11 @@ It is published at `/<slug>/`. Add it to `nav` in `site.json` only if the user a
 - Bluebird is security cleared and works with government: never publish client names,
   dollar values or staff clearance levels unless the user explicitly confirms.
 - Do not edit anything in `_site/` (build output) or `node_modules/`.
-- Keep URLs stable. If you rename or delete a page, add a 301 to `redirects.json` and run
-  `npm run test:redirects`; only exact paths and `/folder/<*>` rules with 301/302 are
-  supported. Vercel does not apply `redirects.json` yet (it needs a `vercel.json`), so also
-  tell the user the redirect won't work on the live site until that is set up.
+- Keep URLs stable. If you rename or delete a page, add a redirect to `redirects` in
+  `vercel.json` (`{ "source": "/old-page/", "destination": "/new-page/", "statusCode": 301 }`;
+  add the path without the trailing slash too). Run `npm run build` then
+  `npm run test:redirects`; only exact paths and `/folder/:path*` rules with 301/302 are
+  supported.
 - Images: always write meaningful `alt` text; use `alt=""` only for decorative images.
 
 ## Before you finish any change

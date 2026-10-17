@@ -34,10 +34,10 @@ connected to this GitHub repository and builds the site itself (`npm run build`,
   the pull request.
 - Build logs, deployments, domains and rollbacks are in the Vercel dashboard.
 
-**Redirects are not applied yet.** `redirects.json` lists the old URLs that should redirect,
-but Vercel only reads redirects from a `vercel.json` file, which this repository doesn't
-have. Until one is added, those old URLs return the 404 page. (`amplify.yml` and
-`scripts/nginx-redirects.mjs` are left over from earlier hosting and aren't used by Vercel.)
+Redirects from old URLs are listed under `redirects` in `vercel.json` and take effect on
+the next deployment. Run `npm run build` then `npm run test:redirects` after changing them.
+Unknown URLs get the site's `404.html` page automatically. (`amplify.yml` is left over from
+earlier hosting and isn't used by Vercel.)
 
 ## Daily rebuild
 
