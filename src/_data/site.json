@@ -8,6 +8,7 @@
   "hero_photo": "grey-and-blue",
   "logo": "/uploads/2021/08/Bluebird-Advisory_Electric-Blue-Reversed_Logo.png",
   "nav": [
+    { "label": "Latest news", "url": "/news/" },
     { "label": "What we do", "url": "/what-we-do/", "services": true,
       "extra": [{ "label": "AI Solutions", "url": "/bluebird-ai-solutions/" }] },
     { "label": "Our experience", "url": "/our-experience/" },
@@ -15,8 +16,7 @@
     { "label": "How to procure us", "url": "/how-to-procure-us/" },
     { "label": "About", "url": "/about/" },
     { "label": "Join our team", "url": "/join-our-team/" },
-    { "label": "Jobs", "url": "/jobs/" },
-    { "label": "Latest news", "url": "/news/" }
+    { "label": "Jobs", "url": "/jobs/" }
   ],
   "commitments": [
     { "label": "Social sustainability", "url": "/social-sustainability/" },
