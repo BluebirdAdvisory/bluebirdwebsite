@@ -25,10 +25,19 @@ builds, previews and commits; pushing to `main` publishes.
 
 ## Hosting
 
-The site is hosted on an AWS Lightsail server in Sydney. Merging to `main` publishes it:
-GitHub Actions builds the site and uploads it, usually within two minutes. Redirects in
-`redirects.json` are applied automatically. Setup, everyday tasks and costs (about
-US$5 a month): [`deploy/README.md`](deploy/README.md).
+The site is hosted on [Vercel](https://vercel.com/) (project `bluebirdwebsite`). Vercel is
+connected to this GitHub repository and builds the site itself (`npm run build`, publishing
+`_site/`):
+
+- Merging to `main` publishes the live site, usually within a minute or two.
+- Every pull request gets its own preview deployment; Vercel posts the link as a comment on
+  the pull request.
+- Build logs, deployments, domains and rollbacks are in the Vercel dashboard.
+
+**Redirects are not applied yet.** `redirects.json` lists the old URLs that should redirect,
+but Vercel only reads redirects from a `vercel.json` file, which this repository doesn't
+have. Until one is added, those old URLs return the 404 page. (`amplify.yml` and
+`scripts/nginx-redirects.mjs` are left over from earlier hosting and aren't used by Vercel.)
 
 ## Daily rebuild
 
