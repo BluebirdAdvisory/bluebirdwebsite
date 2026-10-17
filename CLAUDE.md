@@ -2,8 +2,9 @@
 
 This is the Bluebird Advisory marketing site. It is a static site built with Eleventy:
 plain Markdown and JSON content, a few Nunjucks templates, one CSS file. There is no
-database, CMS or plugin. Pushing to `main` publishes the live site: GitHub Actions builds it
-and uploads it to an AWS Lightsail server in Sydney (see `deploy/README.md`).
+database, CMS or plugin. It is hosted on Vercel, which builds it from this repository:
+pushing to `main` publishes the live site, and each pull request gets a preview deployment
+(see "Hosting" in `README.md`).
 
 ## Where things live
 
@@ -18,7 +19,8 @@ and uploads it to an AWS Lightsail server in Sydney (see `deploy/README.md`).
 | A case study | `src/case-studies/<slug>.md` |
 | Home page copy | front matter at the top of `src/index.njk` |
 | Other pages (About, Join our team, AI Leaderboard, commitments, shared services) | `src/pages/*.md` or `src/pages/*.njk` |
-| Hosting, deploys, server setup | `deploy/README.md`, `deploy/setup-server.sh`, `.github/workflows/deploy.yml` |
+| Hosting and deploys | Vercel dashboard (project `bluebirdwebsite`); notes under "Hosting" in `README.md` |
+| Daily rebuild (refreshes the home page news ticker) | `.github/workflows/daily-rebuild.yml`; setup under "Daily rebuild" in `README.md` |
 | Look and feel | `src/assets/css/site.css` (brand tokens are at the top) |
 | Images and PDFs | `src/uploads/YYYY/MM/filename` and reference as `/uploads/YYYY/MM/filename` |
 | Job ads | Managed in Recruit Wizard and shown on `/jobs/` by its jobs widget. Widget settings: `src/pages/jobs.njk` |
@@ -48,9 +50,10 @@ It is published at `/<slug>/`. Add it to `nav` in `site.json` only if the user a
 - Bluebird is security cleared and works with government: never publish client names,
   dollar values or staff clearance levels unless the user explicitly confirms.
 - Do not edit anything in `_site/` (build output) or `node_modules/`.
-- Keep URLs stable. If you rename or delete a page, add a 301 to `redirects.json`
-  (it is applied to the server automatically on the next deploy). Run `npm run test:redirects`
-  afterwards; only exact paths and `/folder/<*>` rules with 301/302 are supported.
+- Keep URLs stable. If you rename or delete a page, add a 301 to `redirects.json` and run
+  `npm run test:redirects`; only exact paths and `/folder/<*>` rules with 301/302 are
+  supported. Vercel does not apply `redirects.json` yet (it needs a `vercel.json`), so also
+  tell the user the redirect won't work on the live site until that is set up.
 - Images: always write meaningful `alt` text; use `alt=""` only for decorative images.
 
 ## Before you finish any change
@@ -59,6 +62,6 @@ It is published at `/<slug>/`. Add it to `nav` in `site.json` only if the user a
 2. Run `npm start`, open the changed page(s) at http://localhost:8080, and check them at
    desktop and phone widths.
 3. Commit with a plain-English message ("Add NLA case study"). For anything beyond a
-   typo, work on a branch and open a pull request. There are no hosted previews, so
-   preview locally and share screenshots if the user wants to see it first.
+   typo, work on a branch and open a pull request. Vercel posts a preview link on the pull
+   request; also share screenshots if the user wants to see it before then.
    Only merge to `main` when the user approves — `main` is the live site.
