@@ -252,8 +252,18 @@ p{margin:0 0 var(--s2)}
 .logos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s3)}
 @media (max-width:900px){.logos{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:520px){.logos{grid-template-columns:repeat(2,1fr)}}
-.logos li{display:flex;align-items:center;justify-content:center;aspect-ratio:3/2;padding:var(--s2);border:1px solid var(--rule);border-radius:4px}
+.logos li{aspect-ratio:3/2;border:1px solid var(--rule);border-radius:4px;transition:border-color .15s,box-shadow .15s}
+.logos li:hover{border-color:var(--navy);box-shadow:0 6px 18px rgba(14,25,76,.1)}
+.logo-link{display:flex;align-items:center;justify-content:center;width:100%;height:100%;padding:var(--s2);cursor:zoom-in;border-radius:4px}
 .logos img{max-height:72px;width:auto;object-fit:contain}
+/* enlarged logo pop-up */
+.logo-dialog{border:0;border-radius:10px;padding:var(--s4) var(--s4) var(--s3);width:min(720px,calc(100vw - 2 * var(--gut)));max-height:calc(100vh - 2 * var(--gut));text-align:center;box-shadow:0 24px 60px rgba(8,14,46,.35)}
+.logo-dialog::backdrop{background:rgba(8,14,46,.7)}
+.logo-dialog figure{margin:0}
+.logo-dialog img{display:block;margin:0 auto;width:100%;max-width:560px;height:auto;max-height:55vh;object-fit:contain}
+.logo-dialog figcaption{margin-top:var(--s3);font-weight:700;color:var(--navy);font-size:1.05rem}
+.logo-dialog form{margin-top:var(--s3)}
+.logo-dialog .btn{margin:0}
 
 /* team */
 .team{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--s4) var(--s3)}
