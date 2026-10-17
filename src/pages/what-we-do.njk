@@ -2,21 +2,6 @@
 layout: layouts/base.njk
 title: What we do
 summary: We empower organisations with innovative digital solutions and expert consultancy. Our services include AI solutions, digital transformations, data analytics, cyber security, project delivery, change management, financial optimisation, and recruitment and contracting, all tailored to help our clients achieve sustainable results.
-ai:
-  heading: AI Solutions
-  intro: We build sovereign AI solutions for our Australian clients. Developed in Australia using sovereign capabilities, they help government organisations use trusted AI to improve decision-making, reporting and operational efficiency.
-  url: /bluebird-ai-solutions/
-  solutions:
-    - name: Website AI risk assessment
-      text: Rapidly assess your websites and digital services with AI to identify risks, vulnerabilities and unintended exposure, and address them.
-    - name: AI chat bot
-      text: A chat bot that uses your website's information to answer questions, with speech to text and text to speech for people who are visually impaired.
-    - name: Horizon
-      text: AI-driven strategic workforce planning to support workforce forecasting, capability planning and APS workforce strategy development.
-    - name: Freedom of Information at a Glance
-      text: Streamlines Freedom of Information reporting and provides real-time insights into performance and compliance.
-    - name: Notifiable Data Breaches Insights
-      text: Analyses and reports on Notifiable Data Breaches, helping organisations identify trends, risks and regulatory reporting requirements.
 # Shown first in the Our services list, before the services
 ai_item:
   title: Artificial Intelligence Solution
@@ -24,18 +9,6 @@ ai_item:
   url: /bluebird-ai-solutions/
 ---
 {% include "partials/page-hero.njk" %}
-<section class="band-mist">
-  <div class="wrap section">
-    <h2 class="section-title">{{ ai.heading }}</h2>
-    <p class="section-intro">{{ ai.intro }}</p>
-    <ul class="solutions ai-summary">
-      {% for s in ai.solutions %}
-      <li><h3>{{ s.name }}</h3><p>{{ s.text }}</p></li>
-      {% endfor %}
-    </ul>
-    <p class="ai-summary-action"><a class="btn" href="{{ ai.url }}">Explore our AI solutions</a></p>
-  </div>
-</section>
 <section class="wrap section">
   <h2 class="section-title">Our services</h2>
   <ul class="service-index wide">
