@@ -43,11 +43,11 @@ p{margin:0 0 var(--s2)}
 
 /* ---------- header ---------- */
 .site-header{background:var(--navy);position:relative;z-index:5}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);min-height:84px}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--s2);min-height:84px}
 .brand img{width:170px;height:auto}
 .menu-toggle{display:none}
-#site-nav>ul{display:flex;align-items:center;gap:.25rem;list-style:none;margin:0;padding:0}
-#site-nav a{display:block;color:#DCE4F5;text-decoration:none;font-weight:600;font-size:.95rem;padding:.5rem .6rem;border-radius:6px;white-space:nowrap}
+#site-nav>ul{display:flex;align-items:center;gap:.1rem;list-style:none;margin:0;padding:0}
+#site-nav a{display:block;color:#DCE4F5;text-decoration:none;font-weight:600;font-size:.9rem;padding:.5rem .45rem;border-radius:6px;white-space:nowrap}
 #site-nav a:hover,#site-nav a[aria-current="page"]{color:var(--white);background:rgba(255,255,255,.08)}
 #site-nav a[aria-current="page"]{box-shadow:inset 0 -2px 0 var(--sky);border-radius:6px 6px 0 0}
 #site-nav .nav-cta{background:var(--sky);color:var(--navy);border-radius:999px;padding:.55rem 1.1rem;margin-left:.5rem}
@@ -117,6 +117,16 @@ p{margin:0 0 var(--s2)}
   .news-ticker-list{animation:none}
   .news-ticker-list[aria-hidden]{display:none}
 }
+
+/* ---------- news page ---------- */
+.news-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--s3)}
+.news-list a{display:flex;flex-direction:column;height:100%;background:var(--white);border:1px solid var(--rule);border-top:4px solid var(--violet);border-radius:4px;padding:var(--s3);text-decoration:none;color:var(--text)}
+.news-list a:hover{border-color:var(--navy);border-top-color:var(--sky)}
+.news-list time{font-size:.85rem;font-weight:700;color:var(--muted);margin-bottom:.4rem}
+.news-list h2{font-size:1.15rem;margin-bottom:var(--s1)}
+.news-list p{color:var(--muted);font-size:.98rem}
+.news-list .more{margin-top:auto;font-weight:700;color:var(--electric);font-size:.95rem}
+.news-source{margin:var(--s4) 0 0;color:var(--muted);font-size:.95rem}
 
 /* ---------- page hero ---------- */
 .page-hero{background:var(--navy);color:#C8D3EE;padding-block:var(--s5) var(--s4);position:relative;overflow:hidden}
