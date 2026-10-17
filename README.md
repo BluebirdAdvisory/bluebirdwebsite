@@ -54,6 +54,19 @@ Canberra time). It calls a Vercel deploy hook. To set it up, or to replace the h
 
 Treat the hook URL like a password: anyone with it can trigger a deployment.
 
+## AI news summaries
+
+The summaries on the Latest news page (`/news/`) are written by Claude when the site builds
+(`scripts/summarise-news.mjs`): each article is read from its headline link and summarised in
+one or two sentences. To turn it on, add an Anthropic API key in Vercel → the bluebirdwebsite
+project → **Settings → Environment Variables**, named `ANTHROPIC_API_KEY`, for Production and
+Preview, then redeploy. Without the key the page uses the summaries the Ironbark news API
+provides.
+
+Each article is only summarised once; the results are cached between builds. The build log
+shows a `[news] AI summaries: …` line with how many were new, cached or failed. Articles that
+can't be read (paywalls, broken links) keep the news API's summary.
+
 ## Job ads from Recruit Wizard
 
 Jobs published in Recruit Wizard appear at `/jobs/` through Recruit Wizard's jobs widget,

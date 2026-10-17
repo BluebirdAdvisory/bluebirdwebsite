@@ -2,7 +2,11 @@
 // at build time. Also accepts RSS/Atom or a plain HTML page of links to /news/… articles.
 // If the source can't be reached there are no items: the ticker is left off and /news/ links
 // to Ironbark instead. The build never fails; the build log shows a "[news]" line either way.
+// Each article's summary is then written by Claude when ANTHROPIC_API_KEY is set
+// (scripts/summarise-news.mjs).
 // Set NEWS_SOURCE= (empty) to skip the fetch, e.g. when working offline.
+
+import { addSummaries } from "../../scripts/summarise-news.mjs";
 
 const SOURCE = process.env.NEWS_SOURCE ?? "https://ironbark.axoquant.com/api/v1/snapshot/news";
 const PAGE = "https://ironbark.axoquant.com/news"; // Ironbark's own news page, for "read more" links
@@ -111,7 +115,7 @@ export default async function () {
     }
     let list = [...byKey.values()];
     if (list.length && list.every((i) => i.date)) list.sort((a, b) => b.date - a.date);
-    const items = list.slice(0, LIMIT).map((i) => ({
+    const items = (await addSummaries(list.slice(0, LIMIT), { decode, skipUrl: PAGE })).map((i) => ({
       ...i,
       dateLabel: i.date ? i.date.toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric", timeZone: "Australia/Sydney" }) : "",
     }));

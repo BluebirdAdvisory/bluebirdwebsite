@@ -19,7 +19,7 @@ summary: The latest news from Ironbark.
     </li>
     {% endfor %}
   </ul>
-  <p class="news-source">News from <a href="{{ news.source }}">Ironbark</a>.</p>
+  <p class="news-source">News from <a href="{{ news.source }}">Ironbark</a>.{% if news.items | selectattr("aiSummary") | length %} Summaries are written by AI from each article and may contain errors; read the full article for details.{% endif %}</p>
   {% else %}
   <div class="prose">
     <p>Our news can't be shown here right now. You can read it on the <a href="{{ news.source }}">Ironbark news page</a>.</p>
