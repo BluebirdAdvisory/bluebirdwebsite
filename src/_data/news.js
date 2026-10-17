@@ -31,19 +31,34 @@ const tag = (xml, name) => xml.match(new RegExp(`<${name}\\b[^>]*>([\\s\\S]*?)</
 const pick = (o, keys) => keys.map((k) => o?.[k]).find((v) => v != null && v !== "");
 const TITLE = ["title", "headline", "name"];
 
-// The first list of objects with a title, at the top level or nested a few levels down
-function findList(data, depth = 0) {
-  if (Array.isArray(data)) {
-    if (data.some((i) => typeof pick(i, TITLE) === "string")) return data;
-    data = Object.assign({}, ...data.filter((i) => i && typeof i === "object"));
-  }
-  if (!data || typeof data !== "object" || depth > 3) return null;
+const isList = (v) => Array.isArray(v) && v.some((i) => typeof pick(i, TITLE) === "string");
+// The news API's response (data.headlines) also holds other lists, such as data.documents
+// (budget papers), so a list with one of these names wins over the first titled list found
+const LIST_NAMES = ["headlines", "news", "articles", "items", "posts"];
+
+// A titled list stored under the key `name`, nested up to a few levels down
+function findNamed(data, name, depth = 0) {
+  if (!data || typeof data !== "object" || Array.isArray(data) || depth > 4) return null;
+  if (isList(data[name])) return data[name];
   for (const v of Object.values(data)) {
-    const found = findList(v, depth + 1);
+    const found = findNamed(v, name, depth + 1);
     if (found) return found;
   }
   return null;
 }
+
+// The first list of objects with a title, at the top level or nested a few levels down
+function findFirst(data, depth = 0) {
+  if (isList(data)) return data;
+  if (!data || typeof data !== "object" || Array.isArray(data) || depth > 4) return null;
+  for (const v of Object.values(data)) {
+    const found = findFirst(v, depth + 1);
+    if (found) return found;
+  }
+  return null;
+}
+
+const findList = (data) => LIST_NAMES.map((n) => findNamed(data, n)).find(Boolean) || findFirst(data);
 
 function fromJson(data) {
   return (findList(data) || []).map((i) => {
@@ -55,6 +70,7 @@ function fromJson(data) {
       url: pick(i, ["url", "link", "href", "article_url", "articleUrl", "source_url", "sourceUrl", "permalink"]),
       date,
       summary: pick(i, ["summary", "description", "excerpt", "snippet", "abstract", "dek", "content"]),
+      site: typeof i.source === "string" ? i.source : "",
     };
   });
 }
@@ -104,6 +120,7 @@ export default async function () {
         url: i.url ? new URL(decode(String(i.url)), base).href : "",
         date: i.date ? new Date(typeof i.date === "number" ? i.date : decode(String(i.date))) : null,
         summary: shorten(decode(String(i.summary || ""))),
+        site: decode(String(i.site || "")),
       };
       if (item.date && isNaN(item.date)) item.date = null;
       if (!item.title || !item.url) continue;
@@ -116,7 +133,7 @@ export default async function () {
     const items = (await addSummaries(list.slice(0, LIMIT), { decode })).map((i) => ({
       ...i,
       dateLabel: i.date ? i.date.toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric", timeZone: "Australia/Sydney" }) : "",
-      site: new URL(i.url).hostname.replace(/^www\./, ""), // shown on the /news/ tiles
+      site: (i.site || new URL(i.url).hostname).replace(/^www\./, ""), // shown on the /news/ tiles
     }));
 
     console.log(`[news] ${items.length} item(s) from ${SOURCE}`);
