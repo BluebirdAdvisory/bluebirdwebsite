@@ -13,7 +13,12 @@ summary: At Bluebird Advisory, we believe that actions speak louder than words. 
     <h2 class="section-title">Client feedback</h2>
     <ul class="quotes">
       {% for t in testimonials %}
-      <li><blockquote><p>{{ t.quote }}</p></blockquote><p class="cite">{{ t.role }}, {{ t.org }}</p></li>
+      <li>
+        <figure>
+          <blockquote><p>{{ t.quote }}</p></blockquote>
+          <figcaption class="cite"><strong>{{ t.role }}</strong><span>{{ t.org }}</span></figcaption>
+        </figure>
+      </li>
       {% endfor %}
     </ul>
   </div>
