@@ -1,10 +1,11 @@
-// Latest news for the home page ticker, fetched from the Ironbark news page at build time.
-// Accepts a JSON feed, RSS/Atom, or a plain HTML page of links to /news/… articles.
-// If the source can't be reached the ticker is simply left off the page; the build never fails.
+// Latest news for the home page ticker and the /news/ page, fetched from the Ironbark news
+// page at build time. Accepts a JSON feed, RSS/Atom, or a plain HTML page of links to
+// /news/… articles. If the source can't be reached there are no items: the ticker is left off
+// and /news/ links to Ironbark instead. The build never fails.
 // Set NEWS_SOURCE= (empty) to skip the fetch, e.g. when working offline.
 
 const SOURCE = process.env.NEWS_SOURCE ?? "https://ironbark.axoquant.com/news";
-const LIMIT = 8;
+const LIMIT = 24;
 
 const decode = (s) =>
   s
@@ -18,6 +19,8 @@ const decode = (s) =>
     .replace(/\s+/g, " ")
     .trim();
 
+const shorten = (s, max = 220) => (s.length > max ? s.slice(0, s.lastIndexOf(" ", max)) + "…" : s);
+
 const tag = (xml, name) => xml.match(new RegExp(`<${name}\\b[^>]*>([\\s\\S]*?)</${name}>`, "i"))?.[1];
 
 function fromJson(data) {
@@ -26,6 +29,7 @@ function fromJson(data) {
     title: i.title || i.headline || i.name,
     url: i.url || i.link || i.href,
     date: i.date || i.date_published || i.published || i.publishedAt,
+    summary: i.summary || i.description || i.excerpt,
   }));
 }
 
@@ -34,6 +38,7 @@ function fromFeed(xml) {
     title: tag(item, "title"),
     url: tag(item, "link") || item.match(/<link\b[^>]*href="([^"]+)"/i)?.[1],
     date: tag(item, "pubDate") || tag(item, "published") || tag(item, "updated"),
+    summary: tag(item, "description") || tag(item, "summary"),
   }));
 }
 
@@ -49,7 +54,7 @@ function fromHtml(html, base) {
 }
 
 export default async function () {
-  if (!SOURCE) return { source: "", items: [] };
+  if (!SOURCE) return { source: "", items: [], ticker: [] };
   try {
     const res = await fetch(SOURCE, {
       headers: { accept: "application/json, application/rss+xml, application/atom+xml, text/html;q=0.9" },
@@ -65,20 +70,29 @@ export default async function () {
     else if (/<(rss|feed)\b/i.test(body)) raw = fromFeed(body);
     else raw = fromHtml(body, base);
 
-    const seen = new Set();
-    const items = raw
-      .map((i) => ({
+    // One item per article; when a page links to it more than once ("Read more"), keep the longest text
+    const byUrl = new Map();
+    for (const i of raw) {
+      const item = {
         title: decode(String(i.title || "")),
         url: i.url ? new URL(decode(String(i.url)), base).href : "",
         date: i.date ? new Date(decode(String(i.date))) : null,
-      }))
-      .filter((i) => i.title && i.url && !seen.has(i.url) && seen.add(i.url))
-      .slice(0, LIMIT);
+        summary: shorten(decode(String(i.summary || ""))),
+      };
+      if (item.date && isNaN(item.date)) item.date = null;
+      if (!item.title || !item.url) continue;
+      const prev = byUrl.get(item.url);
+      if (!prev || item.title.length > prev.title.length) byUrl.set(item.url, { ...item, date: item.date || prev?.date || null, summary: item.summary || prev?.summary || "" });
+    }
+    const items = [...byUrl.values()].slice(0, LIMIT).map((i) => ({
+      ...i,
+      dateLabel: i.date ? i.date.toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric", timeZone: "Australia/Sydney" }) : "",
+    }));
 
     console.log(`[news] ${items.length} item(s) from ${SOURCE}`);
-    return { source: SOURCE, items };
+    return { source: SOURCE, items, ticker: items.slice(0, 8) };
   } catch (err) {
-    console.warn(`[news] Could not load ${SOURCE} (${err.message}); the home page ticker is hidden.`);
-    return { source: SOURCE, items: [] };
+    console.warn(`[news] Could not load ${SOURCE} (${err.message}); no news items will be shown.`);
+    return { source: SOURCE, items: [], ticker: [] };
   }
 }

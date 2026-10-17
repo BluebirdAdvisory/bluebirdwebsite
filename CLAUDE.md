@@ -21,7 +21,8 @@ pushing to `main` publishes the live site, and each pull request gets a preview 
 | Other pages (About, Join our team, AI Leaderboard, commitments, shared services) | `src/pages/*.md` or `src/pages/*.njk` |
 | Hosting and deploys | Vercel dashboard (project `bluebirdwebsite`); notes under "Hosting" in `README.md` |
 | Redirects from old URLs | `redirects` in `vercel.json` (checked by `npm run test:redirects`) |
-| Daily rebuild (refreshes the home page news ticker) | `.github/workflows/daily-rebuild.yml`; setup under "Daily rebuild" in `README.md` |
+| Latest news page (`/news/`) and home page news ticker | Filled automatically from the Ironbark news page when the site builds: `src/_data/news.js` (source and parsing), `src/pages/news.njk` |
+| Daily rebuild (refreshes the latest news) | `.github/workflows/daily-rebuild.yml`; setup under "Daily rebuild" in `README.md` |
 | Look and feel | `src/assets/css/site.css` (brand tokens are at the top) |
 | Images and PDFs | `src/uploads/YYYY/MM/filename` and reference as `/uploads/YYYY/MM/filename` |
 | Job ads | Managed in Recruit Wizard and shown on `/jobs/` by its jobs widget. Widget settings: `src/pages/jobs.njk` |

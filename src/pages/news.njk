@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+title: Latest news
+summary: The latest news from Ironbark.
+---
+{% include "partials/page-hero.njk" %}
+<section class="wrap section">
+  {# Items come from src/_data/news.js, which reads the Ironbark news page when the site is built. #}
+  {% if news.items.length %}
+  <ul class="news-list">
+    {% for n in news.items %}
+    <li>
+      <a href="{{ n.url }}">
+        {% if n.dateLabel %}<time datetime="{{ n.date.toISOString() }}">{{ n.dateLabel }}</time>{% endif %}
+        <h2>{{ n.title }}</h2>
+        {% if n.summary %}<p>{{ n.summary }}</p>{% endif %}
+        <span class="more">Read article</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="news-source">News from <a href="{{ news.source }}">Ironbark</a>.</p>
+  {% else %}
+  <div class="prose">
+    <p>Our news can't be shown here right now. You can read it on the <a href="https://ironbark.axoquant.com/news">Ironbark news page</a>.</p>
+  </div>
+  {% endif %}
+</section>
