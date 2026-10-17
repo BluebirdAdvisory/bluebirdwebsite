@@ -26,7 +26,25 @@ summary: At Bluebird Advisory, we believe that actions speak louder than words. 
 <section class="wrap section">
   <h2 class="section-title">Our clients</h2>
   <ul class="logos">
-    {% for c in clients %}<li><img src="{{ c.logo }}" alt="{{ c.name or 'Client logo' }}" loading="lazy"></li>{% endfor %}
+    {% for c in clients %}<li><a class="logo-link" href="{{ c.logo }}" aria-label="{{ c.name or 'Client' }} logo, enlarged"><img src="{{ c.logo }}" alt="{{ c.name or 'Client logo' }}" loading="lazy"></a></li>{% endfor %}
   </ul>
+  {# Clicking a logo shows it enlarged; without JavaScript the link opens the image itself #}
+  <dialog class="logo-dialog" aria-labelledby="logo-dialog-name">
+    <figure>
+      <img src="" alt="">
+      <figcaption id="logo-dialog-name"></figcaption>
+    </figure>
+    <form method="dialog"><button class="btn">Close</button></form>
+  </dialog>
+  <script>
+    (function(){var d=document.querySelector('.logo-dialog');if(!d||!d.showModal)return;
+    var img=d.querySelector('img'),cap=d.querySelector('figcaption');
+    document.querySelectorAll('.logo-link').forEach(function(a){a.addEventListener('click',function(e){
+      e.preventDefault();var i=a.querySelector('img');img.style.maxWidth='';img.src=i.src;img.alt=i.alt;cap.textContent=i.alt;
+      d.showModal();});});
+    // PNGs and JPEGs look blurry stretched far beyond their own size; SVGs scale cleanly
+    img.addEventListener('load',function(){if(!/\.svg($|\?)/i.test(img.src))img.style.maxWidth=Math.max(img.naturalWidth*2,200)+'px';});
+    d.addEventListener('click',function(e){if(e.target===d)d.close();});})();
+  </script>
 </section>
 {% include "partials/cta.njk" %}
