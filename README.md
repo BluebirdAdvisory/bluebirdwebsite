@@ -30,6 +30,21 @@ GitHub Actions builds the site and uploads it, usually within two minutes. Redir
 `redirects.json` are applied automatically. Setup, everyday tasks and costs (about
 US$5 a month): [`deploy/README.md`](deploy/README.md).
 
+## Daily rebuild
+
+The home page news ticker is filled from the Ironbark news page when the site is built, so
+the site is rebuilt every morning by `.github/workflows/daily-rebuild.yml` (about 6 am
+Canberra time). It calls a Vercel deploy hook. To set it up, or to replace the hook:
+
+1. In Vercel, open the bluebirdwebsite project → **Settings → Git → Deploy Hooks**. Create
+   a hook named `Daily rebuild` for the `main` branch and copy its URL.
+2. In GitHub, open the repository → **Settings → Secrets and variables → Actions** → **New
+   repository secret**. Name it `VERCEL_DEPLOY_HOOK_URL` and paste the URL.
+3. To test it, open the **Actions** tab → **Daily rebuild** → **Run workflow**. A new
+   production deployment should appear in Vercel within a minute.
+
+Treat the hook URL like a password: anyone with it can trigger a deployment.
+
 ## Job ads from Recruit Wizard
 
 Jobs published in Recruit Wizard appear at `/jobs/` through Recruit Wizard's jobs widget,

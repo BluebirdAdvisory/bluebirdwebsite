@@ -1,0 +1,25 @@
+# Rebuilds the live site on Vercel once a day so the home page news ticker picks up new
+# Ironbark headlines. It calls a Vercel deploy hook for the main branch; the hook's URL is
+# stored in the repository secret VERCEL_DEPLOY_HOOK_URL (see README, "Daily rebuild").
+name: Daily rebuild
+
+on:
+  schedule:
+    - cron: "17 19 * * *" # 19:17 UTC = 6:17 am in Canberra during daylight saving, 5:17 am otherwise
+  workflow_dispatch: # adds a "Run workflow" button on the Actions tab
+
+permissions: {}
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deploy hook
+        env:
+          HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK_URL" ]; then
+            echo "::error::The VERCEL_DEPLOY_HOOK_URL secret is not set. See README, 'Daily rebuild'."
+            exit 1
+          fi
+          curl -fsS -X POST "$HOOK_URL"
