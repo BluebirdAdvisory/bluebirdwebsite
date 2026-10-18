@@ -42,8 +42,9 @@ earlier hosting and isn't used by Vercel.)
 ## Daily rebuild
 
 The home page news ticker and Latest news page are filled from the news API when the site is built, so
-the site is rebuilt every morning by `.github/workflows/daily-rebuild.yml` (about 6 am
-Canberra time). It calls a Vercel deploy hook. To set it up, or to replace the hook:
+the site is rebuilt every morning by `.github/workflows/daily-rebuild.yml` at 6:45 am
+Canberra time (adjusted for daylight saving), so the new news is live by 7 am. It calls a
+Vercel deploy hook. To set it up, or to replace the hook:
 
 1. In Vercel, open the bluebirdwebsite project → **Settings → Git → Deploy Hooks**. Create
    a hook named `Daily rebuild` for the `main` branch and copy its URL.

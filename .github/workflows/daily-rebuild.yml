@@ -5,7 +5,11 @@ name: Daily rebuild
 
 on:
   schedule:
-    - cron: "17 19 * * *" # 19:17 UTC = 6:17 am in Canberra during daylight saving, 5:17 am otherwise
+    # GitHub schedules run in UTC, so there is one line for each half of the year. The
+    # "Check the time" step skips whichever one isn't 6:45 am in Canberra today, so the new
+    # news is live by 7 am.
+    - cron: "45 19 * * *" # 6:45 am Canberra during daylight saving (UTC+11)
+    - cron: "45 20 * * *" # 6:45 am Canberra outside daylight saving (UTC+10)
   workflow_dispatch: # adds a "Run workflow" button on the Actions tab
 
 permissions: {}
@@ -14,7 +18,22 @@ jobs:
   rebuild:
     runs-on: ubuntu-latest
     steps:
+      - name: Check the time
+        id: time
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          offset=$(TZ=Australia/Canberra date +%z)
+          if [ -z "$SCHEDULE" ] \
+            || { [ "$offset" = "+1100" ] && [ "$SCHEDULE" = "45 19 * * *" ]; } \
+            || { [ "$offset" = "+1000" ] && [ "$SCHEDULE" = "45 20 * * *" ]; }; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Skipping: this schedule isn't 6:45 am in Canberra today (UTC$offset)."
+          fi
+
       - name: Trigger Vercel deploy hook
+        if: steps.time.outputs.run == 'true'
         env:
           HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
         run: |
