@@ -18,22 +18,7 @@ jobs:
   rebuild:
     runs-on: ubuntu-latest
     steps:
-      - name: Check the time
-        id: time
-        env:
-          SCHEDULE: ${{ github.event.schedule }}
-        run: |
-          offset=$(TZ=Australia/Canberra date +%z)
-          if [ -z "$SCHEDULE" ] \
-            || { [ "$offset" = "+1100" ] && [ "$SCHEDULE" = "45 19 * * *" ]; } \
-            || { [ "$offset" = "+1000" ] && [ "$SCHEDULE" = "45 20 * * *" ]; }; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "Skipping: this schedule isn't 6:45 am in Canberra today (UTC$offset)."
-          fi
-
       - name: Trigger Vercel deploy hook
-        if: steps.time.outputs.run == 'true'
         env:
           HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
         run: |
