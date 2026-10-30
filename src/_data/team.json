@@ -57,28 +57,28 @@
   {
     "photo": "/uploads/2026/02/Telmo-no-background-e1770244919867.png",
     "name": "Telmo Lele",
-    "role": "Senior Manager",
+    "level": "Senior Manager",
     "bio": "Telmo Lele is a project manager with experience delivering technology, operational, and policy-related projects across a range of environments. He has worked on digital transformation initiatives, cloud migrations, communications systems, infrastructure upgrades, and organisational policy work, with a focus on practical solutions that support day-to-day operations.\n\nTelmo Lele is skilled at coordinating teams, managing vendors, and turning business and policy requirements into clear project actions. He enjoys helping organisations strengthen their digital capability and improve how technology and process frameworks support services. His approach is collaborative and organised, with an emphasis on clear communication and getting work done without unnecessary complexity.",
     "linkedin": "https://www.linkedin.com/in/telmolele/"
   },
   {
     "photo": "/uploads/team/nick-major.png",
     "name": "Nick Major",
-    "role": "Manager",
+    "level": "Manager",
     "bio": "Nick is an experienced solution architect who specialises in connecting data and technological solutions to strategic objectives within government, private and not-for-profit sectors. He combines skills in solution architecture, project management and change management with skills in data management, data modelling, and coding languages in his approach to solving complex data and technical challenges. He seeks to understand the underlying challenges people are facing to ensure any solution is designed to not only solve the problem, but delivers an enduring capability that provides long-term organisational benefits. He is experienced in a wide variety of technologies including Azure DevOps, the Apache Suite, Cloudera Data Solutions, Microsoft Dynamics, Power BI and PostgreSQL databases. Nick is also a gymnastics coach and has been Head Coach of a highly successful program for over 15 years.",
     "linkedin": ""
   },
   {
     "photo": "/uploads/team/amna-saleem.png",
     "name": "Amna Saleem",
-    "role": "Manager",
+    "level": "Manager",
     "bio": "Amna is an experienced Data Analyst with a strong data science foundation, specialising in transforming complex operational datasets into accurate, decision‑ready insights. She applies statistical reasoning, analytical modelling and structured problem‑solving to uncover trends, validate multi‑source data and support high‑integrity reporting across Defence and consulting environments. Her work integrates modern analytical techniques with robust data handling practices including programmatic data manipulation, query‑driven analysis and interactive visual storytelling enabling stakeholders to make confident, evidence‑based decisions. She is recognised for her ability to work end‑to‑end across analytical workflows: extracting and preparing data through ETL processes, applying analytical logic to derive meaningful insights and presenting findings through clear, intuitive dashboards. Amna brings a disciplined approach to data quality, metadata alignment and governance, ensuring analytical outputs are reliable, traceable and aligned with organisational standards",
     "linkedin": "https://www.linkedin.com/in/amna-saleem-aa56416/"
   },
   {
     "photo": "/uploads/2026/03/UsamahM-0513-Transparent-headshot-e1773790910671.png",
     "name": "Usamah Monir",
-    "role": "Recruitment Consultant",
+    "level": "Recruitment Consultant",
     "bio": "With a keen eye for talent and a commitment to excellence, Usamah excels in connecting right individuals with right opportunities. Drawing from the rich resources and expertise of Rosella Recruitment, Usamah specialises in navigating the intricate landscape of talent acquisition. Whether it's identifying the perfect candidate for a client's specialised needs or guiding contractors and consultants towards their desired roles, Usamah serves as the driving force behind successful placements. By fostering strong relationships and leveraging industry insights, he ensures that each placement is a strategic victory for all stakeholders involved.",
     "linkedin": "https://www.linkedin.com/in/usamahmonir/"
   },
