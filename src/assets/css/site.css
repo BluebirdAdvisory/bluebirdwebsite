@@ -359,12 +359,13 @@ p{margin:0 0 var(--s2)}
 @media (max-width:520px){.event-dialog{padding:var(--s3) var(--s2)}.event-facts div{flex-direction:column;gap:0}}
 
 /* ---------- upcoming events band (home page) ---------- */
-.events-band{background:var(--navy-deep);color:#DCE4F5;border-top:1px solid rgba(255,255,255,.1)}
-.events-band-inner{display:flex;align-items:center;gap:var(--s3);padding-block:.9rem}
+.events-band{background:var(--navy-deep);color:#DCE4F5;border-top:1px solid rgba(255,255,255,.1);font-size:.95rem}
+.events-band-inner{display:flex;align-items:center;gap:var(--s3);min-height:3.25rem;padding-block:.6rem}
 .events-band-label{flex:none;margin:0;font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--sky)}
 .events-band-list{flex:1;min-width:0;display:flex;flex-wrap:wrap;gap:.5rem var(--s4);list-style:none;margin:0;padding:0}
 .events-band-list a{color:var(--white);text-decoration:none;font-weight:600}
 .events-band-list a:hover span,.events-band-list a:focus-visible span{text-decoration:underline}
 .events-band-list time{color:var(--sky);font-weight:700;margin-right:.4rem}
-.events-band-all{flex:none;margin:0;padding:.45rem 1.1rem;font-size:.9rem}
+.events-band-all{flex:none;color:var(--sky);text-decoration:none;font-weight:600}
+.events-band-all:hover{color:var(--white);text-decoration:underline}
 @media (max-width:700px){.events-band-inner{flex-wrap:wrap;gap:.6rem var(--s2)}.events-band-list{flex-basis:100%;order:2;flex-direction:column}.events-band-label{flex:1}}
