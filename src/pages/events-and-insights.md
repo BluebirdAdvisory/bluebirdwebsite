@@ -30,7 +30,7 @@ We regularly attend and speak at industry events across Canberra and beyond.
 <h3>What we’ll be showing</h3>
 <p>Meet the Bluebird team and see live demonstrations of the practical AI solutions we’re designing and building for government. All have been developed in Australia using sovereign capabilities.</p>
 <ul class="event-solutions">
-<li><strong>Horizon</strong>: AI-driven strategic workforce planning that supports workforce forecasting, capability planning and APS workforce strategy development.</li>
+<li><strong>Workforce Planning solution</strong>: AI-enabled strategic workforce planning for the Australian Public Service. Built on published APS workforce data and deepened with an agency’s own data, it shows headcount, skills and AI task exposure by job family and agency, forecasts supply and demand, and highlights capability gaps and risks. Planners can test scenarios, map talent pathways, generate draft workforce strategies and reports, and ask questions about their workforce.</li>
 <li><strong>Freedom of Information at a Glance</strong>: streamlines Freedom of Information reporting and gives real-time insights into Freedom of Information performance and compliance.</li>
 <li><strong>Notifiable Data Breaches Insights</strong>: analyses and reports on Notifiable Data Breaches, helping organisations identify trends, risks and regulatory reporting requirements.</li>
 <li><strong>Website AI risk assessment</strong>: rapidly assesses websites and digital services with AI to find risks, vulnerabilities and unintended exposure that an AI agent could discover from the public internet.</li>
