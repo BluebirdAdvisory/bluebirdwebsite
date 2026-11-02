@@ -358,16 +358,12 @@ p{margin:0 0 var(--s2)}
 @media (max-width:520px){.event-dialog{padding:var(--s3) var(--s2)}.event-facts div{flex-direction:column;gap:0}}
 
 /* ---------- upcoming events band (home page) ---------- */
-.events-band{background:linear-gradient(120deg,var(--navy) 0%,#1a2a7a 100%);color:#DCE4F5}
-.events-band-inner{padding-block:var(--s4)}
-.events-band-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s2);margin-bottom:var(--s3)}
-.events-band-head h2{color:var(--white);margin:0;font-size:clamp(1.5rem,3vw,2rem)}
-.events-band-head a{color:var(--sky);font-weight:700;text-decoration:none}
-.events-band-head a:hover{color:var(--white);text-decoration:underline}
-.events-band-list{list-style:none;margin:0;padding:0;display:grid;gap:var(--s3)}
-.events-band-list li{border-left:4px solid var(--sky);padding:var(--s1) 0 0 var(--s3);max-width:62rem}
-.events-band-list h3{color:var(--white);font-size:1.4rem;margin-bottom:var(--s1)}
-.events-band .event-date{color:var(--sky)}
-.events-band .event-actions{margin-top:var(--s2)}
-.events-band .event-actions .btn{margin-bottom:0}
-@media (max-width:520px){.events-band-list li{padding-left:var(--s2)}}
+.events-band{background:var(--navy);color:#DCE4F5;border-top:1px solid rgba(255,255,255,.08)}
+.events-band-inner{display:flex;align-items:center;gap:var(--s3);padding-block:.9rem}
+.events-band-label{flex:none;margin:0;font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--sky)}
+.events-band-list{flex:1;min-width:0;display:flex;flex-wrap:wrap;gap:.5rem var(--s4);list-style:none;margin:0;padding:0}
+.events-band-list a{color:var(--white);text-decoration:none;font-weight:600}
+.events-band-list a:hover span,.events-band-list a:focus-visible span{text-decoration:underline}
+.events-band-list time{color:var(--sky);font-weight:700;margin-right:.4rem}
+.events-band-all{flex:none;margin:0;padding:.45rem 1.1rem;font-size:.9rem}
+@media (max-width:700px){.events-band-inner{flex-wrap:wrap;gap:.6rem var(--s2)}.events-band-list{flex-basis:100%;order:2;flex-direction:column}.events-band-label{flex:1}}

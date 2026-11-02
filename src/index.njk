@@ -72,23 +72,13 @@ partner:
 {% if upcomingEvents.length %}
 <section class="events-band" aria-labelledby="events-band-title">
   <div class="wrap events-band-inner">
-    <div class="events-band-head">
-      <h2 id="events-band-title">Upcoming events</h2>
-      <a href="/events-and-insights/">All events</a>
-    </div>
+    <h2 id="events-band-title" class="events-band-label">Upcoming events</h2>
     <ul class="events-band-list">
-      {% for e in upcomingEvents %}
-      <li>
-        <p class="event-date"><time datetime="{{ e.date }}">{{ e.date_label }}</time> · {{ e.venue }}</p>
-        <h3>{{ e.title }}</h3>
-        <p>{{ e.summary }}</p>
-        <p class="event-actions">
-          <a class="btn btn-light" href="{{ e.details }}">Find out more<span class="visually-hidden"> about {{ e.title }}</span></a>
-          {% if e.register %}<a class="btn btn-ghost" href="{{ e.register }}" target="_blank" rel="noopener">Register now<span class="visually-hidden"> for {{ e.title }} (opens in a new tab)</span></a>{% endif %}
-        </p>
-      </li>
+      {% for e in upcomingEvents | batch(2) | first %}
+      <li><a href="{{ e.details }}"><time datetime="{{ e.date }}">{{ e.short_date }}</time> <span>{{ e.title }}</span></a></li>
       {% endfor %}
     </ul>
+    <a class="btn btn-light events-band-all" href="/events-and-insights/">All events</a>
   </div>
 </section>
 {% endif %}
