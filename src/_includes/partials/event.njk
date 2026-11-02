@@ -1,0 +1,31 @@
+{# One event card plus its "Find out more" popup. Data comes from src/events/<slug>.md #}
+{% macro eventCard(e, isUpcoming) %}
+{% set d = e.data %}{% set id = e.page.fileSlug %}{% set copy = d.upcoming if isUpcoming else d.past %}
+<article class="event{% if not isUpcoming %} event-past{% endif %}">
+<p class="event-date"><time datetime="{{ d.event_date }}">{{ d.event_date | eventDate }}</time> · {{ d.venue }}</p>
+<h3>{{ copy.heading }}</h3>
+{{ copy.intro | md | safe }}
+<p class="event-actions">
+<a class="btn event-more" href="{{ d.url or '#' }}" data-dialog="{{ id }}" aria-haspopup="dialog">Find out more<span class="visually-hidden"> about {{ d.title }}</span></a>
+{% if isUpcoming and d.register %}<a class="btn btn-outline" href="{{ d.register }}" target="_blank" rel="noopener">Register now<span class="visually-hidden"> for {{ d.title }} (opens in a new tab)</span></a>{% endif %}
+</p>
+</article>
+<dialog class="event-dialog" id="{{ id }}" aria-labelledby="{{ id }}-title">
+<h2 id="{{ id }}-title">{{ d.title }}</h2>
+<dl class="event-facts">
+{% if d.when %}<div><dt>When</dt><dd>{{ d.when }}</dd></div>{% endif %}
+{% if d.venue %}<div><dt>Where</dt><dd>{{ d.venue }}</dd></div>{% endif %}
+{% if d.host %}<div><dt>Hosted by</dt><dd>{{ d.host }}</dd></div>{% endif %}
+</dl>
+{% if d.about %}<h3>About the event</h3>
+<p>{{ d.about }}</p>{% endif %}
+{% if copy.showing_heading %}<h3>{{ copy.showing_heading }}</h3>{% endif %}
+{% if copy.showing_intro %}<p>{{ copy.showing_intro }}</p>{% endif %}
+<div class="event-body">{{ e.templateContent | safe }}</div>
+{% if isUpcoming %}<p>Can’t make it on the day? Email <a href="mailto:contact@bluebirdadvisory.com.au?subject={{ d.title | urlencode }}">contact@bluebirdadvisory.com.au</a> and we’ll arrange a time to talk.</p>{% endif %}
+<form method="dialog" class="event-actions">
+{% if isUpcoming and d.register %}<a class="btn" href="{{ d.register }}" target="_blank" rel="noopener">Register now<span class="visually-hidden"> (opens in a new tab)</span></a>{% endif %}
+<button class="btn btn-outline">Close</button>
+</form>
+</dialog>
+{% endmacro %}

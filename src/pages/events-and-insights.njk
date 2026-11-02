@@ -1,0 +1,31 @@
+---
+title: Events & Insights
+summary: Where to find Bluebird Advisory at upcoming events, and what we are learning from our work across government.
+---
+{# Events live in src/events/<slug>.md. Each one is listed under "Upcoming events" until its date
+   (Canberra time, at build time), then moves to "Past events". The daily rebuild moves it the morning after. #}
+{% from "partials/event.njk" import eventCard %}
+{% set upcomingEvents = collections.events | upcoming %}
+{% set pastEvents = collections.events | pastEvents %}
+<h2>Upcoming events</h2>
+<p>We regularly attend and speak at industry events across Canberra and beyond.</p>
+{% for e in upcomingEvents %}{{ eventCard(e, true) }}{% else %}
+<p>There are no upcoming events listed right now. Follow us on <a href="https://www.linkedin.com/company/bluebird-advisory/">LinkedIn</a> to hear about the next one.</p>
+{% endfor %}
+
+{% if pastEvents.length %}
+<h2>Past events</h2>
+{% for e in pastEvents %}{{ eventCard(e, false) }}{% endfor %}
+{% endif %}
+
+<script>
+(function(){if(!window.HTMLDialogElement)return;
+document.querySelectorAll('[data-dialog]').forEach(function(a){var d=document.getElementById(a.getAttribute('data-dialog'));if(!d)return;
+a.addEventListener('click',function(e){e.preventDefault();d.showModal();});
+d.addEventListener('click',function(e){if(e.target===d)d.close();});});
+// Links such as /events-and-insights/#ai-showcase-2026 (from the home page) open that event's popup
+var t=location.hash&&document.getElementById(location.hash.slice(1));if(t&&t.tagName==='DIALOG')t.showModal();})();
+</script>
+
+<h2>Stay in touch</h2>
+<p>Follow us on <a href="https://www.linkedin.com/company/bluebird-advisory/">LinkedIn</a> for event updates, or email <a href="mailto:contact@bluebirdadvisory.com.au?subject=Events%20and%20insights">contact@bluebirdadvisory.com.au</a> to invite us to speak at your event.</p>

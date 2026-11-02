@@ -16,11 +16,24 @@ export default function (eleventyConfig) {
     (list || []).filter((c) => (c.data.services || []).includes(title))
   );
   eleventyConfig.addFilter("year", () => new Date().getFullYear());
-  // Events from src/_data/events.json that haven't happened yet (by Canberra date at build time).
-  // The daily rebuild drops each event the morning after it ends.
-  eleventyConfig.addFilter("upcoming", (events) => {
-    const today = new Date().toLocaleDateString("en-CA", { timeZone: "Australia/Sydney" });
-    return (events || []).filter((e) => (e.end_date || e.date) >= today).sort((a, b) => a.date.localeCompare(b.date));
+  // Events (src/events/*.md), split into upcoming and past by today's date in Canberra at build time.
+  // An event stays upcoming through its event_date (or end_date); the daily rebuild moves it the morning after.
+  eleventyConfig.addCollection("events", (api) => api.getFilteredByGlob("src/events/*.md"));
+  const canberraToday = () => new Date().toLocaleDateString("en-CA", { timeZone: "Australia/Sydney" });
+  const lastDay = (e) => String(e.data.end_date || e.data.event_date);
+  eleventyConfig.addFilter("upcoming", (events) =>
+    (events || []).filter((e) => lastDay(e) >= canberraToday())
+      .sort((a, b) => String(a.data.event_date).localeCompare(String(b.data.event_date)))
+  );
+  eleventyConfig.addFilter("pastEvents", (events) =>
+    (events || []).filter((e) => lastDay(e) < canberraToday())
+      .sort((a, b) => String(b.data.event_date).localeCompare(String(a.data.event_date)))
+  );
+  // "2026-11-11" -> "11 November 2026"; with "short" -> "11 Nov"
+  eleventyConfig.addFilter("eventDate", (iso, style) => {
+    const [y, m, d] = String(iso).split("-").map(Number);
+    const opts = style === "short" ? { day: "numeric", month: "short" } : { day: "numeric", month: "long", year: "numeric" };
+    return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-AU", { ...opts, timeZone: "UTC" });
   });
   // Header photo for a case study: the photo of its first service
   eleventyConfig.addFilter("servicePhoto", (services, all) =>
