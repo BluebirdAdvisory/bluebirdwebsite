@@ -12,7 +12,7 @@ pushing to `main` publishes the live site, and each pull request gets a preview 
 | --- | --- |
 | Contact email, office address, LinkedIn, main menu, footer commitment links | `src/_data/site.json` (extra links at the top of the What we do menu: `extra` on that menu item) |
 | Team members (photo, role, bio, LinkedIn, order on page) | `src/_data/team.json` (order in the file = order on the page) |
-| Events (Events & Insights page and the home page events band) | One file per event in `src/events/<slug>.md` (copy `ai-showcase-2026.md`). Events move from "Upcoming" to "Past events" by themselves the day after `event_date`; the home page shows the next two |
+| Events (Events page at `/events-and-insights/` and the home page events band) | One file per event in `src/events/<slug>.md` (copy `ai-showcase-2026.md`). Events move from "Upcoming" to "Past events" by themselves the day after `event_date`; the home page shows the next two |
 | Client feedback quotes | `src/_data/testimonials.json` |
 | Client logos | `src/_data/clients.json` |
 | Procurement panels | `src/_data/panels.json` (the `details` field is Markdown) |
