@@ -16,6 +16,12 @@ export default function (eleventyConfig) {
     (list || []).filter((c) => (c.data.services || []).includes(title))
   );
   eleventyConfig.addFilter("year", () => new Date().getFullYear());
+  // Events from src/_data/events.json that haven't happened yet (by Canberra date at build time).
+  // The daily rebuild drops each event the morning after it ends.
+  eleventyConfig.addFilter("upcoming", (events) => {
+    const today = new Date().toLocaleDateString("en-CA", { timeZone: "Australia/Sydney" });
+    return (events || []).filter((e) => (e.end_date || e.date) >= today).sort((a, b) => a.date.localeCompare(b.date));
+  });
   // Header photo for a case study: the photo of its first service
   eleventyConfig.addFilter("servicePhoto", (services, all) =>
     (all || []).find((s) => s.data.title === (services || [])[0])?.data.hero_photo

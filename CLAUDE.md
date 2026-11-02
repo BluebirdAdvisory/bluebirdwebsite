@@ -12,6 +12,7 @@ pushing to `main` publishes the live site, and each pull request gets a preview 
 | --- | --- |
 | Contact email, office address, LinkedIn, main menu, footer commitment links | `src/_data/site.json` (extra links at the top of the What we do menu: `extra` on that menu item) |
 | Team members (photo, role, bio, LinkedIn, order on page) | `src/_data/team.json` (order in the file = order on the page) |
+| Upcoming events band on the home page | `src/_data/events.json` (each event drops off automatically after its `date`, or `end_date` if set). Also add the event and its popup to `src/pages/events-and-insights.md`; `details` links to that popup by its `id` |
 | Client feedback quotes | `src/_data/testimonials.json` |
 | Client logos | `src/_data/clients.json` |
 | Procurement panels | `src/_data/panels.json` (the `details` field is Markdown) |
