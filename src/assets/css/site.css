@@ -353,8 +353,9 @@ p{margin:0 0 var(--s2)}
 .event-facts div{display:flex;gap:var(--s2)}
 .event-facts dt{font-weight:700;color:var(--navy);min-width:6.5rem}
 .event-facts dd{margin:0}
-.event-solutions{padding-left:1.2rem;margin:0 0 var(--s2)}
-.event-solutions li{margin-bottom:.6rem}
+.event-body ul{padding-left:1.2rem;margin:0 0 var(--s2)}
+.event-body li{margin-bottom:.6rem}
+.event-past{border-left-color:var(--rule)}
 @media (max-width:520px){.event-dialog{padding:var(--s3) var(--s2)}.event-facts div{flex-direction:column;gap:0}}
 
 /* ---------- upcoming events band (home page) ---------- */
