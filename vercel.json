@@ -1,6 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
+    { "source": "/events-and-insights", "destination": "/events/", "statusCode": 301 },
+    { "source": "/events-and-insights/", "destination": "/events/", "statusCode": 301 },
     { "source": "/careers", "destination": "/join-our-team/", "statusCode": 301 },
     { "source": "/careers/", "destination": "/join-our-team/", "statusCode": 301 },
     { "source": "/ai-leaderboard", "destination": "/bluebird-ai-solutions/", "statusCode": 301 },
