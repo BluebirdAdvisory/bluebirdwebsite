@@ -12,7 +12,7 @@
     { "label": "What we do", "url": "/what-we-do/", "services": true,
       "extra": [
         { "label": "AI Solutions", "url": "/bluebird-ai-solutions/" },
-        { "label": "Events", "url": "/events-and-insights/" }
+        { "label": "Events", "url": "/events/" }
       ] },
     { "label": "Our experience", "url": "/our-experience/" },
     { "label": "Meet our team", "url": "/meet-our-team/" },

@@ -1,5 +1,5 @@
 ---
-# One file per event. The file name (without .md) is the popup's id, e.g. /events-and-insights/#ai-showcase-2026
+# One file per event. The file name (without .md) is the popup's id, e.g. /events/#ai-showcase-2026
 # The event shows under "Upcoming events" (and on the home page) until its date, then moves to "Past events".
 title: AI Government Showcase 2026
 event_date: "2026-11-11"          # YYYY-MM-DD, in quotes. Add end_date: "YYYY-MM-DD" for multi-day events
