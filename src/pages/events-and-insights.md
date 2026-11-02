@@ -27,8 +27,16 @@ We regularly attend and speak at industry events across Canberra and beyond.
 </dl>
 <h3>About the event</h3>
 <p>The AI Government Showcase brings together Australian Public Service leaders, policymakers, digital and data specialists, procurement professionals and industry to explore the responsible, practical use of AI across government.</p>
-<h3>Visit our stand</h3>
-<p>Meet the Bluebird team and see the practical AI solutions we’re designing and building for government. Read more about our <a href="/bluebird-ai-solutions/">AI solutions</a>.</p>
+<h3>What we’ll be showing</h3>
+<p>Meet the Bluebird team and see live demonstrations of the practical AI solutions we’re designing and building for government. All have been developed in Australia using sovereign capabilities.</p>
+<ul class="event-solutions">
+<li><strong>Horizon</strong>: AI-driven strategic workforce planning that supports workforce forecasting, capability planning and APS workforce strategy development.</li>
+<li><strong>Freedom of Information at a Glance</strong>: streamlines Freedom of Information reporting and gives real-time insights into Freedom of Information performance and compliance.</li>
+<li><strong>Notifiable Data Breaches Insights</strong>: analyses and reports on Notifiable Data Breaches, helping organisations identify trends, risks and regulatory reporting requirements.</li>
+<li><strong>Website AI risk assessment</strong>: rapidly assesses websites and digital services with AI to find risks, vulnerabilities and unintended exposure that an AI agent could discover from the public internet.</li>
+<li><strong>AI chat bot</strong>: answers visitors’ questions using your website’s own information, with speech to text and text to speech for people who are visually impaired.</li>
+</ul>
+<p>Read more about our <a href="/bluebird-ai-solutions/">AI solutions</a>.</p>
 <p>Can’t make it on the day? Email <a href="mailto:contact@bluebirdadvisory.com.au?subject=AI%20Government%20Showcase%202026">contact@bluebirdadvisory.com.au</a> and we’ll arrange a time to talk.</p>
 <form method="dialog" class="event-actions">
 <a class="btn" href="https://www.digital.gov.au/initiatives/showcase" target="_blank" rel="noopener">Register now<span class="visually-hidden"> (opens in a new tab)</span></a>
