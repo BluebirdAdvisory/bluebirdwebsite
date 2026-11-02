@@ -356,3 +356,18 @@ p{margin:0 0 var(--s2)}
 .event-solutions{padding-left:1.2rem;margin:0 0 var(--s2)}
 .event-solutions li{margin-bottom:.6rem}
 @media (max-width:520px){.event-dialog{padding:var(--s3) var(--s2)}.event-facts div{flex-direction:column;gap:0}}
+
+/* ---------- upcoming events band (home page) ---------- */
+.events-band{background:linear-gradient(120deg,var(--navy) 0%,#1a2a7a 100%);color:#DCE4F5}
+.events-band-inner{padding-block:var(--s4)}
+.events-band-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s2);margin-bottom:var(--s3)}
+.events-band-head h2{color:var(--white);margin:0;font-size:clamp(1.5rem,3vw,2rem)}
+.events-band-head a{color:var(--sky);font-weight:700;text-decoration:none}
+.events-band-head a:hover{color:var(--white);text-decoration:underline}
+.events-band-list{list-style:none;margin:0;padding:0;display:grid;gap:var(--s3)}
+.events-band-list li{border-left:4px solid var(--sky);padding:var(--s1) 0 0 var(--s3);max-width:62rem}
+.events-band-list h3{color:var(--white);font-size:1.4rem;margin-bottom:var(--s1)}
+.events-band .event-date{color:var(--sky)}
+.events-band .event-actions{margin-top:var(--s2)}
+.events-band .event-actions .btn{margin-bottom:0}
+@media (max-width:520px){.events-band-list li{padding-left:var(--s2)}}

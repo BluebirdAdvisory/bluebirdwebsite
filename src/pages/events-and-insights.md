@@ -48,7 +48,9 @@ We regularly attend and speak at industry events across Canberra and beyond.
 (function(){if(!window.HTMLDialogElement)return;
 document.querySelectorAll('[data-dialog]').forEach(function(a){var d=document.getElementById(a.getAttribute('data-dialog'));if(!d)return;
 a.addEventListener('click',function(e){e.preventDefault();d.showModal();});
-d.addEventListener('click',function(e){if(e.target===d)d.close();});});})();
+d.addEventListener('click',function(e){if(e.target===d)d.close();});});
+// Links such as /events-and-insights/#ai-showcase-2026 (from the home page) open that event's popup
+var t=location.hash&&document.getElementById(location.hash.slice(1));if(t&&t.tagName==='DIALOG')t.showModal();})();
 </script>
 
 ## Stay in touch

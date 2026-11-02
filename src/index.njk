@@ -68,6 +68,31 @@ partner:
 </section>
 {% endif %}
 
+{% set upcomingEvents = events | upcoming %}
+{% if upcomingEvents.length %}
+<section class="events-band" aria-labelledby="events-band-title">
+  <div class="wrap events-band-inner">
+    <div class="events-band-head">
+      <h2 id="events-band-title">Upcoming events</h2>
+      <a href="/events-and-insights/">All events</a>
+    </div>
+    <ul class="events-band-list">
+      {% for e in upcomingEvents %}
+      <li>
+        <p class="event-date"><time datetime="{{ e.date }}">{{ e.date_label }}</time> · {{ e.venue }}</p>
+        <h3>{{ e.title }}</h3>
+        <p>{{ e.summary }}</p>
+        <p class="event-actions">
+          <a class="btn btn-light" href="{{ e.details }}">Find out more<span class="visually-hidden"> about {{ e.title }}</span></a>
+          {% if e.register %}<a class="btn btn-ghost" href="{{ e.register }}" target="_blank" rel="noopener">Register now<span class="visually-hidden"> for {{ e.title }} (opens in a new tab)</span></a>{% endif %}
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
 <section class="wrap section">
   <h2 class="section-title">What we do</h2>
   <ul class="service-index wide">
