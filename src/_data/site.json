@@ -11,13 +11,13 @@
     { "label": "Latest news", "url": "/news/" },
     { "label": "What we do", "url": "/what-we-do/", "services": true,
       "extra": [
-        { "label": "AI Solutions", "url": "/bluebird-ai-solutions/" },
-        { "label": "Events", "url": "/events/" }
+        { "label": "AI Solutions", "url": "/bluebird-ai-solutions/" }
       ] },
     { "label": "Our experience", "url": "/our-experience/" },
     { "label": "Meet our team", "url": "/meet-our-team/" },
     { "label": "How to procure us", "url": "/how-to-procure-us/" },
     { "label": "About", "url": "/about/" },
+    { "label": "Events", "url": "/events/" },
     { "label": "Join our team", "url": "/join-our-team/" },
     { "label": "Jobs", "url": "/jobs/" }
   ],
