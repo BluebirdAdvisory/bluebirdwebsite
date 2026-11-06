@@ -369,3 +369,5 @@ p{margin:0 0 var(--s2)}
 .events-band-all{flex:none;color:var(--sky);text-decoration:none;font-weight:600}
 .events-band-all:hover{color:var(--white);text-decoration:underline}
 @media (max-width:700px){.events-band-inner{flex-wrap:wrap;gap:.6rem var(--s2)}.events-band-list{flex-basis:100%;order:2;flex-direction:column}.events-band-label{flex:1}}
+.badge-new{display:inline-block;margin-left:.4em;padding:.05em .5em;border-radius:999px;background:var(--electric);color:var(--white);font-size:.72em;font-weight:700;line-height:1.5;vertical-align:.1em}
+.nowrap{white-space:nowrap}
