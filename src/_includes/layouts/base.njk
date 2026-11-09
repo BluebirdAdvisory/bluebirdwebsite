@@ -11,11 +11,25 @@
 <meta property="og:description" content="{{ description or summary or site.description }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+{%- if og_image %}
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:image" content="{{ site.url }}{{ og_image }}">
+<meta name="twitter:card" content="summary_large_image">
+{%- endif %}
 <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="/assets/img/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/site.css">
+{%- if page_css %}
+<link rel="stylesheet" href="{{ page_css }}">
+{%- endif %}
+{%- if page_js %}
+<script defer src="{{ page_js }}"></script>
+{%- endif %}
+{%- if jsonld %}
+<script type="application/ld+json">{{ jsonld | dump | replace("<", "\\u003c") | safe }}</script>
+{%- endif %}
 <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 <script>
   window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };

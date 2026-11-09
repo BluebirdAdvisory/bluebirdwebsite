@@ -19,6 +19,7 @@ pushing to `main` publishes the live site, and each pull request gets a preview 
 | A service page (Data and Artificial Intelligence, Cyber Security, …) | `src/services/<slug>.md` — `summary`, `offerings` list, optional body. Optional `menu_label` shortens its name in the What we do menu only; don't rename `title`, case studies link to services by it |
 | A case study | `src/case-studies/<slug>.md` |
 | Home page copy | front matter at the top of `src/index.njk` |
+| AI Solutions hub (`/bluebird-ai-solutions/`) and its five product pages | Hub: `src/pages/bluebird-ai-solutions.njk`; products: `src/bluebird-ai-solutions/<slug>.njk` (shared settings in `bluebird-ai-solutions.json` there). Each has JSON front matter for title, description, share image (`og_image`) and structured data (`jsonld`). Their own styles and script, `src/assets/css/ai-solutions.css` and `src/assets/js/ai-solutions.js`, load only on pages that set `page_css`/`page_js`; don't merge them into `site.css`. Copy, figures and charts change only with Blake Rowlands' agreement |
 | Other pages (About, Join our team, AI Leaderboard, commitments, shared services) | `src/pages/*.md` or `src/pages/*.njk` |
 | Hosting and deploys | Vercel dashboard (project `bluebirdwebsite`); notes under "Hosting" in `README.md` |
 | Redirects from old URLs | `redirects` in `vercel.json` (checked by `npm run test:redirects`) |
