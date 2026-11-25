@@ -1,0 +1,12 @@
+/* Demo-only styles for the local replica. Not part of either route's deliverable. */
+.demo-banner {
+  position: relative;
+  z-index: 100;
+  padding: 0.625rem 1rem;
+  background: #fff1e9;
+  border-bottom: 2px solid #cc591e;
+  color: #3d1b09;
+  font-family: var(--font-body, "PlusJakartaSans"), system-ui, sans-serif;
+  font-size: 0.875rem;
+  text-align: center;
+}
