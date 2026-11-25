@@ -1,0 +1,20 @@
+/*
+ * Theme addition for the naic theme (Annex to merge).
+ * Pages that carry a data component (dashboard or assistant) let the content
+ * column span the full 12-column grid, instead of the default 8 columns, so
+ * charts get room. Prose in the same column keeps a readable line length.
+ * Uses :has(), supported in all current evergreen browsers.
+ */
+.node--type-content.node--view-mode-full .group-right:has(.paragraph--type-ai-adoption-dashboard),
+.node--type-content.node--view-mode-full .group-right:has(.paragraph--type-ai-adoption-assistant),
+.node--type-content.node--view-mode-full .group-left.hidden + .group-right:has(.paragraph--type-ai-adoption-dashboard),
+.node--type-content.node--view-mode-full .group-left.hidden + .group-right:has(.paragraph--type-ai-adoption-assistant) {
+  grid-column: 1 / -1;
+}
+
+.group-right:has(.paragraph--type-ai-adoption-dashboard) .paragraph--type-rich-text,
+.group-right:has(.paragraph--type-ai-adoption-assistant) .paragraph--type-rich-text,
+.group-right:has(.paragraph--type-ai-adoption-dashboard) .field--name-field-next-up,
+.group-right:has(.paragraph--type-ai-adoption-assistant) .field--name-field-next-up {
+  max-width: 48rem;
+}
