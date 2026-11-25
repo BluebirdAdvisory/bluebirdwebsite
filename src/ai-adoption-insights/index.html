@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Adoption Insights · Bluebird</title>
+  <meta name="description" content="How Australian small and medium businesses are adopting AI. A Bluebird AI Solutions demonstrator on synthetic data.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/img/bluebird-mark.png" type="image/png">
+  <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="components/aat-charts.css">
+  <link rel="stylesheet" href="components/ai-adoption-dashboard.css">
+  <link rel="stylesheet" href="assets/bluebird.css">
+  <!-- Order matters: bluebird.js themes the chart palettes before the dashboard reads them. -->
+  <script src="components/aat-charts.js" defer></script>
+  <script src="assets/bluebird.js" defer></script>
+  <script src="components/ai-adoption-dashboard.js" defer></script>
+</head>
+<body class="bb">
+  <a class="bb-skip" href="#main">Skip to content</a>
+
+  <header class="bb-header">
+    <div class="bb-wrap bb-header__inner">
+      <a class="bb-brand" href="https://bluebirdadvisory.com.au/">
+        <img src="assets/img/bluebird-logo-reversed.png" alt="Bluebird Advisory" width="150" height="46">
+      </a>
+      <a class="bb-btn" href="https://bluebirdadvisory.com.au/contact/">Talk to us</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="bb-hero" aria-labelledby="bb-title">
+      <img class="bb-hero__photo" src="assets/img/feathers-blue-1600.jpg" alt="" width="1600" height="1067">
+      <div class="bb-wrap bb-hero__inner">
+        <h1 id="bb-title">AI Adoption Insights</h1>
+        <p class="bb-lede">How Australian small and medium businesses are adopting AI, quarter by quarter.</p>
+        <p class="bb-notice">Demonstration only. All figures are synthetic.</p>
+      </div>
+    </section>
+
+    <div class="bb-tabbar">
+      <div class="bb-wrap">
+        <div class="bb-tabs" role="tablist" aria-label="AI Adoption Insights">
+          <button class="bb-tab" type="button" role="tab" id="bb-tab-dashboard" aria-controls="bb-panel-dashboard" aria-selected="true">Dashboard</button>
+          <button class="bb-tab" type="button" role="tab" id="bb-tab-about" aria-controls="bb-panel-about" aria-selected="false" tabindex="-1">About</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="bb-panel" role="tabpanel" id="bb-panel-dashboard" aria-labelledby="bb-tab-dashboard">
+      <div class="bb-wrap">
+        <section class="aad" id="bb-dashboard" data-aad data-variant="minimal" data-src="data/widget.json" aria-label="AI adoption dashboard">
+          <div class="aad__fallback">
+            <p class="aad__status">Loading the dashboard. If it doesn't appear, <a href="data/widget.json">download the data file</a>.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="bb-panel" role="tabpanel" id="bb-panel-about" aria-labelledby="bb-tab-about" hidden>
+      <div class="bb-wrap">
+        <div class="bb-about">
+          <section aria-labelledby="bb-about-data">
+            <h2 id="bb-about-data">The data</h2>
+            <dl class="bb-facts">
+              <div><dt>Source</dt><dd>Synthetic responses modelled on the National AI Centre’s AI adoption tracker. They are not real survey results.</dd></div>
+              <div><dt>Sample</dt><dd>400 responses a month from May 2024 to September 2026, 11,600 in total. Owners and decision makers in businesses with 0 to 500 employees.</dd></div>
+              <div><dt>Adopting AI</dt><dd>Using AI broadly, using it in part of the business, or implementing it now. A working definition for this demonstrator.</dd></div>
+              <div><dt>Weighting</dt><dd>Percentages are weighted by business size to match the national business mix. n is the unweighted number of responses.</dd></div>
+              <div><dt>Small groups</dt><dd>Figures from fewer than 10 responses are never shown. Below 30, the dashboard flags the figure and hides its change from the previous quarter.</dd></div>
+              <div><dt>Change over time</dt><dd>Each month surveys different businesses, so small movements between quarters may not be meaningful.</dd></div>
+            </dl>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bb-footer">
+    <div class="bb-wrap bb-footer__inner">
+      <a href="https://bluebirdadvisory.com.au/">Bluebird Advisory</a>
+      <a href="https://bluebirdadvisory.com.au/bluebird-ai-solutions/">Bluebird AI Solutions</a>
+    </div>
+  </footer>
+</body>
+</html>

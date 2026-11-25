@@ -1,0 +1,228 @@
+/*
+ * AAT charts. Colours are tokens so a theme can re-skin them in one place.
+ * Palette: four categorical slots and three ramps drawn from the ai.gov.au
+ * brand ramps, each validated for colour-vision deficiency and contrast
+ * (see the Route A README for the validator output).
+ */
+/* Tokens live on the component root (class aat-tokens) so a theme can override them once. */
+.aat-tokens {
+  --aat-surface: #ffffff;
+  --aat-ink: #0f161c;
+  --aat-ink-2: #363e44;
+  --aat-ink-3: #5a6772;
+  --aat-grid: #e6eaed;
+  --aat-axis: #bac2c9;
+
+  /* Categorical, fixed order: jade, Kakadu orange, royal bluebell, reef blue */
+  --aat-s1: #008f7a;
+  --aat-s2: #cc591e;
+  --aat-s3: #5e54ca;
+  --aat-s4: #4d9aca;
+
+  /* Ordinal ramps */
+  --aat-jade-1: #00483d;
+  --aat-jade-2: #008f7a;
+  --aat-jade-3: #33c2ad;
+  --aat-orange-1: #cc591e;
+  --aat-orange-2: #ff8c51;
+  --aat-grey-1: #515f6b;
+  --aat-grey-2: #7c8790;
+  --aat-grey-3: #a8afb5;
+  --aat-neutral: #cbd2d7;
+
+  /* Context marks */
+  --aat-muted-line: #98a4ae;
+  --aat-muted-mark: #cbd2d7;
+}
+
+.aatc {
+  position: relative;
+  color: var(--aat-ink);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.aatc-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Legend */
+.aatc-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  list-style: none;
+  color: var(--aat-ink-2);
+  font-size: 0.8125rem;
+}
+.aatc-legend__item { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0; }
+.aatc-legend__key { display: inline-block; background: var(--c); flex: none; }
+.aatc-legend__key--line { width: 18px; height: 3px; border-radius: 2px; }
+.aatc-legend__key--box { width: 12px; height: 12px; border-radius: 3px; }
+
+/* Line chart */
+.aatc-plot { position: relative; }
+.aatc-svg { display: block; overflow: visible; }
+.aatc-grid { stroke: var(--aat-grid); stroke-width: 1; }
+.aatc-axis { stroke: var(--aat-axis); stroke-width: 1; }
+.aatc-tick { fill: var(--aat-ink-3); font-size: 12px; font-variant-numeric: tabular-nums; }
+.aatc-line__path { fill: none; stroke: var(--c); stroke-width: 2.25; stroke-linejoin: round; stroke-linecap: round; }
+.aatc-line__path.is-muted { stroke-width: 2; }
+.aatc-line__path.is-drawing {
+  stroke-dasharray: var(--len);
+  stroke-dashoffset: var(--len);
+  animation: aatc-draw 900ms cubic-bezier(.215, .61, .355, 1) forwards;
+}
+@keyframes aatc-draw { to { stroke-dashoffset: 0; } }
+.aatc-area { fill: var(--c); opacity: 0.1; stroke: none; }
+.aatc-dot { fill: var(--c); stroke: var(--aat-surface); stroke-width: 2; }
+.aatc-dot.is-hover { pointer-events: none; }
+.aatc-cross { stroke: var(--aat-ink-3); stroke-width: 1; pointer-events: none; }
+.aatc-leader { stroke: var(--aat-axis); stroke-width: 1; fill: none; }
+.aatc-endlabel { fill: var(--aat-ink-2); font-size: 12.5px; }
+.aatc-endlabel__value { fill: var(--aat-ink); font-weight: 700; }
+.aatc-hit { fill: transparent; cursor: crosshair; outline: none; }
+.aatc-hit:focus-visible { stroke: var(--aat-ink); stroke-width: 2; stroke-dasharray: none; }
+
+/* Tooltip */
+.aatc-tip {
+  position: absolute;
+  left: var(--x, 0);
+  top: var(--y, 0);
+  z-index: 5;
+  min-width: 10rem;
+  max-width: 18rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--aat-surface);
+  box-shadow: 0 12px 24px -8px rgba(15, 22, 28, .25), 0 0 0 1px rgba(15, 22, 28, .08);
+  pointer-events: none;
+  font-size: 0.8125rem;
+}
+.aatc-tip[hidden] { display: none; }
+.aatc-tip__title { margin-bottom: 0.375rem; color: var(--aat-ink-3); font-weight: 600; }
+.aatc-tip__row { display: flex; align-items: center; gap: 0.5rem; padding: 0.125rem 0; }
+.aatc-tip__key { width: 14px; height: 3px; border-radius: 2px; background: var(--c); flex: none; }
+.aatc-tip__key.is-box { width: 10px; height: 10px; border-radius: 2px; }
+.aatc-tip__value { min-width: 3.25rem; color: var(--aat-ink); font-variant-numeric: tabular-nums; }
+.aatc-tip__label { color: var(--aat-ink-2); }
+
+/* Ranked bars */
+.aatc-bars__list { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.375rem; }
+.aatc-bar {
+  display: grid;
+  grid-template-columns: minmax(8rem, 38%) 1fr auto;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  margin: 0;
+  padding: 0.25rem 0.375rem;
+  border-radius: 0.375rem;
+}
+.aatc-bar:hover { background: #f4f6f7; }
+.aatc-bar.is-highlight { background: #e5fef6; }
+.aatc-bar__label { color: var(--aat-ink-2); font-size: 0.8125rem; }
+.aatc-bar.is-highlight .aatc-bar__label { color: var(--aat-ink); font-weight: 700; }
+.aatc-bar__track { display: flex; align-items: center; min-width: 0; }
+.aatc-bar__lane { display: flex; align-items: center; width: calc(100% - 3rem); }
+.aatc-bar__fill {
+  display: block;
+  height: 14px;
+  width: 0;
+  border-radius: 0 4px 4px 0;
+  background: var(--c);
+  transition: width 700ms cubic-bezier(.215, .61, .355, 1) var(--delay, 0ms);
+}
+.aatc-bars.is-ready .aatc-bar__fill { width: var(--w); }
+.aatc-bar__value { margin-left: 0.5rem; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.aatc-bar__na { color: var(--aat-ink-3); font-style: italic; font-size: 0.8125rem; }
+.aatc-bar__delta { min-width: 3.25rem; text-align: right; color: var(--aat-ink-3); font-size: 0.75rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.aatc-bar__delta.is-up,
+.aatc-bar__delta.is-down { color: var(--aat-ink-2); }
+@media (max-width: 34rem) {
+  .aatc-bar { grid-template-columns: 1fr auto; }
+  .aatc-bar__label { grid-column: 1 / -1; }
+}
+
+/* Stacked bars */
+.aatc-stack__rows { display: grid; gap: 0.875rem; }
+.aatc-stack__head { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 0.3125rem; }
+.aatc-stack__label { color: var(--aat-ink-2); font-size: 0.8125rem; }
+.aatc-stack__row.is-highlight .aatc-stack__label { color: var(--aat-ink); font-weight: 700; }
+.aatc-stack__aside { flex: none; color: var(--aat-ink-3); font-size: 0.75rem; white-space: nowrap; }
+.aatc-stack__bar { position: relative; display: flex; height: 24px; }
+.is-diverging .aatc-stack__bar { display: block; }
+.aatc-seg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 0 0 var(--w);
+  min-width: 0;
+  background: var(--c);
+  box-shadow: inset 2px 0 0 var(--aat-surface);
+  transition: filter 120ms ease;
+}
+.aatc-seg.is-first { box-shadow: none; border-radius: 4px 0 0 4px; }
+.aatc-seg.is-last { border-radius: 0 4px 4px 0; }
+.aatc-seg.is-first.is-last { border-radius: 4px; }
+.aatc-seg.is-abs { position: absolute; top: 0; bottom: 0; left: var(--l); width: var(--w); }
+.aatc-seg:hover { filter: brightness(1.08) saturate(1.05); }
+.aatc-seg__label {
+  padding: 0 0.375rem;
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.aatc-seg.is-tight .aatc-seg__label { visibility: hidden; }
+.aatc-stack__center {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  left: var(--center);
+  width: 1px;
+  background: var(--aat-ink-2);
+}
+
+/* Sparkline */
+.aatc-spark { display: block; width: 120px; height: 34px; overflow: visible; }
+.aatc-spark__line { fill: none; stroke: var(--c); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.aatc-spark__dot { fill: var(--c); stroke: var(--aat-surface); stroke-width: 2; }
+
+/* Table view */
+.aatc-table { margin-top: 0.75rem; }
+.aatc-table__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  cursor: pointer;
+  color: var(--aat-ink);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.aatc-table__scroll { margin-top: 0.75rem; overflow-x: auto; }
+.aatc-table__scroll:focus-visible { outline: 2px solid var(--aat-ink); outline-offset: 2px; }
+.aatc-table table { width: 100%; border-collapse: collapse; font-size: 0.8125rem; }
+.aatc-table caption { padding-bottom: 0.5rem; text-align: left; color: var(--aat-ink-3); font-size: 0.75rem; }
+.aatc-table th, .aatc-table td { padding: 0.375rem 0.625rem; border-bottom: 1px solid var(--aat-grid); text-align: left; }
+.aatc-table thead th { color: var(--aat-ink-2); font-weight: 600; border-bottom-color: var(--aat-axis); }
+.aatc-table .is-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.aatc-table tbody th { font-weight: 400; }
+
+@media (prefers-reduced-motion: reduce) {
+  .aatc-line__path.is-drawing { animation: none; stroke-dasharray: none; stroke-dashoffset: 0; }
+  .aatc-bar__fill { transition: none; }
+}
+@media (forced-colors: active) {
+  .aatc-line__path { stroke: CanvasText; }
+  .aatc-bar__fill, .aatc-seg { forced-color-adjust: none; }
+}
