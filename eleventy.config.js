@@ -3,6 +3,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/uploads");
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
   eleventyConfig.addPassthroughCopy({ "src/favicon.ico": "favicon.ico" });
+  // Self-contained static page with its own HTML, styles and data, built in the Annex repo
+  // (tools/build_static.py). Copied as is, never processed as a template.
+  eleventyConfig.addPassthroughCopy("src/ai-adoption-insights");
+  eleventyConfig.ignores.add("src/ai-adoption-insights/**");
 
   eleventyConfig.addCollection("services", (api) =>
     api.getFilteredByGlob("src/services/*.md").sort((a, b) => a.data.order - b.data.order)
